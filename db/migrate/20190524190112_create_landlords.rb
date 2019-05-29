@@ -4,6 +4,7 @@ class CreateLandlords < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.text :information
+      t.string :phone_number
       t.references :user, foreign_key: true
 
       t.timestamps

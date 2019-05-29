@@ -1,0 +1,146 @@
+<h1>Properties#new</h1>
+
+<div class="container">
+
+      <%= form_for @property do |f| %>
+
+        <div class="row">
+			
+			<div class="col-md-12">
+				<div class="form-group">
+					<label>Address</label>
+					<%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+				</div>
+			</div>
+
+			
+
+			<div class="col-md-12">
+				<p>Property Type</p>
+				<%= f.radio_button :home_type, 'House' %> House<br />
+    			<%= f.radio_button :home_type, 'Apartment/
+				Condo/Loft' %> Apartment/Condo/Loft<br />
+    			<%= f.radio_button :home_type, 'Separate
+				room' %> Separateroom<br />
+    			<%= f.radio_button :home_type, 'Townhouse' %> Townhouse<br />
+    			<%= f.radio_button :home_type, 'Studio' %> Studio<br />
+    			<%= f.radio_button :home_type, 'Assisted Living' %> Assisted Living<br />
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Room Type</label>
+					<%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]],prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Accommodate</label>
+					<%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Bedrooms</label>
+					<%= f.select :bed_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Bathrooms</label>
+					<%= f.select :bath_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_air %> Air Conditioning
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_parking %> Parking/Garage
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_washer %> Washer/Dryer
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_internet %> Wi-Fi
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_pool %> Pool/Hot Tub
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_gym %> Gym
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_balcony %> Balcony
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_fireplace %> Fireplace
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_dogs %> Dogs
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_cats %> Cats
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_smoking %> Smoking
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_wheelchair %> Cats
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<%= f.radio_button :minimum_lease, '1-3 Months' %> 1-3 Months<br />
+    			<%= f.radio_button :minimum_lease, '3-6 Months' %> 3-6 Months<br />
+    			<%= f.radio_button :minimum_lease, '6+ Months' %> 6+ Months<br />
+			</div>
+
+			<div class="col-md-12">
+	            <div class="form-group">
+	              <label>Price</label>
+	              <%= f.number_field :price, class: "form-control" %>
+	            </div>
+	        </div>
+
+	        <div class="col-md-12">
+	            <div class="form-group">
+	              <label>Property Name</label>
+	              <%= f.text_field :property_name, class: "form-control" %>
+	            </div>
+	        </div>
+
+	        <div class="col-md-12">
+				<div class="form-group">
+					<label>Summary</label>
+					<%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :active %> Active
+				</div>
+			</div>       
+
+          	<div class="col-md-12">
+          		<div class="actions">
+						<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+          	</div>
+
+        </div>  
+
+      <% end %>
+
+    </div>

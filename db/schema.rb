@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_144930) do
+ActiveRecord::Schema.define(version: 2019_05_25_153859) do
+
+  create_table "landlords", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "information"
+    t.string "phone_number"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_landlords_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "property_name"
+    t.integer "price"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "accommodate"
+    t.integer "bed_room"
+    t.integer "bath_room"
+    t.boolean "is_air"
+    t.boolean "is_parking"
+    t.boolean "is_washer"
+    t.boolean "is_balcony"
+    t.boolean "is_fireplace"
+    t.boolean "is_internet"
+    t.boolean "is_gym"
+    t.boolean "is_pool"
+    t.boolean "is_dogs"
+    t.boolean "is_cats"
+    t.boolean "is_wheelchair"
+    t.boolean "is_smoking"
+    t.string "address"
+    t.string "minimum_lease"
+    t.text "summary"
+    t.boolean "active"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
