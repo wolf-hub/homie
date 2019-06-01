@@ -7,5 +7,6 @@ class User < ApplicationRecord
   validates :role, presence: true       
   enum role: {tenant: 0, landlord: 1}
   has_one :landlord
+  has_one :tenant
   has_many :properties   
 end

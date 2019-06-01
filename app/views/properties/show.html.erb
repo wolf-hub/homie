@@ -1,2 +1,79 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<%= @property.property_name %>
+		</div>
+		<div class="col-12">
+			<%= @property.price %>
+		</div>
+		<div class="col-12">
+			<%= @property.home_type %>
+		</div>
+		<div class="col-12">
+			<%= @property.room_type %>
+		</div>
+		<div class="col-12">
+			<%= @property.accommodate %>
+		</div>
+		<div class="col-12">
+			<%= @property.bed_room %>
+		</div>
+		<div class="col-12">
+			<%= @property.bath_room %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_air %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_parking %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_washer %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_balcony %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_fireplace %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_internet %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_gym %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_pool %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_dogs %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_cats %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_wheelchair %>
+		</div>
+		<div class="col-12">
+			<%= @property.is_smoking %>
+		</div>
+		<div class="col-12">
+			<%= @property.address %>
+		</div>
+		<div class="col-12">
+			<%= @property.minimum_lease %>
+		</div>
+		<div class="col-12">
+			<%= @property.summary %>
+		</div>
+		<div class="col-12">
+			<ul>
+			  <% @property.images.each do |image| %>
+			    <li>
+			      <%= image_tag image %>
+			    </li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,89 @@
+<h1>Tenant#new</h1>
+
+<div class="container">
+	<%= form_with model: @tenant do |f| %>
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>First Name</label>
+              <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Last Name</label>
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Information</label>
+              <%= f.text_area :information, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Employment Status</label>
+              <%= f.select :employment_status, [["Student","Student"], ["Work","Work"]],prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Working Place</label>
+              <%= f.text_field :working_place, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>From Year</label>
+              <%= f.select :from_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]],prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>To Year</label>
+              <%= f.select :to_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]],prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Credit score</label>
+              <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]],prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Address</label>
+              <%= f.text_field :address, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Information</label>
+              <%= f.telephone_field :phone_number, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+				<div class="from-group">
+					<%= f.file_field :avatar, direct_upload: true %>
+				</div>
+			</div>          
+
+        </div>
+
+        <div><%= f.submit "Save", class: "btn btn-normal" %></div>
+
+      <% end %>
+</div>

@@ -34,6 +34,6 @@ class LandlordsController < ApplicationController
       @landlord = Landlord.find(params[:id])
     end
   def landlord_params
-      params.require(:landlord).permit(:first_name, :last_name, :information, :phone_number)
+      params.require(:landlord).permit(:first_name, :last_name, :information, :phone_number, :avatar)
   end
 end

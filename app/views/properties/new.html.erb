@@ -131,12 +131,22 @@
 				<div class="form-group">
 					<%= f.check_box :active %> Active
 				</div>
-			</div>       
+			</div> 
+
+			<div class="col-md-12">
+				<div class="from-group">
+					<%= f.file_field :images, multiple: true, direct_upload: true %>
+				</div>
+			</div>      
 
           	<div class="col-md-12">
           		<div class="actions">
 						<%= f.submit "Save", class: "btn btn-primary" %>
 				</div>
+          	</div>
+
+          	<div class="com-md-12">
+          		<div id="photos"><%= render 'photos_list' %></div>
           	</div>
 
         </div>  
