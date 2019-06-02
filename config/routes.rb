@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+  root 'pages#home'
+  get 'pages/home'
+  get 'pages/home_landlord'
   get 'properties/index'
   get 'properties/new'
   get 'properties/create'

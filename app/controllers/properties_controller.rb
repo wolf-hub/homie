@@ -22,6 +22,12 @@ class PropertiesController < ApplicationController
   end
 
   def update
+    if @property.update(property_params)
+      flash[:notice] = "Saved..."
+    else
+      flash[:alert] = "Something went wrong..."
+    end
+    redirect_back(fallback_location: request.referer)
   end
 
   def show

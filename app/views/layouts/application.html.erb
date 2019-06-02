@@ -4,14 +4,43 @@
     <title>Homie</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
       <div class="canvas">
-        <header class="header border-bottom">
+        <% if user_signed_in? %>
+            <header class="header landloard-profile-head border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 brand"> <a href="/"><%= image_tag("logo.png", :alt => "") %></a> </div>
+        <div class="col-sm-6">
+          <nav class="navbar">
+            <div class="navbar-header"> <a href="javascript:void()" class="menu-btn"><%= image_tag("menu-icon.png", :alt => "menu-icon") %> <%= image_tag("close-icon.png", :alt => "close-icon") %></a> </div>
+            <div id="bs-navbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="<%= properties_new_path %>">+ New Property</a></li>
+                <li><a href="<%= properties_index_path %>">My Properties</a></li>
+                <li><a href="#">Inbox</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-4">
+          <div class="profile-rt-header">
+            <ul class="profile-rt">
+              <li> <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a> </li>
+              <li> <a class="user-email" href="#">landlord@gmail.com</a> <span class="l-profile-img"><%= image_tag("l-profile.png", :alt => "close-icon") %></span> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+        <% else %>
+          <header class="header border-bottom">
           <div class="container">
             <div class="row">
               <div class="col-sm-2 brand"> <a href="index.html"><%= image_tag("logo.png", :alt => "logo") %></a> </div>
@@ -20,9 +49,13 @@
                   <div class="navbar-header"> <a href="javascript:void()" class="menu-btn"><%= image_tag("menu-icon.png", :alt => "menu-icon") %> <%= image_tag("close-icon.png", :alt => "close-icon") %></a> </div>
                   <div id="bs-navbar">
                     <ul class="nav navbar-nav">
-                      <li class="active"><a href="index.html">Are You a Landlord?</a></li>
-                      <li><a href="#">Login</a></li>
-                      <li><a href="#" class="primary-btn">Sign Up</a></li>
+                      <li class="active"><% if current_page?('http://localhost:3000/pages/home_landlord') %>
+                        <a href="<%= root_path %>">Looking For a Place?</a>
+                        <% else %>
+                        <a href="<%= pages_home_landlord_path %>">Are You a Landlord?</a>
+                      <% end %></li>
+                      <li><a href="<%= new_user_session_path %>">Login</a></li>
+                      <li><a href="<%= new_user_registration_path %>" class="primary-btn">Sign Up</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -30,6 +63,8 @@
             </div>
           </div>
         </header>
+        <% end %>
+        
         <!-- header end here -->
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
