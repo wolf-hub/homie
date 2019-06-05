@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, except: [:index, :new, :create]
+  before_action :set_property, except: [:index, :new, :create, :all_requests]
   before_action :authenticate_user!  
 
 
@@ -31,6 +31,12 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
+  end
+  
+  def all_requests
+    @property = Property.find(params[:property_id])
+    @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
   end
 
   def edit

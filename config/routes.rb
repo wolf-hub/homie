@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'requests/index'
+  get 'requests/show'
+  get 'requests/update'
+  get 'requests/destroy'
+  get 'requests/edit'
+  get 'requests/create'
+  get 'requests/new'
   root 'pages#home'
   get 'pages/home'
   get 'pages/home_landlord'
@@ -16,6 +23,10 @@ Rails.application.routes.draw do
   resources :landlords
   resources :tenants
   resources :properties
+  resources :requests
+  resources :properties do
+    get 'all_requests'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
 end

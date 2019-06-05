@@ -1,0 +1,9 @@
+Test
+<% if @requests %>
+
+<% @requests.each do |request| %>
+	<p><%= request.home_type %></p>
+	<%= link_to 'some', request  %>
+<% end %>
+	
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_01_195146) do
+ActiveRecord::Schema.define(version: 2019_06_05_074020) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,35 @@ ActiveRecord::Schema.define(version: 2019_06_01_195146) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "address"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "accommodate"
+    t.integer "bed_room"
+    t.integer "bath_room"
+    t.boolean "is_air"
+    t.boolean "is_parking"
+    t.boolean "is_washer"
+    t.boolean "is_balcony"
+    t.boolean "is_fireplace"
+    t.boolean "is_internet"
+    t.boolean "is_gym"
+    t.boolean "is_pool"
+    t.boolean "is_dogs"
+    t.boolean "is_cats"
+    t.boolean "is_wheelchair"
+    t.boolean "is_smoking"
+    t.string "duration"
+    t.date "arrival_date"
+    t.integer "min_budget"
+    t.integer "max_budget"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "tenants", force: :cascade do |t|

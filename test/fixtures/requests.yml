@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  home_type: MyString
+  room_type: MyString
+  accommodate: 1
+  bed_room: 1
+  bath_room: 1
+  is_air: false
+  is_parking: false
+  is_washer: false
+  is_balcony: false
+  is_fireplace: false
+  is_internet: false
+  is_gym: false
+  is_pool: false
+  is_dogs: false
+  is_cats: false
+  is_wheelchair: false
+  is_smoking: false
+  duration: MyString
+  arrival_date: 2019-06-02 18:51:19
+  min_budget: 1
+  max_budget: 1
+
+two:
+  address: MyString
+  home_type: MyString
+  room_type: MyString
+  accommodate: 1
+  bed_room: 1
+  bath_room: 1
+  is_air: false
+  is_parking: false
+  is_washer: false
+  is_balcony: false
+  is_fireplace: false
+  is_internet: false
+  is_gym: false
+  is_pool: false
+  is_dogs: false
+  is_cats: false
+  is_wheelchair: false
+  is_smoking: false
+  duration: MyString
+  arrival_date: 2019-06-02 18:51:19
+  min_budget: 1
+  max_budget: 1

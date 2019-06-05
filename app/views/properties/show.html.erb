@@ -74,7 +74,7 @@
                     <div class="row">
                     	<div class="col-md-12">
                         	<div class="pro-btn-sec">
-                                	<a href="#" class="light-blue-btn">Enquiries <span>(2)</span></a>
+                                	<a href="<%= request.fullpath %>/all_requests" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>                            	
                                     <a href="#" class="light-red-btn">Deactivate</a>
                                 </div>
                         </div>
@@ -192,7 +192,7 @@
 
 				      <div id="map" style="width: 100%; height: 400px"></div>
 
-				      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_QMZEQg41rdMB-jTIg3_mpvzoOd6GM6I"></script>
+				      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAP_API'] %>"></script>
 				      <script>
 				          function initialize() {
 				            var location = {lat: <%= @property.latitude %>, lng: <%= @property.longitude %>};
