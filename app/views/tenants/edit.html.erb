@@ -1,0 +1,109 @@
+<section class="landloard-content main-landloard-profile-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="l-sidebar">
+            <ul class="l-menu">
+              <li class="active"> <a href="edit-profile-landlord.html"><span class="l-p-icon"><%= image_tag 'edit.png' %></span>Edit Profile</a></li>
+              <li><a href="edit-profile-landlord-credit-card.html"><span class="l-p-icon"><%= image_tag 'gallery.png' %></span>Photo</a></li>
+              <li><a href="#"><span class="l-p-icon"><%= image_tag 'padlock-grey.png' %></span>Security</a></li>
+              <li class="logout-link"><a href="#"><span class="l-p-icon"><%= image_tag 'logout.png' %></span>Log out</a></li>
+            </ul>
+            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <%= form_with model: @tenant do |f| %>
+          <div class="landloard-rt-sec">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="media pb-4"> 
+                  <% if @tenant.avatar.attached? %>
+                    <%= image_tag @tenant.avatar, class: 'mr-3 mt-3 rounded-circle', size: '183' %>
+                  <% end %>       
+
+                  <div class="media-body">
+                    <p>Clear frontal face photos are an important way for tenants to learn about each other.  Be sure to use a photo that clearly shows your face and doesn’t include any personal or sensitive info you’d rather not have tenants see.</p>
+                    <div class="landloard-profile-btn-sec"> <%= f.file_field :avatar, direct_upload: true, class: "blue-outline-btn arrow-none-btn" %> <a href="#" class="light-red-btn">Delete</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="edit-landloard-profile">
+                  <div class="form-group"> <i class="fa fa-user-o input-user-icon"></i>
+                    <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+                  </div>
+                  <div class="form-group"> <i class="fa fa-user-o input-user-icon"></i>
+                    <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+                  </div>                  
+                  <div class="form-group">
+                    <label>Add some information about you</label>
+                    <%= f.text_area :information, class: "form-control", placeholder: "Information..." %>
+                  </div>
+                  <div class="form-group">
+                    <label>Add information about your employment status</label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <%= f.select :employment_status, [["Student","Student"], ["Work","Work"]],{:prompt => 'Select...'}, {:class => "form-control arrow-select"}  %>
+                      </div>
+                      <div class="col-md-8">
+                        <%= f.text_field :working_place, class: "form-control em-status-input", placeholder: 'Where are You Working/Studying in?' %>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group ">
+                  	<div class="row v-center">
+                  	
+                    	<div class="col-sm-1"><label>From</label></div>
+                        <div class="col-sm-2">
+                        	<%= f.select :from_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>     
+                        </div>
+                        
+                        <div class="col-sm-1"><label>To</label></div>
+                        <div class="col-sm-2">
+                        	<%= f.select :to_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>      
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Add Your Credit Score</label>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Add your address</label>
+                    <%= f.text_field :address, class: "form-control" %> 
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Add a phone number <span>Only tenants can see it to contact you.</span></label>
+                    <div class="row">
+                      
+                      <div class="col-md-5">
+                        <%= f.telephone_field :phone_number, class: "form-control p-number" %>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <%= f.submit "Save", class: "primary-btn" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- landloard-profile end here -->

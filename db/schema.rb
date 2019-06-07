@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_074020) do
+ActiveRecord::Schema.define(version: 2019_06_06_214455) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2019_06_05_074020) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recepient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "landlords", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -41,7 +48,18 @@ ActiveRecord::Schema.define(version: 2019_06_05_074020) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.index ["user_id"], name: "index_landlords_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "context"
+    t.integer "user_id"
+    t.integer "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "properties", force: :cascade do |t|

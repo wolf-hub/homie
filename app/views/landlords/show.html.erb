@@ -1,10 +1,90 @@
-<h1>Landlords#show</h1>
+<section class="landloard-content main-landloard-profile-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="l-sidebar">
+          	<div class="landloard-profile">
+            	<%= image_tag @landlord.avatar %>
+            </div>
+            <h6 class="text-center">Land Provided</h6>
+            <ul class="l-menu text-center center-menu">
+              <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
+              <% if @landlord.phone_number %>
+              	<li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
+              <% end %>
+              
+            </ul>
+            <div class="l-side-btn-sec"> <a href="<%= new_property_path %>" class="light-blue-btn">+ New Property</a> </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+        	
+          <div class="landloard-rt-sec">
+          		
+            <div class="row">
+            
+            <div class="col-md-12">
+            	<div class="l-a-landloard-header">
+                <div class="row">
+                <div class="col-md-8">
+            	<h2 class="heading-level-02">Hi, I’m <%= @landlord.first_name %> <%= @landlord.last_name %></h2>
+                <ul class="profile-list">
+                	<li>Joined in <%= @landlord.created_at.strftime("%Y") %></li>
+                    <li><span><%= @properties.count %></span> available properties <a href="<%= properties_path %>">View all</a></li>
+                </ul>
+                <p class="lives-in-paris-france">Lives in 
+					<% if @landlord.address %>
+						<%= @landlord.address %>
+					<% end %>
+                	</p>
+                </div>
+                <div class="col-md-4 text-right">
+                	<a class="light-blue-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i> Edit Profile</a>
+                </div>
+                </div>
+                </div>
+                <div class="l-a-landloard-header">
+                	<h5><%= @landlord.first_name %> <%= @landlord.last_name %></h5>
+                    <p><%= @landlord.information %></p>
+                </div>
+                <div class="l-a-landloard-header">
+                <h6>Billing Information</h6>
+                <div class="row">
+                <div class="col-md-5">
+                	<div class="mastercard">
+                    	<%= image_tag 'mastercard.png' %>
+                    	 MasterCard ending in 7676
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 text-right">
+                	<div class="wallet-sec">
+                    	<div class="wallet-icon">
+                        	<%= image_tag 'wallet.png' %>
+                        </div>
+                        <div class="wallet-amount">
+                        	<span class="wallet-title">Available:</span>
+                            <span class="w-amount">$870</span>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-right">
+                	<a href="#" class="primary-btn">Get Paid</a>
+                </div>
+                </div>
+                </div>
+           </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- landloard-profile end here -->
 <div class="container">
-	<p><%= @landlord.first_name %></p>
-	<p><%= @landlord.last_name %></p>
-	<p><%= @landlord.information %></p>
-	<p><%= @landlord.phone_number%></p>
-	<div>
-		<%= image_tag @ladnlord.image %>
-	</div>
+	
+	<% if current_user && current_user != @landlord.user %>
+        <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recepient_id: @landlord.user.id), method: :post, class: "btn btn-default" %>
+    <% end %>
 </div>

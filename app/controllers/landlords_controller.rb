@@ -15,6 +15,12 @@ class LandlordsController < ApplicationController
   end
 
   def update
+    if @landlord.update(landlord_params)
+      flash[:notice] = "Saved..."
+    else
+      flash[:alert] = "Something went wrong..."
+    end
+    redirect_to :action => 'show'
   end
 
   def edit
@@ -27,6 +33,7 @@ class LandlordsController < ApplicationController
   end
 
   def show
+    @properties = current_user.properties
   end
 
   private 
@@ -34,6 +41,6 @@ class LandlordsController < ApplicationController
       @landlord = Landlord.find(params[:id])
     end
   def landlord_params
-      params.require(:landlord).permit(:first_name, :last_name, :information, :phone_number, :avatar)
+      params.require(:landlord).permit(:first_name, :last_name, :information, :phone_number, :address, :avatar)
   end
 end

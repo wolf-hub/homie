@@ -33,7 +33,7 @@
         <div class="col-sm-6">
           <label class="remember-sec active  user-label tenant">
             <div class="inner-user-bx">
-              <%= f.radio_button :role, role[1], {:checked => true} %>
+              <%= f.radio_button :role, role[0], {:checked => true} %>
               <span class="checkmark check1"></span>
               <span class="user-icon"><%= image_tag("landloard-icon.png", :alt => "tenant-icon") %> <%= image_tag("landloard-icon-active.png", :alt => "tenant-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>
@@ -44,7 +44,7 @@
         <div class="col-sm-6">
           <label class="remember-sec user-label landlord">
             <div class="inner-user-bx">
-              <%= f.radio_button :role, role[1] %>
+              <%= f.radio_button :role, role[0] %>
               <span class="checkmark check2"></span>
               <span class="user-icon"><%= image_tag("landloard-icon.png", :alt => "landord-icon") %> <%= image_tag("landloard-icon-active.png", :alt => "landlord-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>

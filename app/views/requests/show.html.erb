@@ -1,2 +1,160 @@
-<h1>Requests#show</h1>
-<p>Find me in app/views/requests/show.html.erb</p>
+<section class="landloard-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="l-sidebar">
+            <ul class="l-menu">
+              <li class="active"> <a href="#"><span class="l-p-icon"><%= image_tag "copy.png" %></span> No Responce</a></li>
+              <li><a href="#"><span class="l-p-icon"><%= image_tag "accpted-icon.png" %></span> Accepted</a></li>
+              <li><a href="#"><span class="l-p-icon"><%= image_tag "new.png" %></span> Archived</a></li>
+            </ul>
+            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+        	
+          <div class="landloard-rt-sec">
+          		<div class="row">
+                	<div class="col-md-12">
+                    	<div class="back-to-req-sec">
+            	<a href="#" class="back-to-request">
+                	<span class="back-arrow"></span> <span>Back to requests</span>
+                </a>	
+            </div>
+                    </div>
+                </div>
+            <div class="row">
+            
+            <div class="col-md-12">
+            	<div class="pro-l-open-property">
+                
+                <div class="row pro-l-head">
+                <div class="col-md-3 pr-0"> <%= image_tag "apartment-big-icon.png" %> </div>
+                <div class="col-md-6">
+                  <h4><%= @request.home_type %></h4>
+                  <span class="location-address"><%= @request.address %></span>
+                  <ul class="pro-dtl-list">
+                    <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
+                    <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
+                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> Accommodate </li>
+                    <li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
+                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> bedrooms</li>
+                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> bathroom</li>
+
+                  </ul>
+                </div>
+                <div class="col-md-3 text-right">
+                	<div class="budget ">Budget:</div>
+                	<h4>$<%= @request.min_budget %>-<%= @request.max_budget %></h4>
+                    <div class="rt-t-edit-sec">
+                    <a href="<%= edit_request_path %>" class="light-blue-btn"><i class="fa fa-pencil"></i> Edit Request</a>
+                    <a href="#" class="light-red-btn">Archive</a>
+                    </div>
+                 </div>
+                <div class="col-md-12">
+               		<hr>
+                </div>
+                
+                 
+                
+              </div>
+                
+              
+              <div class="row">
+              	<div class="col-md-12 mt-0 mb-2 pro-feature-sec">
+                	<h5>Features</h5>
+                	<ul class="features-list">
+                    	<% if @request.is_air %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("air-conditioner.png", :alt => "") %></span><span>Airconditioning </span></div></div>
+                          </li>                       
+                      <% end %>
+
+                      <% if @request.is_parking %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("parking.png", :alt => "") %></span><span>Parking/
+                Garage </span></div></div>
+                          </li>                       
+                      <% end %>
+
+                      <% if @request.is_washer %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("washing-machine.png", :alt => "") %></span><span>Washing machine </span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_balcony %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("balcony.png", :alt => "") %></span><span>Balcony</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_fireplace %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("fireplace.png", :alt => "") %></span><span>Fireplace</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_internet %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("smartphone.png", :alt => "") %></span><span>Wi-Fi</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_gym %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("gym.png", :alt => "") %></span><span>Gym</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_pool %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("swimming-pool.png", :alt => "") %></span><span>Pool/Hot Tub</span></div></div>
+                          </li>
+                      <% end %>                    
+                        
+                    </ul>
+                </div>
+                
+                <div class="col-md-12 mb-4 pro-feature-sec">
+                	<h5>Additional Features</h5>
+                	<ul class="features-list">
+                    	<% if @request.is_dogs %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("pet.png", :alt => "") %></span><span>Dogs</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_cats %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("cat.png", :alt => "") %></span><span>Cats</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_wheelchair %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("wheelchair.png", :alt => "") %></span><span>Wheelchair Access</span></div></div>
+                          </li>
+                      <% end %>
+
+                      <% if @request.is_smoking %>
+                        <li>                        
+                            <div class="list-block"><div><span class="feature-img"><%= image_tag("smoke.png", :alt => "") %></span><span>Smoking</span></div></div>
+                          </li>
+                      <% end %>                          
+                    </ul>
+                </div>
+                
+                
+              </div>
+              
+              
+              </div>
+           </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- landloard-profile end here -->

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-3 text-center">
+    <% if @other.landlord.avatar %>
+    	
+    <% end %>
+    <%= image_tag @other.landlord.avatar %>
+    <strong><%= profile(@other).first_name %></strong>
+    <%= link_to "View Profile", @other.landlord, class: "btn btn-default" %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Conversation with <%= @other.landlord.first_name %>
+        <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
+      </div>
+      <div class="panel-body">
+        <div class="container text-center">
+          <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
+              <div class="form-group">
+                <%= f.text_field :context, placeholder: "Add a personal message", class: "form-control" %>
+              </div>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <div>
+                <%= f.submit "Send Message", class: "btn btn-normal" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>

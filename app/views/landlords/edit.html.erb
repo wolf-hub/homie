@@ -1,2 +1,72 @@
-<h1>Landlords#edit</h1>
-<p>Find me in app/views/landlords/edit.html.erb</p>
+<section class="landloard-content main-landloard-profile-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="l-sidebar">
+            <ul class="l-menu">
+              <li class="active"> <a href="edit-profile-landlord.html"><span class="l-p-icon">
+                <% if @landlord.avatar.attached? %>
+                <%= image_tag 'edit.png' %>
+                <% end %>  
+                </span>Edit Profile</a></li>
+              <li><a href="#"><span class="l-p-icon"><%= image_tag 'padlock-grey.png' %></span>Security</a></li>
+              <li><a href="edit-profile-landlord-credit-card.html"><span class="l-p-icon"><%= image_tag 'credit-card.png' %></span>Credit Card Information</a></li>
+              <li><a href="#"><span class="l-p-icon"><%= image_tag 'wallet-grey.png' %></span>Wallet</a></li>
+              <li class="logout-link"><a href="#"><span class="l-p-icon"><%= image_tag 'logout.png' %></span>Log out</a></li>
+            </ul>
+            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <%= form_with model: @landlord do |f| %>
+          <div class="landloard-rt-sec">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="media pb-4"> <%= image_tag @landlord.avatar, size: "122x122", class: "mr-3 mt-3 rounded-circle" %>
+                  <div class="media-body">
+                    <p>Clear frontal face photos are an important way for tenants to learn about each other.  Be sure to use a photo that clearly shows your face and doesn’t include any personal or sensitive info you’d rather not have tenants see.</p>
+                    <div class="landloard-profile-btn-sec"> <%= f.file_field :avatar, direct_upload: true, class: "blue-outline-btn arrow-none-btn" %> <a href="#" class="light-red-btn">Delete</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="edit-landloard-profile">
+                  <div class="form-group"> <i class="fa fa-user-o input-user-icon"></i>
+                    <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>                    
+                  </div>
+                  <div class="form-group"> <i class="fa fa-user-o input-user-icon"></i>
+                    <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+                  </div>                  
+                  <div class="form-group">
+                    <label>Add some information about you</label>
+                    <%= f.text_area :information, class: "form-control", placeholder: "Information..." %>
+                  </div>
+                  <div class="form-group">
+                    <label>Add your address</label>
+                    <%= f.text_field :address, class: "form-control" %> 
+                  </div>
+                  <div class="form-group">
+                    <label>Add a phone number <span>Only tenants can see it to contact you.</span></label>
+                    <div class="row">                      
+                      <div class="col-md-6">
+                        <%= f.telephone_field :phone_number, class: "form-control p-number" %> 
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <%= f.submit "Save", class: "primary-btn" %>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- landloard-profile end here -->
+

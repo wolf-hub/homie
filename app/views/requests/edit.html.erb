@@ -1,2 +1,139 @@
-<h1>Requests#edit</h1>
-<p>Find me in app/views/requests/edit.html.erb</p>
+<h1>Requests#new</h1>
+<div class="container">
+<%= form_for @request do |f| %>
+
+        <div class="row">
+			
+			<div class="col-md-12">
+				<div class="form-group">
+					<label>Where Are You Looking To Move?</label>
+					<%= f.text_field :address, placeholder: "Where Are You Looking To Move?", class: "form-control" %>
+				</div>
+			</div>
+
+			
+
+			<div class="col-md-12">
+				<p>Property Type</p>
+				<%= f.radio_button :home_type, 'House' %> House<br />
+    			<%= f.radio_button :home_type, 'Apartment/
+				Condo/Loft' %> Apartment/Condo/Loft<br />
+    			<%= f.radio_button :home_type, 'Separate
+				room' %> Separateroom<br />
+    			<%= f.radio_button :home_type, 'Townhouse' %> Townhouse<br />
+    			<%= f.radio_button :home_type, 'Studio' %> Studio<br />
+    			<%= f.radio_button :home_type, 'Assisted Living' %> Assisted Living<br />
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Room Type</label>
+					<%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]],prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Accommodate</label>
+					<%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Bedrooms</label>
+					<%= f.select :bed_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12 select">
+				<div class="form-group">
+					<label>Bathrooms</label>
+					<%= f.select :bath_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_air %> Air Conditioning
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_parking %> Parking/Garage
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_washer %> Washer/Dryer
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_internet %> Wi-Fi
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_pool %> Pool/Hot Tub
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_gym %> Gym
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_balcony %> Balcony
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_fireplace %> Fireplace
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_dogs %> Dogs
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_cats %> Cats
+				</div>
+				<div class="form-group">
+					<%= f.check_box :is_smoking %> Smoking
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.check_box :is_wheelchair %> Cats
+				</div>
+			</div>
+			
+
+			<div class="col-md-12">
+				<%= f.radio_button :duration, '1-3' %> 1-3 Months<br />
+    			<%= f.radio_button :duration, '3-6' %> 3-6 Months<br />
+    			<%= f.radio_button :duration, '6+' %> 6+ Months<br />
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+					<%= f.date_field :arrival_date %>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.number_field :min_budget %>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.number_field :max_budget %>
+				</div>
+			</div>
+			     
+
+          	<div class="col-md-12">
+          		<div class="actions">
+						<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+          	</div>
+
+          	
+
+        </div>  
+
+      <% end %>
+
+    </div>

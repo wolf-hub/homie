@@ -8,13 +8,19 @@ class TenantsController < ApplicationController
     @tenant = Tenant.new(tenant_params)
     @tenant.user_id = current_user.id
     if @tenant.save
-      redirect_to @Tenant, notice: "Data saved"
+      redirect_to @tenant, notice: "Data saved"
     else
       render :new
     end  
   end
 
   def update
+    if @tenant.update(tenant_params)
+      flash[:notice] = "Saved..."
+    else
+      flash[:alert] = "Something went wrong..."
+    end
+    redirect_to :action => 'show'
   end
 
   def edit
@@ -27,6 +33,7 @@ class TenantsController < ApplicationController
   end
 
   def show
+    @requests = current_user.requests
   end
 
   private 
