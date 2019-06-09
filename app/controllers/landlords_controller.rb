@@ -1,5 +1,5 @@
 class LandlordsController < ApplicationController
-  before_action :set_landlord, except: [:index, :new, :create]
+  before_action :set_landlord, except: [:index, :new, :create, :payment, :add_card]
   def new 
      @landlord = Landlord.new(user_id: current_user.id)
   end
@@ -34,6 +34,38 @@ class LandlordsController < ApplicationController
 
   def show
     @properties = current_user.properties
+  end
+
+  def payment
+  end
+
+  def add_card
+    if current_user.stripe_id.blank?
+      customer = Stripe::Customer.create(
+        email: current_user.email
+      )
+      current_user.stripe_id = customer.id
+      current_user.save      
+    else
+      customer = Stripe::Customer.retrieve(current_user.stripe_id)
+      
+    end
+
+    month, year = params[:expiry].split(/ \/ /)
+    new_token = Stripe::Token.create(:card => {
+      :number => params[:number],
+      :exp_month => month,
+      :exp_year => year,
+      :cvc => params[:cvv]
+    })
+
+    customer.sources.create(source: new_token.id)
+
+    flash[:notice] = "Your card is saved."
+    redirect_to payment_method_path
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to payment_method_path
   end
 
   private 

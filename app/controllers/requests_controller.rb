@@ -4,7 +4,13 @@ class RequestsController < ApplicationController
 
 
   def index
-    @requests = current_user.requests
+    if current_user.role == 'landlord'
+      @property = Property.find(params[:property_id])
+    @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
+    else
+      @requests = current_user.requests
+    end
+    
   end
 
   def show

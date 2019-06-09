@@ -1,9 +1,9 @@
 Test
 <% if @requests %>
 
-<% @requests.each do |request| %>
-	<p><%= request.home_type %></p>
-	<%= link_to 'some', request  %>
+<% @requests.each do |requesto| %>
+	<p><%= requesto.home_type %></p>
+	<a href="<%= property_request_path(@property, requesto) %>">Some</a>
 <% end %>
 	
 <% end %>

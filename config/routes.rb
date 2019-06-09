@@ -29,8 +29,20 @@ Rails.application.routes.draw do
   resources :properties
   resources :requests
   resources :properties do
-    get 'all_requests'
+    member do
+      get 'all_requests'
+      get 'show_request'
+    end  
   end
+
+  resources :properties do
+    resources :requests
+  end  
+
+ 
+
+  get '/payment_method' => "landlords#payment"
+  post '/add_card' => "landlords#add_card"
 
   resources :conversations, only: [:index, :create]  do
     resources :messages, only: [:index, :create]

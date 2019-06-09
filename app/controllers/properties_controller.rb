@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, except: [:index, :new, :create, :all_requests]
+  before_action :set_property, except: [:index, :new, :create, :all_requests, :show_request]
   before_action :authenticate_user!  
 
 
@@ -35,8 +35,12 @@ class PropertiesController < ApplicationController
   end
   
   def all_requests
-    @property = Property.find(params[:property_id])
+    @property = Property.find(params[:id])
     @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
+  end
+
+  def show_request
+    @request = Request.find(params[:requst_id])
   end
 
   def edit
@@ -46,6 +50,28 @@ class PropertiesController < ApplicationController
   end
 
   private
+
+  def charge(property, request)
+      if !property.user.stripe_id.blank?
+        customer = Stripe::Customer.retrieve(property.user.stripe_id)
+        charge = Stripe::Charge.create(
+          :customer => customer.id,
+          :amount => 5 * 100,
+          :description => "something",
+          :currency => "usd",          
+        )
+
+        if charge
+          flash[:notice] = "Reservation created successfully!"
+        else
+          flash[:alert] = "Cannot charge with this payment method!"
+        end
+      end
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+    end
+
+
   def property_params
       params.require(:property).permit(:property_name, :price, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :is_air, :is_parking, :is_washer, :is_balcony, :is_fireplace, :is_internet, :is_gym, :is_pool, :is_dogs, :is_cats, :is_wheelchair, :is_smoking, :address, :minimum_lease, :summary, :active, images: [])
   end

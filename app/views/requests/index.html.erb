@@ -19,7 +19,13 @@
               	<div class="col-md-4">
                 <div class="apartment-pro-bx list-common">
                   <div class="apartment-header">
-                    <h5><%= request.home_type %></h5>
+                    <% if current_user.id == request.user_id %>
+                    	<h5><%= request.home_type %></h5>
+                    <% else %>
+                    	<a href="<%= property_request_path(@property, request) %>"><h5><%= request.home_type %></h5></a>
+                    <% end %>
+                    
+                    
                     <div class="row">
                       <div class="col-sm-6"> <span class="location-name"><%= request.address %></span> </div>
                       <div class="col-md-6 text-right"> <span class="property-price"> $<%= request.min_budget %>-<%= request.max_budget %> </span> </div>
