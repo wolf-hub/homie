@@ -4,7 +4,6 @@ module ApplicationHelper
 			@profile = user.landlord
 		else
 			@profile = user.tenant
-		end
-		
+		end		
 	end
 end

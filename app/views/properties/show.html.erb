@@ -2,15 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-            <ul class="l-menu">
-              <li> <a href="#"><span class="l-p-icon"><%= image_tag("home-icon.png", :alt => "home-icon") %></span> All</a></li>
-              <li><a href="#"><span class="l-p-icon">
-              	<%= image_tag("accpted-icon.png", :alt => "accpted-icon") %></span> Accepted</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag("dnd-icon.png", :alt => "dnd-icon") %></span> Not active</a></li>
-            </ul>
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+         <!-- Sidebar here -->
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
         	
@@ -18,8 +11,8 @@
           		<div class="row">
                 	<div class="col-md-12">
                     	<div class="back-to-req-sec">
-            	<a href="#" class="back-to-request">
-                	<span class="back-arrow"></span> <span>Back to requests</span>
+            	<a href="<%= properties_path %>" class="back-to-request">
+                	<span class="back-arrow"></span> <span>Back to Properties</span>
                 </a>	
             </div>
                     </div>
@@ -29,37 +22,33 @@
             <div class="col-md-12">
             	<div class="pro-l-open-property">
                 <div class="row">
-             	 <div class="col-md-6">
-                <div id="sync1" class="owl-carousel">
-                  <% @property.images.each do |image| %>
-				    <div class="item">
-				      <%= image_tag image %>
-				    </div>
-				  <% end %>                 
-                </div>
-                <div id="sync2" class="owl-carousel">
-                  <% @property.images.each do |image| %>
-				    <div class="item">
-				      <%= image_tag image %>
-				    </div>
-				  <% end %>                  
-                </div>
-              </div>
-              
-              	 
-
-
-              	 <div class="col-md-6">
-              	 	
-              	 	<div class="row pro-l-head">
-                    	<div class="col-md-8">
-                        	<h4><%= @property.property_name %></h4>
-                            <span class="location-address"><%= @property.address %></span>
-                        </div>
-                        <div class="col-md-4 property-price">
-                        	<h4>$<%= @property.price %></h4>
-                        </div>
+                 	<div class="col-md-6">
+                    <div id="sync1" class="owl-carousel">
+                      <% @property.images.each do |image| %>
+            				    <div class="item">
+            				      <%= image_tag image %>
+            				    </div>
+            				  <% end %>                 
                     </div>
+                    <div id="sync2" class="owl-carousel">
+                      <% @property.images.each do |image| %>
+            				    <div class="item">
+            				      <%= image_tag image %>
+            				    </div>
+            				  <% end %>                  
+                    </div>
+                  </div>
+
+              	 <div class="col-md-6">              	 	
+              	 	<div class="row pro-l-head">
+                    <div class="col-md-8">
+                      <h4><%= @property.property_name %></h4>
+                      <span class="location-address"><%= @property.address %></span>
+                    </div>
+                    <div class="col-md-4 property-price">
+                      <h4>$<%= @property.price %></h4>
+                    </div>
+                  </div>
                     
                     <ul class="l-p-dtl-list">
                     	<li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @property.home_type %></li>
@@ -73,13 +62,11 @@
                     
                     <div class="row">
                     	<div class="col-md-12">
-                        	<div class="pro-btn-sec">
-                                	<a href="<%= request.fullpath %>/all_requests" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>  
-                                  <a href="<%= property_requests_url(@property) %>">Some</a>
-                                  <a href="<%= all_requests_property_path %>">Aomw</a>                          	
-                                    <a href="#" class="light-red-btn">Deactivate</a>
-                                </div>
+                        <div class="pro-btn-sec">
+                          <a href="<%= all_requests_property_path %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>                         	
+                          <a href="#" class="light-red-btn">Deactivate</a>
                         </div>
+                      </div>
                     </div>
                  </div>
 
@@ -189,40 +176,9 @@
                 	<span class="location-address"><%= @property.address %></span>
                 </div>
                 <div class="col-md-12 l-p-l-map">
-                	    <!-- GOOGLE MAP -->
-				    
-
-				      <div id="map" style="width: 100%; height: 400px"></div>
-
-<<<<<<< HEAD
-				      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAP_API'] %>"></script>
-=======
-				      
->>>>>>> ea1e30565e68d857ed9fcb84fc7fe51d1ea96f2f
-				      <script>
-				          function initialize() {
-				            var location = {lat: <%= @property.latitude %>, lng: <%= @property.longitude %>};
-				            var map = new google.maps.Map(document.getElementById('map'), {
-				              center: location,
-				              zoom: 14
-				            });
-
-				            var image =  {
-				            	url: "<%= image_path('location.svg') %>"
-				            };
-
-				            var marker = new google.maps.Marker({
-				              position: location,
-				              map: map,
-				              icon: image
-				            });
-				            
-				          }
-
-				          google.maps.event.addDomListener(window, 'load', initialize);
-				      </script>
-
-				    
+                	<% if @property.address %>
+                    <%= render 'map' %>
+                  <% end %>				    
                 </div>
               </div>
               </div>
@@ -234,12 +190,3 @@
     </div>
   </section>
   <!-- landloard-profile end here -->
-
-<div class="container">
-	<div class="row">
-		
-		
-		
-		
-	</div>
-</div>

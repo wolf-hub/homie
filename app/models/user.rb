@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_one :tenant
   has_many :properties  
   has_many :requests 
+  has_many :purchases
 end

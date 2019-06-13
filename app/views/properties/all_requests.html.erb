@@ -1,9 +1,84 @@
+<section class="landloard-content">
+  		<div class="container">
+        	<div class="row">
+        	<div class="col-md-3">
+            	<div class="l-sidebar">
+                	<ul class="l-menu">
+                    	<li> <a href="#"><span class="l-p-icon"><%= image_tag 'home-icon.png' %></span> All</a></li>
+                        <li><a href="#"><span class="l-p-icon"><%= image_tag 'accpted-icon.png' %></span> Accepted</a></li>
+                        <li><a href="#"><span class="l-p-icon"><%= image_tag 'dnd-icon.png' %></span> Not active</a></li>
+                    </ul>
+                    
+                    <div class="l-side-btn-sec">
+                    	<a href="#" class="light-blue-btn">+ New Property</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+            	<div class="landloard-rt-sec">
+                	<div class="row">
+                	<div class="col-md-12">
+                    	<div class="back-to-req-sec">
+            	<a href="#" class="back-to-request">
+                	<span class="back-arrow"></span> <span>Back to properties</span>
+                </a>	
+            </div>
+            <hr>
+                    </div>
+                </div>
+                
+                	<div class="row">
+                    	<div class="col-md-12">
+                        	<h3 class="property-top-title">You have <span><%= @requests.count %> requests</span> for your property “An Apartment”</h3>
+                        </div>
+                    </div>
+                
+                	<div class="row">
+                    	
+						<% @requests.each do |requesto| %>
+                    	<div class="col-md-4">
+                        	<div class="apartment-pro-bx list-common">
+                            	<div class="apartment-header">
+                                	<h5><%= requesto.home_type %></h5>
+                                    <div class="row">
+                                    	<div class="col-sm-6">
+                                        	<span class="location-name"><%= requesto.address %></span>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                        	<span class="property-price">
+                                            	$<%= requesto.min_budget %>-<%= requesto.max_budget %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="apartment-dtl-list">
+                                	<ul class="pro-dtl-list">
+					                    <li><span class="f-icon"><%= image_tag 'calendar.png' %></span> <span><%= requesto.arrival_date %> - <%= requesto.duration %></span> Months</li>
+					                    <li><span class="f-icon"><%= image_tag 'bed-grey-icon-1.png' %></span> <span><%= requesto.bed_room %></span> bedroom(s)</li>
+					                    <li><span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= requesto.bath_room %></span> bathroom(s)</li>
+					                  </ul>
+                  
+                  					<a href="<%= show_request_property_path(@property, requesto) %>" class="light-blue-btn">Show more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>	
+  </section>
+  <!-- landloard-profile end here -->
 Test
 <% if @requests %>
 
 <% @requests.each do |requesto| %>
 	<p><%= requesto.home_type %></p>
 	<a href="<%= property_request_path(@property, requesto) %>">Some</a>
+	<a href="<%= show_request_property_path(@property, requesto) %>">Some2</a>
 <% end %>
 	
 <% end %>

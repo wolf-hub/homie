@@ -40,7 +40,9 @@ class PropertiesController < ApplicationController
   end
 
   def show_request
-    @request = Request.find(params[:requst_id])
+    @property = Property.find(params[:id])
+    @request = Request.find(params[:format])
+    @purchase = @request.purchases.build
   end
 
   def edit
@@ -51,25 +53,7 @@ class PropertiesController < ApplicationController
 
   private
 
-  def charge(property, request)
-      if !property.user.stripe_id.blank?
-        customer = Stripe::Customer.retrieve(property.user.stripe_id)
-        charge = Stripe::Charge.create(
-          :customer => customer.id,
-          :amount => 5 * 100,
-          :description => "something",
-          :currency => "usd",          
-        )
-
-        if charge
-          flash[:notice] = "Reservation created successfully!"
-        else
-          flash[:alert] = "Cannot charge with this payment method!"
-        end
-      end
-    rescue Stripe::CardError => e
-      flash[:alert] = e.message
-    end
+  
 
 
   def property_params

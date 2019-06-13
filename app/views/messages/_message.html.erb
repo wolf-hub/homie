@@ -1,0 +1,18 @@
+<% if message.user_id == current_user.id %>
+    <div class="row" style="margin-bottom: 2rem;">
+        <div class="col-md-1"> </div>
+        <div class="col-md-6">
+            <div class="incoming-chat-bx"> <span class="chat-time"><%= timeago(message.created_at) %></span> <%= message.context %>
+                        
+            </div>
+        </div>
+    </div>
+<% else %>
+    <div class="row" style="margin-bottom: 2rem;">
+        <div class="col-md-5"> </div>
+        <div class="col-md-6">
+            <div class="media-chat-bx rt-chat-tool-tip sm-v-line"> <span class="chat-time"><%= timeago(message.created_at) %></span> <%= message.context %> 
+            </div>
+        </div>
+    </div>
+<% end %>

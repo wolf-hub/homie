@@ -1,34 +1,73 @@
-<div class="row">
-  <div class="col-md-3 text-center">
-    <% if @other.landlord.avatar %>
-    	
-    <% end %>
-    <%= image_tag @other.landlord.avatar %>
-    <strong><%= profile(@other).first_name %></strong>
-    <%= link_to "View Profile", @other.landlord, class: "btn btn-default" %>
-  </div>
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Conversation with <%= @other.landlord.first_name %>
-        <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
-      </div>
-      <div class="panel-body">
-        <div class="container text-center">
-          <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
-              <div class="form-group">
-                <%= f.text_field :context, placeholder: "Add a personal message", class: "form-control" %>
+<section class="chat-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="nav nav-pills" role="tablist">            
+            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#messages"><i class="fa fa-envelope-open"></i> Messages</a> </li>
+          </ul>
+          <div class="tab-content custom-scrollbar">
+            
+            <div id="messages" class="tab-pane active">
+              <% if @conversations %>
+                
+                <% @conversations.each do |conversation| %>
+                    <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
+                    <%= link_to conversation_messages_path(conversation) do %>
+                        <div class="media"> <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                          <div class="media-body">
+                            <div class="chat-account-name"><%= profile(other).first_name %> <%= profile(other).last_name %> <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
+                            <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                          </div>
+                        </div>
+                        
+
+                    <% end %>
+                <% end %>
+              <% end %>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="chat-right-section tenant-chat">
+            <div class="chat-header">
+              <div class="chat-head-left"> <%= image_tag profile(@other).avatar, size: "50x50", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> </div>
+              <div class="chat-head-right"> <a href="#" class="ellipsis"><i class="fa fa-ellipsis-v"></i></a>
+                <ul class="chat-menu">
+                  <li>
+                    <%= link_to "View Profile", profile(@other) %>
+                    </li>
+                </ul>
               </div>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <div>
-                <%= f.submit "Send Message", class: "btn btn-normal" %>
-              </div>
-          <% end %>
+            </div>
+            <div class="chat-body custom-scrollbar">
+              <% if @messages %>
+                <%= render @messages %>                
+              <% end %>
+              
+              
+              
+            </div>
+            <div class="chat-input-box"> <a class="attach-btn" href="javascript:void(0)"><%= image_tag 'attach-icon.png' %></a>
+              <ul class="attached-menu">
+                <li><a href="#">+ Picture</a></li>
+                <li><a href="#">+ File</a></li>
+                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#send-property">+ Property</a></li>
+              </ul>
+              <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
+                  <div class="form-group">
+                    <%= f.text_field :context, placeholder: "Type your message here...", class: "form-control" %>
+                  </div>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <div>
+                    <%= f.submit "Send Message", :type => :image, :src => image_path("send-icon.png"), class: "send-btn" %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    
-
-  </div>
-</div>
+  </section>
+  <!-- chat-wrapper end here -->

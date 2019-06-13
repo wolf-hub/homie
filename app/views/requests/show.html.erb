@@ -157,4 +157,8 @@
       </div>
     </div>
   </section>
+  <%= form_for([@purchase, current_user.purchases.build]) do |f| %>
+
+    <%= f.submit "Purachase", id: "btn_purcahse", class: "primary-btn"%>      
+    <% end %>
   <!-- landloard-profile end here -->

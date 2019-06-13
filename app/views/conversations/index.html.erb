@@ -1,36 +1,38 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">Your Conversations</div>
-      <div class="panel-body">
-        <div class="container">
+<section class="chat-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="nav nav-pills" role="tablist">            
+            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#messages"><i class="fa fa-envelope-open"></i> Your Conversations</a> </li>
+          </ul>
+          <div class="tab-content custom-scrollbar">
+            
+            <div id="messages" class="tab-pane active">
+              <% if @conversations %>
+                
+                <% @conversations.each do |conversation| %>
+                    <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
+                    <%= link_to conversation_messages_path(conversation) do %>
+                        <div class="media"> <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                          <div class="media-body">
+                            <div class="chat-account-name"><%= profile(other).first_name %> <%= profile(other).last_name %> <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
+                            <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                          </div>
+                        </div>
+                        
 
-          <% if @conversation %>
-          	<% @conversations.each do |conversation| %>
-	              <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
-	              <%= link_to conversation_messages_path(conversation) do %>
-
-	                  <div class="row conversation">
-	                    <% if conversation.messages.any? %>
-	                        <div class="col-md-2">
-	                          <%= image_tag other.image, class: "img-circle avatar-medium" %>
-	                        </div>
-	                        <div class="col-md-2">
-	                          <%= other.first_name %>
-	                          <%= conversation.messages.last.message_time %>
-	                        </div>
-	                        <div class="col-md-8">
-	                          <%= conversation.messages.last.context %>
-	                        </div>
-	                    <% end %>
-	                  </div>
-
-	              <% end %>
-	          <% end %>
-          <% end %>          
-
+                    <% end %>
+                <% end %>
+              <% end %>
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+  <!-- chat-wrapper end here -->

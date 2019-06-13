@@ -2,17 +2,8 @@
   		<div class="container">
         	<div class="row">
         	<div class="col-md-3">
-            	<div class="l-sidebar">
-                	<ul class="l-menu">
-                    	<li> <a href="#"><span class="l-p-icon"><%= image_tag("home-icon.png", :alt => "") %></span> All</a></li>
-                        <li><a href="#"><span class="l-p-icon"><%= image_tag("accpted-icon.png", :alt => "") %></span> Accepted</a></li>
-                        <li><a href="#"><span class="l-p-icon"><%= image_tag("dnd-icon.png", :alt => "") %></span> Not active</a></li>
-                    </ul>
-                    
-                    <div class="l-side-btn-sec">
-                    	<a href="#" class="light-blue-btn">+ New Property</a>
-                    </div>
-                </div>
+            	<!-- Sidebar here -->
+          		<%= render 'sidebar' %>
             </div>
             
             <div class="col-md-9">
@@ -47,8 +38,9 @@
 	                                    </div>
 	                                </div>
 	                                <div class="pro-btn-sec">
-	                                	<a href="#" class="light-blue-btn">Enquiries <span>(2)</span></a>
-	                                    <a href="#" class="light-red-btn">Deactivate</span></a>
+	                                	<% @requests = Request.where(home_type: property.home_type, room_type: property.room_type, duration: property.minimum_lease) %>
+	                                	<a href="<%= property_requests_url(property) %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>
+	                                    <a href="<%= edit_property_path(property) %>" class="light-red-btn">Deactivate</span></a>
 	                                </div>
 	                        	</div>
 	                        	

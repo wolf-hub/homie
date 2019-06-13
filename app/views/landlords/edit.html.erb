@@ -22,7 +22,10 @@
           <div class="landloard-rt-sec">
             <div class="row">
               <div class="col-md-12">
-                <div class="media pb-4"> <%= image_tag @landlord.avatar, size: "122x122", class: "mr-3 mt-3 rounded-circle" %>
+                <div class="media pb-4"> 
+                  <% if @landlord.avatar.attached? %>
+                  <%= image_tag @landlord.avatar, size: "122x122", class: "mr-3 mt-3 rounded-circle" %>
+                  <% end %> 
                   <div class="media-body">
                     <p>Clear frontal face photos are an important way for tenants to learn about each other.  Be sure to use a photo that clearly shows your face and doesn’t include any personal or sensitive info you’d rather not have tenants see.</p>
                     <div class="landloard-profile-btn-sec"> <%= f.file_field :avatar, direct_upload: true, class: "blue-outline-btn arrow-none-btn" %> <a href="#" class="light-red-btn">Delete</a> </div>

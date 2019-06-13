@@ -10,10 +10,19 @@ class ApplicationController < ActionController::Base
 	
 	def after_sign_in_path_for(resource)
 	    # return the path based on resource
-	    if current_user.role == 1
-	    	new_landlord_path	
+	    if current_user.role == 'landlord'
+	    	if current_user.landlord
+	    		landlord_path(current_user.landlord)
+	    	else
+	    		new_landlord_path
+	    	end
+	    		
 	    else
-	    	new_tenant_path
+	    	if current_user.tenant
+	    		tenant_path(current_user.tenant)
+	    	else
+	    		new_tenant_path
+	    	end   	
 	    end
 	    
 	end

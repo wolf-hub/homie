@@ -49,7 +49,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-      params.require(:request).permit(:min_budget, :max_budget, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :is_air, :is_parking, :is_washer, :is_balcony, :is_fireplace, :is_internet, :is_gym, :is_pool, :is_dogs, :is_cats, :is_wheelchair, :is_smoking, :address, :duration, :arrival_date)
+      params.require(:request).permit(:min_budget, :max_budget, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :is_air, :is_parking, :is_washer, :is_balcony, :is_fireplace, :is_internet, :is_gym, :is_pool, :is_dogs, :is_cats, :is_wheelchair, :is_smoking, :address, :duration, :arrival_date, :active)
   end
 
   def set_request

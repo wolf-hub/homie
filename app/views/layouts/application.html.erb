@@ -22,8 +22,8 @@
             <div id="bs-navbar">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="<%= properties_new_path %>">+ New Property</a></li>
-                <li><a href="<%= properties_index_path %>">My Properties</a></li>
-                <li><a href="#">Inbox</a></li>
+                <li><a href="<%= properties_path %>">My Properties</a></li>
+                <li><a href="<%= conversations_path %>">Inbox</a></li>
               </ul>
             </div>
           </nav>
@@ -32,7 +32,11 @@
           <div class="profile-rt-header">
             <ul class="profile-rt">
               <li> <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a> </li>
-              <li> <a class="user-email" href="#">landlord@gmail.com</a> <span class="l-profile-img"><%= image_tag("l-profile.png", :alt => "close-icon") %></span> </li>
+              <li> <a class="user-email" href="mailto: <%= current_user.email %>"><%= current_user.email %></a> <span class="l-profile-img">
+                <% if profile(current_user).avatar.attached? %>
+                  <%= image_tag profile(current_user).avatar, size: "50x50" %>
+                <% end %>
+                </span> </li>
             </ul>
           </div>
         </div>
