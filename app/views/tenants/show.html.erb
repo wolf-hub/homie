@@ -11,7 +11,7 @@
               <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
               <li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
             </ul>
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
+            <div class="l-side-btn-sec"> <a href="<%= requests_new_path %>" class="light-blue-btn">+ New Request</a> </div>
           </div>
         </div>
         <div class="col-md-9">
@@ -27,7 +27,7 @@
             	<h2 class="heading-level-02">Hi, I’m <%= @tenant.first_name%> <%= @tenant.last_name %></h2>
                 <ul class="profile-list">
                 	<li>Joined in <%= @tenant.created_at.strftime("%Y") %></li>
-                    <li><span><%= @requests.count %></span> active requests <a href="<%= requests_path %>">View all</a></li>
+                    <li><span><%= @requests.count %></span> active <%= 'request'.pluralize(@requests.count) %> <a href="<%= requests_path %>">View all</a></li>
                 </ul>
                 <p class="lives-in-paris-france">Lives in <%= @tenant.address %></p>
                 </div>

@@ -2,17 +2,7 @@
   		<div class="container">
         	<div class="row">
         	<div class="col-md-3">
-            	<div class="l-sidebar">
-                	<ul class="l-menu">
-                    	<li> <a href="#"><span class="l-p-icon"><%= image_tag 'home-icon.png' %></span> All</a></li>
-                        <li><a href="#"><span class="l-p-icon"><%= image_tag 'accpted-icon.png' %></span> Accepted</a></li>
-                        <li><a href="#"><span class="l-p-icon"><%= image_tag 'dnd-icon.png' %></span> Not active</a></li>
-                    </ul>
-                    
-                    <div class="l-side-btn-sec">
-                    	<a href="#" class="light-blue-btn">+ New Property</a>
-                    </div>
-                </div>
+            	<%= render 'sidebar' %>
             </div>
             
             <div class="col-md-9">
@@ -30,7 +20,7 @@
                 
                 	<div class="row">
                     	<div class="col-md-12">
-                        	<h3 class="property-top-title">You have <span><%= @requests.count %> requests</span> for your property “An Apartment”</h3>
+                        	<h3 class="property-top-title">You have <span><%= @requests.count %> <%= pluralize_without_count(@requests.count, 'request') %></span> for your property “An Apartment”</h3>
                         </div>
                     </div>
                 
@@ -56,8 +46,8 @@
                                 <div class="apartment-dtl-list">
                                 	<ul class="pro-dtl-list">
 					                    <li><span class="f-icon"><%= image_tag 'calendar.png' %></span> <span><%= requesto.arrival_date %> - <%= requesto.duration %></span> Months</li>
-					                    <li><span class="f-icon"><%= image_tag 'bed-grey-icon-1.png' %></span> <span><%= requesto.bed_room %></span> bedroom(s)</li>
-					                    <li><span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= requesto.bath_room %></span> bathroom(s)</li>
+					                    <li><span class="f-icon"><%= image_tag 'bed-grey-icon-1.png' %></span> <span><%= requesto.bed_room %></span> <%= pluralize_without_count(requesto.bed_room, 'bedroom') %></li>
+					                    <li><span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= requesto.bath_room %></span> <%= pluralize_without_count(requesto.bath_room, 'bathroom') %></li>
 					                  </ul>
                   
                   					<a href="<%= show_request_property_path(@property, requesto) %>" class="light-blue-btn">Show more</a>
@@ -72,13 +62,3 @@
         </div>	
   </section>
   <!-- landloard-profile end here -->
-Test
-<% if @requests %>
-
-<% @requests.each do |requesto| %>
-	<p><%= requesto.home_type %></p>
-	<a href="<%= property_request_path(@property, requesto) %>">Some</a>
-	<a href="<%= show_request_property_path(@property, requesto) %>">Some2</a>
-<% end %>
-	
-<% end %>

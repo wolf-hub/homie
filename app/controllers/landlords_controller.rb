@@ -1,7 +1,18 @@
 class LandlordsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_landlord, except: [:index, :new, :create, :payment, :add_card]
+  
   def new 
-     @landlord = Landlord.new(user_id: current_user.id)
+     if current_user.landlord
+       redirect_to current_user.landlord, notice: "You already have profile."
+     else
+       if current_user.role == 'tenant'
+         redirect_to current_user.tenant, notice: "You are tenant! You couldn't create landlord profile!"
+       else
+         @landlord = Landlord.new(user_id: current_user.id)
+       end
+       
+     end     
   end
 
   def create
@@ -24,6 +35,11 @@ class LandlordsController < ApplicationController
   end
 
   def edit
+    if current_user.id == @landlord.user_id
+      
+    else
+      redirect_to @landlord, notice: "You don't have permission."  
+    end 
   end
 
   def destroy

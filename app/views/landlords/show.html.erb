@@ -8,6 +8,7 @@
             </div>
             <h6 class="text-center">Land Provided</h6>
             <ul class="l-menu text-center center-menu">
+              <li class="sidebar-item"><%= link_to "Payment Method", payment_method_path, class: "sidebar-link active" %></li>
               <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
               <% if @landlord.phone_number %>
               	<li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
@@ -30,7 +31,7 @@
             	<h2 class="heading-level-02">Hi, I’m <%= @landlord.first_name %> <%= @landlord.last_name %></h2>
                 <ul class="profile-list">
                 	<li>Joined in <%= @landlord.created_at.strftime("%Y") %></li>
-                    <li><span><%= @properties.count %></span> available properties <a href="<%= properties_path %>">View all</a></li>
+                    <li><span><%= @properties.count %></span> available <%= pluralize_without_count(@properties.count, 'property') %> <a href="<%= properties_path %>">View all</a></li>
                 </ul>
                 <p class="lives-in-paris-france">Lives in 
 					<% if @landlord.address %>
@@ -39,7 +40,10 @@
                 	</p>
                 </div>
                 <div class="col-md-4 text-right">
-                	<a class="light-blue-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i> Edit Profile</a>
+                	<% if @landlord.user_id == current_user.id %>
+                       <a class="light-blue-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i> Edit Profile</a> 
+                    <% end %>
+                    
                 </div>
                 </div>
                 </div>

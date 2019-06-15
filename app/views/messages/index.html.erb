@@ -41,7 +41,7 @@
                 </ul>
               </div>
             </div>
-            <div class="chat-body custom-scrollbar">
+            <div class="chat-body custom-scrollbar" id="custom-scrollbar">
               <% if @messages %>
                 <%= render @messages %>                
               <% end %>
@@ -55,7 +55,7 @@
                 <li><a href="#">+ File</a></li>
                 <li><a href="javascript:void(0);" data-toggle="modal" data-target="#send-property">+ Property</a></li>
               </ul>
-              <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
+              <%= form_for [@conversation, @conversation.messages.new] do |f| %>
                   <div class="form-group">
                     <%= f.text_field :context, placeholder: "Type your message here...", class: "form-control" %>
                   </div>

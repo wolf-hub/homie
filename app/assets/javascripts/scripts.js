@@ -1,11 +1,20 @@
 window.onload = function(){
+
+    function updateScroll(){
+    var element = document.getElementById("custom-scrollbar");
+    element.scrollTop = element.scrollHeight;
+};
+
+updateScroll();
         
     //Check File API support
     if(window.File && window.FileList && window.FileReader)
     {
         var filesInput = document.getElementById("files");
-        
-        filesInput.addEventListener("change", function(event){
+
+        if (filesInput) {
+
+            filesInput.addEventListener("change", function(event){
             
             var files = event.target.files; //FileList object
             var output = document.getElementById("result");
@@ -41,6 +50,11 @@ window.onload = function(){
             }                               
            
         });
+
+
+        }
+        
+        
     }
     else
     {

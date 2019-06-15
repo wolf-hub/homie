@@ -2,14 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-            <ul class="l-menu">
-              <li class="active"> <a href="#"><span class="l-p-icon"><%= image_tag "copy.png" %></span> No Responce</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag "accpted-icon.png" %></span> Accepted</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag "new.png" %></span> Archived</a></li>
-            </ul>
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
         	
@@ -17,7 +10,7 @@
           		<div class="row">
                 	<div class="col-md-12">
                     	<div class="back-to-req-sec">
-            	<a href="#" class="back-to-request">
+            	<a href="<%= requests_path %>" class="back-to-request">
                 	<span class="back-arrow"></span> <span>Back to requests</span>
                 </a>	
             </div>
@@ -36,10 +29,10 @@
                   <ul class="pro-dtl-list">
                     <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
                     <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
-                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> Accommodate </li>
+                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> <%= 'Accommodate'.pluralize(@request.accommodate) %> </li>
                     <li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
-                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> bedrooms</li>
-                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> bathroom</li>
+                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> <%= 'bedroom'.pluralize(@request.bed_room) %></li>
+                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> <%= 'bathroom'.pluralize(@request.bath_room) %></li>
 
                   </ul>
                 </div>
@@ -157,8 +150,5 @@
       </div>
     </div>
   </section>
-  <%= form_for([@purchase, current_user.purchases.build]) do |f| %>
 
-    <%= f.submit "Purachase", id: "btn_purcahse", class: "primary-btn"%>      
-    <% end %>
   <!-- landloard-profile end here -->

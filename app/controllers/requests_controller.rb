@@ -19,10 +19,11 @@ class RequestsController < ApplicationController
   def update
     if @request.update(request_params)
       flash[:notice] = "Saved..."
+
     else
       flash[:alert] = "Something went wrong..."
     end
-    redirect_back(fallback_location: request.referer)
+    redirect_to @request
   end
 
   def destroy

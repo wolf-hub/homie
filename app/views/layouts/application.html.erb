@@ -70,8 +70,7 @@
         <% end %>
         
         <!-- header end here -->
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= render 'shared/message'%>
       <%= yield %>
       <footer>
         <section class="footer-top">
@@ -120,6 +119,7 @@
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Cookies</a></li>
                     <li><a href="#">Frequently asked Questions</a></li>
+                    <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
                 </ul>
               </div>
             </div>

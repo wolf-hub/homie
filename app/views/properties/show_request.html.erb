@@ -3,14 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-            <ul class="l-menu">
-              <li> <a href="#"><span class="l-p-icon"><%= image_tag 'home-icon.png' %></span> All</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag 'accpted-icon.png' %></span> Accepted</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag 'dnd-icon.png' %></span> Not active</a></li>
-            </ul>
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
         	
@@ -18,7 +11,7 @@
           		<div class="row">
                 	<div class="col-md-12">
                     	<div class="back-to-req-sec">
-            	<a href="#" class="back-to-request">
+            	<a href="<%= all_requests_property_path(@property) %>" class="back-to-request">
                 	<span class="back-arrow"></span> <span>Back to requests</span>
                 </a>	
             </div>
@@ -37,10 +30,10 @@
                   <ul class="pro-dtl-list">
                     <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
                     <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
-                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> Accommodate </li>
+                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> <%= pluralize_without_count(@request.accommodate, 'Accomodate') %> </li>
 					<li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
-                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> bedrooms</li>
-                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> bathroom</li>                    
+                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> <%= pluralize_without_count(@request.bed_room, 'bedroom') %></li>
+                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> <%= pluralize_without_count(@request.bath_room, 'bathroom') %></li>                    
                   </ul>
                 </div>
                 <div class="col-md-3 text-right">
@@ -150,7 +143,7 @@
                 	<div class="divider-h"></div>
                 	<div class="media l-media-object"> 
                 		<% if profile(@request.user).avatar.attached? %>
-                			<%= image_tag profile(@request.user).avatar, size: "122x122" , class: "mr-3  rounded-circle" %>
+                			<%= image_tag profile(@request.user).avatar, size: "75x75" , class: "mr-3  rounded-circle" %>
                 		<% end %>
 
                 <div class="media-body">
@@ -184,9 +177,9 @@
 	            		<p class="primary-btn disabled-btn">Request Accepted</p>
 	                </div>
 	                <div class="col-md-5">
-	                	<%= link_to "Send Message", conversations_path(sender_id: current_user.id, recepient_id: @request.user.id), method: 'post' %>
-                    <%= link_to "Message", conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
-                    <a href="<%= conversations_path(sender_id: current_user.id, recepient_id: @request.user.id) %>" class="primary-btn">Message <%= profile(@request.user).first_name %></a>
+	                	
+                    <%= link_to "Message " + profile(@request.user).first_name, conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
+                    
 	                </div>
                 <% end %> 
                 
@@ -203,9 +196,3 @@
     </div>
   </section>
   <!-- landloard-profile end here -->
-  <% @purchases = Purchase.where(request_id: @request.id, user_id: current_user.id) %>
-  <%= @purchases.count %>
-  <%= current_user.properties.count %>
-<% if current_user.purchases.count %>
-	<%= current_user.purchases.count %>
-<% end %>

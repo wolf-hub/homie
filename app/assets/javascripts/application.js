@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
+//= require toastr
 
 //= require card
 //= require_tree .
