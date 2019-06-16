@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, except: [:index, :new, :create, :all_requests, :show_request]
+  before_action :set_property, except: [:index, :new, :create, :all_requests, :show_request, :delete_image_attachment]
   before_action :authenticate_user!  
 
 
@@ -49,6 +49,12 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: request.referer, notice: "Saved...")
   end
 
   private

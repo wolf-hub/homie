@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     member do
       get 'all_requests'
       get 'show_request'
+      delete :delete_image_attachment
     end  
   end
 

@@ -1,5 +1,6 @@
 
   <% @property.images.each do |image| %>
-    <span><%= image_tag image %> <a href="#" class="remove-image-btn"><%= image_tag 'close.png' %></a></span>
+    <span><%= image_tag image %> <a href="<%= delete_image_attachment_property_path(image.id) %>" class="remove-image-btn" data-method="delete"><%= image_tag 'close.png' %></a></span>
     
   <% end %>
+
