@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     end  
   end  
 
- 
+  get '/notifications' => 'notifications#index'
 
   get '/payment_method' => "landlords#payment"
   post '/add_card' => "landlords#add_card"

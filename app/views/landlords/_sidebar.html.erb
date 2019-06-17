@@ -1,0 +1,20 @@
+<div class="l-sidebar">
+  <div class="landloard-profile">
+    <%= image_tag @landlord.avatar %>
+  </div>
+  <h6 class="text-center">Land Provided</h6>
+  <ul class="l-menu text-center center-menu">
+    
+    <% if current_user.stripe_id %>
+      <li> <a href="<%= payment_method_path %>"><span class="checked-tick-icon"></span> Update Card</a></li>
+    <% else %>
+      <li> <a href="payment_method_path"></span> Add Card</a></li>
+    <% end %>
+    
+    <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
+    <% if @landlord.phone_number %>
+      <li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
+    <% end %>              
+  </ul>
+  <div class="l-side-btn-sec"> <a href="<%= new_property_path %>" class="light-blue-btn">+ New Property</a> </div>
+</div>

@@ -2,24 +2,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-          	<div class="landloard-profile">
-            	<%= image_tag @landlord.avatar %>
-            </div>
-            <h6 class="text-center">Land Provided</h6>
-            <ul class="l-menu text-center center-menu">
-              <li class="sidebar-item"><%= link_to "Payment Method", payment_method_path, class: "sidebar-link active" %></li>
-              <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
-              <% if @landlord.phone_number %>
-              	<li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
-              <% end %>
-              
-            </ul>
-            <div class="l-side-btn-sec"> <a href="<%= new_property_path %>" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
-        	
+        	<div class="card card-default">
+            <div class="card-header">Notifications</div>
+            <div class="card-body">
+                <%= link_to notifications_path do %>
+                    You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
+                <% end %>
+            </div>
+          </div>
+
           <div class="landloard-rt-sec">
           		
             <div class="row">
@@ -50,35 +44,8 @@
                 <div class="l-a-landloard-header">
                 	<h5><%= @landlord.first_name %> <%= @landlord.last_name %></h5>
                     <p><%= @landlord.information %></p>
-                </div>
-                <div class="l-a-landloard-header">
-                <h6>Billing Information</h6>
-                <div class="row">
-                <div class="col-md-5">
-                	<div class="mastercard">
-                    	<%= image_tag 'mastercard.png' %>
-                    	 MasterCard ending in 7676
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 text-right">
-                	<div class="wallet-sec">
-                    	<div class="wallet-icon">
-                        	<%= image_tag 'wallet.png' %>
-                        </div>
-                        <div class="wallet-amount">
-                        	<span class="wallet-title">Available:</span>
-                            <span class="w-amount">$870</span>
-                        
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 text-right">
-                	<a href="#" class="primary-btn">Get Paid</a>
-                </div>
-                </div>
-                </div>
-           </div>
+                </div>                
+               </div>
             </div>
           </div>
         </div>

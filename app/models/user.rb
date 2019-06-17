@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :properties  
   has_many :requests 
   has_many :purchases
+  has_many :notifications
 end

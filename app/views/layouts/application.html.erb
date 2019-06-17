@@ -12,7 +12,7 @@
   <body>
       <div class="canvas">
         <% if user_signed_in? %>
-            <header class="header landloard-profile-head border-bottom">
+            <header class="header landloard-profile-head border-bottom" style="margin-bottom: 30px;">
     <div class="container">
       <div class="row">
         <div class="col-sm-2 brand"> <a href="/"><%= image_tag("logo.png", :alt => "") %></a> </div>
@@ -31,7 +31,13 @@
         <div class="col-sm-4">
           <div class="profile-rt-header">
             <ul class="profile-rt">
-              <li> <a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a> </li>
+              <li>
+              <%= link_to notifications_path do %>
+                <i class="fa fa-bell-o icon-babu"></i>
+                <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
+              <% end %>
+            </li>
+              
               <li> <a class="user-email" href="mailto: <%= current_user.email %>"><%= current_user.email %></a> <span class="l-profile-img">
                 <% if profile(current_user) %>
                   <% if profile(current_user).avatar.attached? %>
@@ -46,7 +52,7 @@
     </div>
   </header>
         <% else %>
-          <header class="header border-bottom">
+          <header class="header border-bottom" style="margin-bottom: 30px;">
           <div class="container">
             <div class="row">
               <div class="col-sm-2 brand"> <a href="/"><%= image_tag("logo.png", :alt => "logo") %></a> </div>
@@ -73,6 +79,9 @@
         
         <!-- header end here -->
       <%= render 'shared/message'%>
+      <% if current_user %>
+        <input type="hidden" id="user_id" value="<%= current_user.id %>">
+      <% end %>
       <%= yield %>
       <footer>
         <section class="footer-top">

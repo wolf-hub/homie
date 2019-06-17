@@ -27,19 +27,16 @@ class LandlordsController < ApplicationController
 
   def update
     if @landlord.update(landlord_params)
-      flash[:notice] = "Saved..."
+      redirect_to @landlord, notice: "Data saved"
     else
       flash[:alert] = "Something went wrong..."
+      render 'edit'
     end
-    redirect_to :action => 'show'
+    
   end
 
   def edit
-    if current_user.id == @landlord.user_id
-      
-    else
-      redirect_to @landlord, notice: "You don't have permission."  
-    end 
+    
   end
 
   def destroy
@@ -61,21 +58,15 @@ class LandlordsController < ApplicationController
         email: current_user.email
       )
       current_user.stripe_id = customer.id
-      current_user.save      
+      current_user.save
+
+      # Add Credit Card to Stripe
+      customer.sources.create(source: params[:stripeToken])
     else
       customer = Stripe::Customer.retrieve(current_user.stripe_id)
-      
+      customer.source = params[:stripeToken]
+      customer.save
     end
-
-    month, year = params[:expiry].split(/ \/ /)
-    new_token = Stripe::Token.create(:card => {
-      :number => params[:number],
-      :exp_month => month,
-      :exp_year => year,
-      :cvc => params[:cvv]
-    })
-
-    customer.sources.create(source: new_token.id)
 
     flash[:notice] = "Your card is saved."
     redirect_to payment_method_path

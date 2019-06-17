@@ -15,7 +15,14 @@
           </div>
         </div>
         <div class="col-md-9">
-        	
+        	<div class="card card-default">
+            <div class="card-header">Notifications</div>
+            <div class="card-body">
+                <%= link_to notifications_path do %>
+                    You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
+                <% end %>
+            </div>
+          </div>
           <div class="landloard-rt-sec">
           		
             <div class="row">

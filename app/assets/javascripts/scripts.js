@@ -1,12 +1,7 @@
 window.onload = function(){
 
-    function updateScroll(){
-    var element = document.getElementById("custom-scrollbar");
-    element.scrollTop = element.scrollHeight;
-};
 
-updateScroll();
-        
+       
     //Check File API support
     if(window.File && window.FileList && window.FileReader)
     {
