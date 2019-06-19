@@ -1,7 +1,61 @@
 class RequestsController < ApplicationController
-  before_action :set_request, except: [:index, :new, :create]
-  before_action :authenticate_user!
+  before_action :set_request, except: [:index, :new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
+  before_action :authenticate_user!, except: [:new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
 
+
+  def step1
+    if user_signed_in?
+      @request = current_user.requests.build
+    else
+      @request = Request.new
+    end
+  end
+
+  def step2
+    session[:request] ||= {}
+    session[:request].merge!{request_params}
+    @request = Request.new
+  end
+
+  def step3
+    session[:request] ||= {}
+    session[:request].merge!{request_params}
+    @request = Request.new
+  end
+
+  def step4
+    session[:request] ||= {}
+    session[:request].merge!{request_params}
+    @request = Request.new
+  end
+
+  def step5
+    session[:request] ||= {}
+    session[:request].merge!{request_params}
+    @request = Request.new
+  end
+
+  def step6    
+    session[:request] ||= {}
+    session[:request].merge!{request_params}
+    @request = Request.new
+  end
+
+  def steplast
+    if current_user.nil?
+      session[:request] = params
+     # Redirect the user to register/login
+      redirect_to new_user_registration_path  
+    else
+      @request = current_user.requests.build(request_params)
+      if @request.save
+        redirect_to @request, notice: "Saved..."
+      else
+        flash[:alert] = "Something went wrong..."
+        render :new
+      end
+    end    
+  end
 
   def index
     if current_user.role == 'landlord'
@@ -33,17 +87,28 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = current_user.requests.build(request_params)
-    if @request.save
-      redirect_to @request, notice: "Saved..."
+    if current_user.nil?
+      session[:request] = params
+     # Redirect the user to register/login
+      redirect_to new_user_registration_path  
     else
-      flash[:alert] = "Something went wrong..."
-      render :new
-    end
+      @request = current_user.requests.build(request_params)
+      if @request.save
+        redirect_to @request, notice: "Saved..."
+      else
+        flash[:alert] = "Something went wrong..."
+        render :new
+      end
+    end    
   end
 
   def new
-    @request = current_user.requests.build
+    if user_signed_in?
+      @request = current_user.requests.build
+    else
+      @request = Request.new
+    end
+    
   end
 
   

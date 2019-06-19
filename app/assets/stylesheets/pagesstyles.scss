@@ -705,6 +705,18 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
 
 .landloard-step-sec .heading-level-01{ font-weight:normal; }
 .select-outline{ width:75%; }
+.select-outline input {
+    font-family: 'Sofia Pro';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    width: 100%;
+    letter-spacing: normal;
+    color: #787676;
+    padding: 15px 20px 15px 60px;
+    background: image-url("location-pin.png") 30px center no-repeat;
+    background-size: 12px 15px;
+}
 .select-outline select {
     font-family: 'Sofia Pro';
     font-size: 16px;
@@ -1979,6 +1991,10 @@ ul.pro-list.c-p-step-list li {
 
 .error {
   color: #E4584C;
+}
+
+#step2, #step3, #step4, #step5, #step6 {
+  display: none;
 }
 
 

@@ -1,0 +1,57 @@
+<section class="landloard-step-sec" id="step6">
+    <div class="container">
+      <div class="row l-step-6">
+        <div class="col-sm-1">
+          <ul class="step-list">
+            <li class="active-done"><a href="tenant-step-1.html">1</a></li>
+            <li class="active-done"><a href="tenant-step-2.html">2</a></li>
+            <li class="active-done"><a href="tenant-step-3.html">3</a></li>
+            <li class="active-done"><a href="tenant-step-4.html">4</a></li>
+            <li class="active-done"><a href="tenant-step-5.html">5</a></li>
+            <li class="active"><a href="tenant-step-6.html">6</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-11">
+          <%= form_for @request, :url => {:action => "steplast"} do |f| %>
+          <div class="row">
+            <div class="col-sm-8 l-left-step-sec-01">
+              <div class="step-header"> <span class="location-2"><%= image_tag 'debit-card.png' %></span> <span class="step-name">Step 6</span> </div>
+              <h2 class="heading-level-01">What Is Your Monthly Budget? </h2>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="price-select-sec">
+                    <%= f.number_field :min_budget, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="price-select-sec">
+                    <%= f.number_field :max_budget, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                	<div class="col-sm-12">
+                    	<div class="step-btn-pagination tenant-step-pagination">
+                        	<div class="up-broken-line-arrow">
+                            	<ul>
+                              		<li><%= image_tag 'up-broken-line-arrow1.png' %></li>
+                                    <li><%= image_tag 'up-broken-line-arrow2.png' %></li>
+                                    <li><%= image_tag 'up-broken-line-arrow3.png' %></li>
+                                </ul>
+                            </div>
+                        	<a href="<%= step5_path %>" class="blue-outline-btn">Previous Step</a>
+                        	<%= f.submit "Finish", class: "primary-btn checked-btn" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="step-rt-img-sec"> <%= image_tag 'tenant-image-step-6.jpg' %> </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- landloard-profile end here -->

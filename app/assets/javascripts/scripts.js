@@ -67,6 +67,69 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
+jQuery('#step1-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#step1').hide();
+    jQuery('#step2').show();
+});    
+
+jQuery('#step2-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#step2').hide();
+    jQuery('#step3').show();
+}); 
+
+jQuery('#step3-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#step3').hide();
+    jQuery('#step4').show();
+}); 
+
+jQuery('#step4-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#step4').hide();
+    jQuery('#step5').show();
+}); 
+
+jQuery('#step5-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#step5').hide();
+    jQuery('#step6').show();
+}); 
+
+ 
+
+jQuery('#step6-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#step6').hide();
+    jQuery('#step5').show();
+}); 
+
+jQuery('#step5-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#step5').hide();
+    jQuery('#step4').show();
+}); 
+
+jQuery('#step4-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#step4').hide();
+    jQuery('#step3').show();
+}); 
+
+jQuery('#step3-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#step3').hide();
+    jQuery('#step2').show();
+}); 
+
+jQuery('#step2-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#step2').hide();
+    jQuery('#step1').show();
+}); 
+
+
 var owl = $('.property-slider-01');
               owl.owlCarousel({
                 margin:0,
