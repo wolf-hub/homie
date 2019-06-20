@@ -130,6 +130,71 @@ jQuery('#step2-prev').click(function(e){
 }); 
 
 
+
+
+jQuery('#pstep1-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep1').hide();
+    jQuery('#pstep2').show();
+});    
+
+jQuery('#pstep2-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep2').hide();
+    jQuery('#pstep3').show();
+}); 
+
+jQuery('#pstep3-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep3').hide();
+    jQuery('#pstep4').show();
+}); 
+
+jQuery('#pstep4-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep4').hide();
+    jQuery('#pstep5').show();
+}); 
+
+jQuery('#pstep5-btn').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep5').hide();
+    jQuery('#pstep6').show();
+}); 
+
+ 
+
+jQuery('#pstep6-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep6').hide();
+    jQuery('#pstep5').show();
+}); 
+
+jQuery('#pstep5-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep5').hide();
+    jQuery('#pstep4').show();
+}); 
+
+jQuery('#pstep4-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep4').hide();
+    jQuery('#pstep3').show();
+}); 
+
+jQuery('#pstep3-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep3').hide();
+    jQuery('#pstep2').show();
+}); 
+
+jQuery('#pstep2-prev').click(function(e){
+    e.preventDefault();
+    jQuery('#pstep2').hide();
+    jQuery('#pstep1').show();
+}); 
+
+
 var owl = $('.property-slider-01');
               owl.owlCarousel({
                 margin:0,

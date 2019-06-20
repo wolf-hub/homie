@@ -1,48 +1,99 @@
-<section class="landloard-content">
+<%= form_for @property do |f| %>
+
+<section class="landloard-step-sec" id="pstep1">
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <!-- Sidebar here -->
-        <%= render 'sidebar' %>
+    <div class="row l-step-1">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active"><a href="landloard-step-1.html">1</a></li>
+          <li><a href="landloard-step-2.html">2</a></li>
+          <li><a href="landloard-step-3.html">3</a></li>    
+          <li><a href="landloard-step-4.html">4</a></li>
+          <li><a href="landloard-step-5.html">5</a></li>
+          <li><a href="landloard-step-6.html">6</a></li>
+        </ul>
       </div>
-      <div class="col-md-9">
-        <%= form_for @property do |f| %>
-        <div class="landloard-rt-sec tenant-edit-request">
-          <div class="row">
-            <div class="col-md-7">
-              <div class="back-to-req-sec"> <a href="#" class="back-to-request"> <span class="back-arrow"></span> <span>Back to requests</span> </a> </div>
-            </div>
-            <div class="col-md-5 text-right mb-0"> <%= f.submit "Save", class: "primary-btn" %> </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="divider-h divider-h-2"></div>
-              <div class="row mb-5">
-                 <div class="col-md-7">
-                 	<%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
-               </div>
-               <div class="col-md-5 text-right">
-               <label class="remember-sec">
-                   <%= f.check_box :active %>
-                   <span class="checkmark"></span>  Active
-                 </label></div>
-             </div>
-              <h5 class="heading-level-05 mb-3">Which Type of Property Do You Have?</h5>
-              <ul class="pro-list">
+      <div class="col-sm-11">
+        <div class="row">
                 
-    			 
-                <li class="check-property-step">
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'location-2.png' %></span>
+              <span class="step-name">Step 1</span>
+                           
+            </div>
+            <h2 class="heading-level-01">Where is Your House Located?</h2>
+            <p class="select-step-label">Please select the closest city.</p>
+            <div class="select-outline">
+              <%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+            </div>
+            <p class="select-step-label" style="margin-top: 30px; margin-bottom: 15px;">Please add pretty name for your property </p>
+            <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
+            <label>Add a description</label>               
+                <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control add-description" %>
+               
+          </div>
+                    
+          <div class="col-sm-4">
+            <div class="step-rt-img-sec">
+              <%= image_tag 'globe.jpg' %>
+            </div>
+          </div>
+        </div>
+                
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="step-btn-pagination">
+              <a href="javascript: void" class="primary-btn arrow-rt" id="pstep1-btn">Next step</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</section>
+<!-- landloard-profile end here -->
+
+
+<section class="landloard-step-sec" id="pstep2">
+  <div class="container">
+    <div class="row l-step-2">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active-done"><a href="landloard-step-1.html">1</a></li>
+          <li class="active"><a href="landloard-step-2.html">2</a></li>
+          <li><a href="landloard-step-3.html">3</a></li>    
+          <li><a href="landloard-step-4.html">4</a></li>
+          <li><a href="landloard-step-5.html">5</a></li>
+          <li><a href="landloard-step-6.html">6</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+               
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'choice.png' %></span>
+              <span class="step-name">Step 2</span>
+                           
+            </div>
+            <h2 class="heading-level-01">Which Type Of Property Do You Have</h2>
+                            
+            <div class="row">
+              <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'Apartment/
-				Condo/Loft' %>
+        Condo/Loft' %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'apartments.png' %> <%= image_tag 'apartments-active.png' %></span>
                     <div class="text-label">Apartment/
                       Condo/Loft</div>
                   </div>
                   </label>
-                </li>
-                <li class="check-property-step">
+                </div>
+
+                <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'House' %>
@@ -50,19 +101,21 @@
                     <div class="text-label">House</div>
                   </div>
                   </label>
-                </li>
-                <li class="check-property-step">
+                </div>
+
+                <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'Separate
-				room' %>
+        room' %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'hotel-2.png' %> <%= image_tag 'hotel-2-active.png' %></span>
                     <div class="text-label">Separate
                       room</div>
                   </div>
                   </label>
-                </li>
-                <li class="check-property-step">
+                </div>
+
+                <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'Townhouse' %>
@@ -70,8 +123,9 @@
                     <div class="text-label">Townhouse</div>
                   </div>
                   </label>
-                </li>
-                <li class="check-property-step">
+                </div>
+
+                <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'Studio' %>
@@ -79,8 +133,9 @@
                     <div class="text-label">Studio</div>
                   </div>
                   </label>
-                </li>
-                <li class="check-property-step">
+                </div>
+
+                <div class="check-property-step">
                   <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :home_type, 'Assisted Living' %>
@@ -88,278 +143,439 @@
                     <div class="text-label">Assisted Living</div>
                   </div>
                   </label>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <ul class="l-step-2-bed-list tenant-bed-list">
-            <li> <span class="bed-image"><%= image_tag 'bed-icon.png' %></span> <span class="count-bed-sec">
+                </div>
+              </div>  
+                         
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="l-step-2-bed-list">
+                    <li> <span class="bed-image"><%= image_tag 'bed-icon.png' %></span> <span class="count-bed-sec">
               <%= f.select :bed_room, [["1",1], ["2",2], ["3",3], ["4+",4]] %>
               </span> <span class="number-bed-text">number of bedrooms</span> </li>
-            <li> <span class="bed-image"><%= image_tag 'bathtub-icon.png' %></span> <span class="count-bed-sec">
+                    <li> <span class="bed-image"><%= image_tag 'bathtub-icon.png' %></span> <span class="count-bed-sec">
               <%= f.select :bath_room, [["1",1], ["2",2], ["3",3], ["4+",4]] %>
               </span> <span class="number-bed-text">number of bathrooms</span> </li>
-          </ul>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="divider-h divider-h-2"> </div>
+            </ul>
+          </div>
+        </div> 
+      </div>
+                    
+      <div class="col-sm-4">
+        <div class="step-rt-img-sec">
+          <%= image_tag 'step-2.jpg' %>
+        </div>
+      </div>
+    </div>
+                
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="step-btn-pagination">
+              <a href="javascript: void" class="blue-outline-btn" id="pstep2-prev">Previous Step</a>
+              <a href="javascript: void" class="primary-btn arrow-rt" id="pstep2-btn">Next step</a>
             </div>
           </div>
-          <div class="row">
-          		<div class="col-md-12">
-                	<h5>Photos</h5>
-                </div>
-          	   <div class="col-md-12 upload-sec-gallery">
-               		<div class="upload-step-pic">
-                        <div>
-                           	<span class="upload-image-icon"><%= image_tag 'upload-photo.png' %></span>
-                            <span class="upload-btn-text">Click here to add a photo from your computer</span>
-                            <%= f.file_field :images, multiple: true, direct_upload: true, id: "files" %>
-                        </div>
-                    </div>
-                    <div class="gallery step-6-gallery">
-                <output id="result">
-                  <div class="space-div"></div>
-                  	<%= render 'photos_list' %>
-                   </output>
-              </div>  
-                            
-       
-               </div>
-          </div>
-          
-          <div class="row l-p-loction-sec mb-3">
-              	<div class="col-md-12"><hr></div>
-              	<div class="col-md-7">
-                	<h5>Location</h5>
-                    <div class="row">
-                    	<div class="col-md-12 mb-4">
-                        	<div class="hero-select-bx">
-                				<%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
-              				</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-12 l-p-l-map">
-                	<% if @property.address %>
-                    <%= render 'map' %>
-                  <% end %>
-                  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- landloard-profile end here -->
 
-                </div>
-              </div>
-          <div class="row">
-            <div class="col-md-12">
-            <hr>
-              <h5 class="heading-level-05 mb-3">Features</h5>
-              <ul class="pro-list">				
-				
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+<section class="landloard-step-sec" id="pstep3">
+  <div class="container">
+    <div class="row l-step-3">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active-done"><a href="landloard-step-1.html">1</a></li>
+          <li class="active-done"><a href="landloard-step-2.html">2</a></li>
+          <li class="active"><a href="landloard-step-3.html">3</a></li>   
+          <li><a href="landloard-step-4.html">4</a></li>
+          <li><a href="landloard-step-5.html">5</a></li>
+          <li><a href="landloard-step-6.html">6</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+                
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'research.png' %></span>
+              <span class="step-name">Step 3</span>
+                           
+            </div>
+            <h2 class="heading-level-01">What Features Does Your Property Have?</h2>
+                            
+            <div class="row">
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_air %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'air-conditioner.png' %> <%= image_tag 'air-conditioner-active.png' %></span>
                     <div class="text-label">Airconditioning</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_parking %> 
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'parking.png' %> <%= image_tag 'parking-active.png' %></span>
                     <div class="text-label">Parking/
                       Garage</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_washer %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'washing-machine.png' %> <%= image_tag 'washing-machine-active.png' %></span>
                     <div class="text-label">Washer/Dryer</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_internet %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'smartphone.png' %> <%= image_tag 'smartphone-active.png' %></span>
                     <div class="text-label">Wi-Fi</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_pool %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'swimming-pool.png' %> <%= image_tag 'swimming-pool-active.png' %></span>
                     <div class="text-label">Pool/Hot Tub</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_gym %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'gym.png' %> <%= image_tag 'gym-active.png' %></span>
                     <div class="text-label">Gym</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_balcony %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'antique-balcony.png' %> <%= image_tag 'antique-balcony-active.png' %></span>
                     <div class="text-label">Balcony</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_fireplace %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'fireplace-active.png' %> <%= image_tag 'fireplace.png' %></span>
                     <div class="text-label">Fireplace</div>
                   </div>
-                  </label>
-                </li>
-              </ul>
+                </label>
+              </div>
+            </div>  
+          </div>
+                    
+          <div class="col-sm-4">
+            <div class="step-rt-img-sec">
+              <%= image_tag 'step-4.jpg' %>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h5 class="heading-level-05 mb-3">Additional Features</h5>
-              <ul class="pro-list">
+        </div>
                 
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="step-btn-pagination">
+              <a href="javascript: void" class="blue-outline-btn" id="pstep3-prev">Previous Step</a>
+              <a href="javascript: void" class="primary-btn arrow-rt" id="pstep3-btn">Next step</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- landloard-profile end here -->  
+
+<section class="landloard-step-sec" id="pstep4">
+  <div class="container">
+      
+    <div class="row l-step-4">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active-done"><a href="landloard-step-1.html">1</a></li>
+          <li class="active-done"><a href="landloard-step-2.html">2</a></li>
+          <li class="active-done"><a href="landloard-step-3.html">3</a></li>    
+          <li class="active"><a href="landloard-step-4.html">4</a></li>
+          <li><a href="landloard-step-5.html">5</a></li>
+          <li><a href="landloard-step-6.html">6</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+                
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'research.png' %></span>
+              <span class="step-name">Step 4</span>
+            </div>
+            <h2 class="heading-level-01">Additional features</h2>
+                            
+            <div class="row">
+              <div class="col-sm-12">
+                <p class="select-step-lebel">Select if you allow ...</p>
+              </div>
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_dogs %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'pet.png' %> <%= image_tag 'pet-active.png' %></span>
                     <div class="text-label">Dogs</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_cats %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'cat.png' %> <%= image_tag 'cat-active.png' %></span>
                     <div class="text-label">Cats</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_smoking %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'smoke.png' %> <%= image_tag 'smoke-active.png' %></span>
                     <div class="text-label">Smoking</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-sm-12">
+                <p class="select-step-lebel">Select if you can provide ...</p>
+              </div>
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.check_box :is_wheelchair %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'wheelchair.png' %> <%= image_tag 'wheelchair-active.png' %></span>
                     <div class="text-label">Wheelchair
                       Access</div>
                   </div>
-                  </label>
-                </li>
-              </ul>
+                </label>
+              </div>       
+            </div>  
+          </div>
+                    
+          <div class="col-sm-4">
+            <div class="step-rt-img-sec">
+              <%= image_tag 'step-4.jpg' %>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-8 f-width-div">
-              <h5 class="heading-level-05 mb-3 mt-4">What is the Minimum Lease?</h5>
-              <ul class="pro-list c-p-step-list">
+        </div>
+                
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="step-btn-pagination">
+              <a href="javascript: void" class="blue-outline-btn" id="pstep4-prev">Previous Step</a>
+              <a href="javascript: void" class="primary-btn arrow-rt" id="pstep4-btn">Next step</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</section>
+  <!-- landloard-profile end here -->
 
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+<section class="landloard-step-sec" id="pstep5">
+  <div class="container">
+    <div class="row l-step-5">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active-done"><a href="landloard-step-1.html">1</a></li>
+          <li class="active-done"><a href="landloard-step-2.html">2</a></li>
+          <li class="active-done"><a href="landloard-step-3.html">3</a></li>
+          <li class="active-done"><a href="landloard-step-4.html">4</a></li>
+          <li class="active"><a href="landloard-step-5.html">5</a></li>
+          <li><a href="landloard-step-6.html">6</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+                
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'calendar.png' %></span>
+              <span class="step-name">Step 5</span>
+            </div>
+            <h2 class="heading-level-01">What is The Minimum Lease? </h2>
+                            
+            <div class="row">
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :minimum_lease, '1-3' %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'calendar-star.png' %> <%= image_tag 'calendar-star-active.png' %></span>
                     <div class="text-label">1-3 Months</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :minimum_lease, '3-6' %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'calendar-star.png' %> <%= image_tag 'calendar-star-active.png' %></span>
                     <div class="text-label">3-6 Months</div>
                   </div>
-                  </label>
-                </li>
-                <li class="check-property-step">
-                  <label class="remember-sec user-label landlord">
+                </label>
+              </div>
+              <div class="col-sm-3 check-property-step">
+                <label class="remember-sec user-label landlord">
                   <div class="inner-user-bx">
                     <%= f.radio_button :minimum_lease, '6+' %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'calendar-star.png' %> <%= image_tag 'calendar-star-active.png' %></span>
                     <div class="text-label">6+ Months</div>
                   </div>
-                  </label>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-4 mb-0">
-              <div class="row">
-                <div class="col-sm-12">
-                  <label class="lebel-margin-t">What is the monthly rent? </label>
-                  <div class="price-select-sec price-symbol">
+                </label>
+              </div>
+            </div> 
+                         
+            <div class="row"> 
+              <div class="col-sm-12">
+                <p class="p-step">What is the monthly rent?</p>
+                  <div class="price-select-sec">
                     <%= f.number_field :price, class: "form-control" %>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 mt-3">
+                  <label>Choose a room type</label>
+                  <div class="price-select-sec">
+                    <%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]], {class: "arrow-select"} %>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-4 mt-3">
-              <label>Choose a room type</label>
-              <div class="price-select-sec">
-                
-                <%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]], {class: "arrow-select"} %>
-              </div>
-            </div>
-            <div class="col-md-4 mt-3">
-              <label>Accommodate </label>
-              <div class="price-select-sec">
-                <%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], {class: "arrow-select"} %>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-12">
-            	<label>Add a description</label>               
-                <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control add-description" %>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-12">
-              <div class="chat-footer l-open-pro-footer">
-                <div class="row">
-                  <div class="col-md-12"> <%= f.submit "Save", class: "primary-btn f-btn" %>
-                 <a href="#" class="light-blue-btn f-btn">Cancel</a> </div>
+              <div class="row">
+                <div class="col-sm-12 mt-3">
+                  <label>Accommodate </label>
+                  <div class="price-select-sec">
+                    <%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], {class: "arrow-select"} %>
+                  </div>
                 </div>
+              </div>
+          </div>
+                    
+            <div class="col-sm-4">
+              <div class="step-rt-img-sec">
+                <%= image_tag 'step-5.jpg' %>
+              </div>
+            </div>
+          </div>
+                
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="step-btn-pagination">
+                <a href="javascript: void" class="blue-outline-btn" id="pstep5-prev">Previous Step</a>
+                <a href="javascript: void" class="primary-btn arrow-rt" id="pstep5-btn">Next step</a>
               </div>
             </div>
           </div>
         </div>
-        <% end %>
       </div>
     </div>
+  </section>
+  <!-- landloard-profile end here -->  
+
+<section class="landloard-step-sec" id="pstep6">
+  <div class="container">
+    <div class="row l-step-6">
+      <div class="col-sm-1">
+        <ul class="step-list">
+          <li class="active-done"><a href="landloard-step-1.html">1</a></li>
+          <li class="active-done"><a href="landloard-step-2.html">2</a></li>
+          <li class="active-done"><a href="landloard-step-3.html">3</a></li>
+          <li class="active-done"><a href="landloard-step-4.html">4</a></li>
+          <li class="active-done"><a href="landloard-step-5.html">5</a></li>
+          <li class="active"><a href="landloard-step-6.html">6</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+                
+          <div class="col-sm-8 l-left-step-sec-01">
+            <div class="step-header">
+              <span class="location-2"><%= image_tag 'gallery.png' %></span>
+              <span class="step-name">Step 6</span>
+            </div>
+            <h2 class="heading-level-01">Add photos</h2>
+                            
+            <div class="row">
+                        
+              <div class="col-sm-12 upload-sec-gallery">
+                <div class="upload-step-pic">
+                  <div>
+                    <span class="upload-image-icon"><%= image_tag 'upload-photo.png' %></span>
+                    <span class="upload-btn-text">Click here to add a photo from your computer</span>
+                    <%= f.file_field :images, multiple: true, direct_upload: true, id: "files" %>
+                  </div>
+                </div>
+                <div class="gallery step-6-gallery">
+                  <output id="result">
+                    <div class="space-div"></div>
+                    <%= render 'photos_list' %>
+                  </output>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="step-rt-img-sec">
+              <%= image_tag 'step-5.jpg' %>
+            </div>
+          </div>
+        </div>
+                
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="step-btn-pagination">
+              <div class="up-broken-line-arrow">
+                <ul>
+                  <li><%= image_tag 'up-broken-line-arrow1.png' %></li>
+                  <li><%= image_tag 'up-broken-line-arrow2.png' %></li>
+                  <li><%= image_tag 'up-broken-line-arrow3.png' %></li>
+                </ul>
+              </div>
+              <a href="javascript: void" class="blue-outline-btn" id="pstep6-prev">Previous Step</a>
+              <%= f.submit "Finish", :type => :image, :src => image_path("checked-btn.png"), class: "primary-btn checked-btn" %>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
   </div>
-</div>
 </section>
-<!-- landloard-profile end here -->
+  <!-- landloard-profile end here -->  
+<% end %>
+

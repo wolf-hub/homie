@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, except: [:index, :new, :create, :all_requests, :show_request, :delete_image_attachment]
-  before_action :authenticate_user!  
+  before_action :authenticate_user!, except: [:new, :create] 
 
 
   def index
@@ -8,17 +8,28 @@ class PropertiesController < ApplicationController
   end
 
   def new
-    @property = current_user.properties.build
+    if user_signed_in?
+      @property = current_user.properties.build
+    else
+      @property = Property.new
+    end
+
   end
 
   def create
-    @property = current_user.properties.build(property_params)
-    if @property.save
-      redirect_to @property, notice: "Saved..."
+    if current_user.nil?
+      session[:property] = params
+     # Redirect the user to register/login
+      redirect_to new_user_registration_path  
     else
-      flash[:alert] = "Something went wrong..."
-      render :new
-    end
+      @property = current_user.properties.build(property_params)
+      if @property.save
+        redirect_to @property, notice: "Saved..."
+      else
+        flash[:alert] = "Something went wrong..."
+        render :new
+      end
+    end    
   end
 
   def update
