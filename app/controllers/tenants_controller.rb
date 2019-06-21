@@ -15,6 +15,7 @@ class TenantsController < ApplicationController
   end
 
   def update
+    authorize! :update, @tenant
     if @tenant.update(tenant_params)
       flash[:notice] = "Saved..."
     else
@@ -24,16 +25,19 @@ class TenantsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @tenant
   end
 
   def destroy
+    authorize! :destroy, @tenant
   end
 
   def index
   end
 
   def show
-    @requests = current_user.requests
+    @requests = current_user.
+    authorize! :read, @tenant
   end
 
   private 

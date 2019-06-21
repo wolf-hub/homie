@@ -16,7 +16,10 @@
                         <div class="media"> <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
                           <div class="media-body">
                             <div class="chat-account-name"><%= profile(other).first_name %> <%= profile(other).last_name %> <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
-                            <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                            <% if conversation.messages.last %>
+                              <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                            <% end %>
+                            
                           </div>
                         </div>
                         

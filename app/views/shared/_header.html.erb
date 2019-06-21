@@ -1,0 +1,54 @@
+<header class="header landloard-profile-head border-bottom" style="margin-bottom: 30px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 brand"> <a href="/"><%= image_tag("logo.png", :alt => "") %></a> </div>
+        <div class="col-sm-6">
+          <nav class="navbar">
+            <div class="navbar-header"> 
+              <a href="javascript:void()" class="menu-btn"><%= image_tag("menu-icon.png", :alt => "menu-icon") %> <%= image_tag("close-icon.png", :alt => "close-icon") %></a> 
+            </div>
+            <div id="bs-navbar">
+              <ul class="nav navbar-nav">
+                <% if current_user.role == 'landlord' %>
+                  <li class="active"><a href="<%= properties_new_path %>">+ New Property</a></li>
+                  <li><a href="<%= properties_path %>">My Properties</a></li>
+                <% else %>
+                  <li class="active"><a href="<%= requests_new_path %>">+ New Request</a></li>
+                <li><a href="<%= requests_path %>">My Requests</a></li>
+                <% end %>
+                
+                <li><a href="<%= conversations_path %>">Inbox</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-4">
+          <div class="profile-rt-header">
+            <ul class="profile-rt">
+              <li>
+              <%= link_to notifications_path do %>
+                <i class="fa fa-bell-o icon-babu"></i>
+                <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
+              <% end %>
+            </li>
+              
+              <li> 
+                <% if profile(current_user) %>
+                  <%= link_to current_user.email, profile(current_user), class: "user-email" %>
+                <% else %>
+                  <p class="user-email"><%= current_user.email %></p>
+                <% end %>
+                
+                <span class="l-profile-img">
+                <% if profile(current_user) %>
+                  <% if profile(current_user).avatar.attached? %>
+                    <%= image_tag profile(current_user).avatar, size: "50x50" %>
+                  <% end %>
+                <% end %>                
+                </span> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

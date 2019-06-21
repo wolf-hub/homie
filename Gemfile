@@ -49,7 +49,7 @@ gem 'rails-assets-card', source: 'https://rails-assets.org'
 
 gem 'toastr-rails'
 
-gem 'cancancan', '~> 3.0', '>= 3.0.1'
+gem 'cancancan'
 
 group :production do 
   gem 'pg'

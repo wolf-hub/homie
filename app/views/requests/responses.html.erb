@@ -1,0 +1,48 @@
+<section class="landloard-content">
+  		<div class="container">
+        	<div class="row">
+        	<div class="col-md-3">
+            	<!-- Sidebar here -->
+          		<%= render "sidebar" %>
+            </div>
+            
+            <div class="col-md-9">
+            	<div class="landloard-rt-sec">
+                	<div class="row">
+                    	<% @purchases.each do |purchase| %>
+                    	<%	@property = Property.find( purchase.property_id) %>
+                    		<div class="col-md-4">
+	                        	<div class="property-slide-bx">
+	                            	<div class="property-slider-01 owl-carousel owl-theme">
+		                                <% @property.images.each do |image| %>
+		                                	<div class="item">
+				                            	<div class="propert-image-box">
+				                            		<%= image_tag image %>
+				                            	</div>
+			                                </div>
+		                                <% end %>	                                
+	                                </div>
+	                                <div class="property-detail-bx" style="display: flex;">
+	                                	<div class="pro-dtl-sec">
+	                                    	<%= link_to response_property_request_url(@request, @property) do %>
+	                                    		<h5><%= @property.property_name %></h5>
+	                                    	<% end %>
+	                                        <span class="city-name"><%= @property.address %></span>
+	                                    </div>
+	                                    <div class="pro-bed-bx">
+	                                    	<ul>
+	                                        	<li><span class="bed-icon"><%= image_tag("bed-icon.png", :alt => "") %></span> <span class="pro-count"><%= @property.bed_room %></span></li>
+	                                            <li><span class="bathtub-icon"><%= image_tag("bathtub-icon.png", :alt => "") %></span> <span class="pro-count"><%= @property.bath_room %></span></li>
+	                                        </ul>
+	                                    </div>
+	                                </div>	                                
+	                        	</div>	                        	
+	                        </div>
+                    	<% end %> 
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>	
+  </section>
+  <!-- landloard-profile end here -->

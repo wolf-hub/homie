@@ -25,7 +25,12 @@ Rails.application.routes.draw do
   resources :landlords
   resources :tenants
   resources :properties
-  resources :requests
+  resources :requests do
+    member do
+      get 'responses'
+      get 'response_property'
+    end  
+  end  
   resources :properties do
     member do
       get 'all_requests'

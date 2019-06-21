@@ -26,6 +26,7 @@ class LandlordsController < ApplicationController
   end
 
   def update
+    authorize! :update, @landlord
     if @landlord.update(landlord_params)
       redirect_to @landlord, notice: "Data saved"
     else
@@ -36,10 +37,11 @@ class LandlordsController < ApplicationController
   end
 
   def edit
-    
+    authorize! :edit, @landlord
   end
 
   def destroy
+    authorize! :destroy, @landlord
   end
 
   def index
@@ -47,6 +49,7 @@ class LandlordsController < ApplicationController
 
   def show
     @properties = current_user.properties
+    authorize! :read, @landlord
   end
 
   def payment

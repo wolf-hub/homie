@@ -2,6 +2,14 @@ class RequestsController < ApplicationController
   before_action :set_request, except: [:index, :new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
   before_action :authenticate_user!, except: [:new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
 
+  def response_property
+    @property = Property.find(params[:format])
+  end
+  
+  def responses
+    
+    @purchases = Purchase.where(request_id: params[:id])    
+  end
 
   def step1
     if user_signed_in?
@@ -58,19 +66,17 @@ class RequestsController < ApplicationController
   end
 
   def index
-    if current_user.role == 'landlord'
-      @property = Property.find(params[:property_id])
-    @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
-    else
-      @requests = current_user.requests
-    end
-    
+    @requests = current_user.requests
   end
+    
+  
 
   def show
+    authorize! :read, @request
   end
 
   def update
+    authorize! :update, @request
     if @request.update(request_params)
       flash[:notice] = "Saved..."
 
@@ -81,9 +87,11 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, @request
   end
 
   def edit
+    authorize! :edit, @request
   end
 
   def create

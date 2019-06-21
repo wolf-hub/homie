@@ -33,6 +33,7 @@ class PropertiesController < ApplicationController
   end
 
   def update
+    authorize! :update, @property
     if @property.update(property_params)
       flash[:notice] = "Saved..."
     else
@@ -43,6 +44,7 @@ class PropertiesController < ApplicationController
 
   def show
     @requests = Request.where(home_type: @property.home_type, room_type: @property.room_type, duration: @property.minimum_lease)
+    authorize! :read, @property   
   end
   
   def all_requests
@@ -57,9 +59,11 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @property
   end
 
   def destroy
+    authorize! :destroy, @property
   end
 
   def delete_image_attachment

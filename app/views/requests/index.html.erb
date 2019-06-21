@@ -31,7 +31,7 @@
                       <li><span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= request.bath_room %></span> <%= 'bathroom'.pluralize(request.bath_room) %></li>
                     </ul>
                     <% @purchases = Purchase.where(request_id: request.id) %>
-                    <div class="pro-btn-sec m-r-accepted-btn"> <a href="#" class="light-blue-btn">Responses <span>(<%= @purchases.count %>)</span></a> <a href="#" class="light-red-btn">Archive</a> </div>
+                    <div class="pro-btn-sec m-r-accepted-btn"> <a href="<%= responses_request_path(request) %>" class="light-blue-btn">Responses <span>(<%= @purchases.count %>)</span></a> <a href="<%= edit_request_path(request) %>" class="light-red-btn">Archive</a> </div>
                   </div>
                 </div>
               </div>
