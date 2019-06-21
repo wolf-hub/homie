@@ -36,7 +36,7 @@ class TenantsController < ApplicationController
   end
 
   def show
-    @requests = current_user.
+    @requests = current_user.requests
     authorize! :read, @tenant
   end
 

@@ -41,31 +41,31 @@ class Ability
     end
 
     can :edit, Landlord do |landlord|
-        request.user == user
-    end
-
-    can :update, Landlord do |landlord|
-        request.user == user
-    end
-
-    can :destroy, Landlord do |landlord|
-        request.user == user
-    end
-
-    can :read, Tenant do |tenant|
         landlord.user == user
     end
 
+    can :update, Landlord do |landlord|
+        landlord.user == user
+    end
+
+    can :destroy, Landlord do |landlord|
+        landlord.user == user
+    end
+
+    can :read, Tenant do |tenant|
+        tenant.user == user
+    end
+
     can :edit, Tenant do |tenant|
-        request.user == user
+        tenant.user == user
     end
 
     can :update, Tenant do |tenant|
-        request.user == user
+        tenant.user == user
     end
 
     can :destroy, Tenant do |tenant|
-        request.user == user
+        tenant.user == user
     end
     # Define abilities for the passed in user here. For example:
     #
