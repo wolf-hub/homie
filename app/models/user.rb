@@ -12,4 +12,10 @@ class User < ApplicationRecord
   has_many :requests 
   has_many :purchases
   has_many :notifications
+
+  after_create :send_admin_mail
+  def send_admin_mail
+    UserMailer.welcome_email(self).deliver_later
+  end
+
 end

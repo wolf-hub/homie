@@ -67,16 +67,67 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
+function step1valid(addrfield) {
+    if (addrfield != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function step2valid(hometype) {
+    if (hometype.is(":checked")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function step5valid(duration) {
+    if (duration.is(":checked")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function step6validmin(minbudg) {
+    if (minbudg != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function step6validmax(maxbudg) {
+    if (maxbudg != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 jQuery('#step1-btn').click(function(e){
     e.preventDefault();
-    jQuery('#step1').hide();
-    jQuery('#step2').show();
+    var addrfield = jQuery('.address-val').val();
+    if (step1valid(addrfield)) {
+        jQuery('#step1').hide();
+        jQuery('#step2').show();
+    } else {
+        alert('Address should be not empty!');
+    }    
 });    
 
 jQuery('#step2-btn').click(function(e){
     e.preventDefault();
-    jQuery('#step2').hide();
-    jQuery('#step3').show();
+    var hometype = jQuery('input[name="request[home_type]"]');
+    if (step2valid(hometype)) {
+        jQuery('#step2').hide();
+        jQuery('#step3').show();
+    } else {
+        alert('Please select Home Type!');
+    }
+    
 }); 
 
 jQuery('#step3-btn').click(function(e){
@@ -93,9 +144,29 @@ jQuery('#step4-btn').click(function(e){
 
 jQuery('#step5-btn').click(function(e){
     e.preventDefault();
-    jQuery('#step5').hide();
-    jQuery('#step6').show();
+    var duration = jQuery('input[name="request[duration]"]');
+    if (step2valid(duration)) {
+        jQuery('#step5').hide();
+        jQuery('#step6').show();
+    } else {
+        alert('Please select how much you want to stay!');
+    }
 }); 
+
+jQuery('#stepfinish').click(function(e){
+    e.preventDefault();
+    var minbudg = jQuery('#request_min_budget').val();
+    var maxbudg = jQuery('#request_max_budget').val();
+    if (!step6validmin(minbudg) ) {
+        alert('Please add your min budget!');
+    } else if (!step6validmax(maxbudg)) {
+        alert('Please add your max budget!');
+    } else if (parseInt(minbudg) > parseInt(maxbudg)) {
+        alert('Max budget should be bigger than min budget!');
+    } else {
+        jQuery('#new_request').submit();
+    }
+});
 
  
 

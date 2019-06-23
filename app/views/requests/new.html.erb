@@ -17,25 +17,21 @@
               
                 <div class="row">                
                   <div class="col-sm-8 l-left-step-sec-01">
-                      <div class="step-header">
-                          <span class="location-2"><%= image_tag 'tenant-step-1.png' %></span>
-                            <span class="step-name">Step 1</span>
-                           
-                        </div>
-                         <h2 class="heading-level-01">Where Are You Looking To Move?</h2>
-                         
-                         <p class="light-text">Pick From Our List Of Available Cities</p>
-                            <div class="select-outline">
-                                <%= f.text_field :address, placeholder: "Where are you looking to move?", class: "form-control" %> 
-                                
-                            </div>
+                    <div class="step-header">
+                      <span class="location-2"><%= image_tag 'tenant-step-1.png' %></span>
+                      <span class="step-name">Step 1</span>
                     </div>
+                    <h2 class="heading-level-01">Where Are You Looking To Move?</h2>
+                    <div class="select-outline">
+                      <%= f.text_field :address, placeholder: "Where are you looking to move?", class: "form-control address-val" %> 
+                    </div>
+                  </div>
                     
-                    <div class="col-sm-4">
-                      <div class="step-rt-img-sec">
+                  <div class="col-sm-4">
+                    <div class="step-rt-img-sec">
                       <%= image_tag 'tenant-image-step-1.jpg' %>
-                        </div>
                     </div>
+                  </div>
                 </div>
                 
                 <div class="row">
@@ -540,7 +536,7 @@
                                 </ul>
                             </div>
                             <a href="<%= step5_path %>" class="blue-outline-btn" id="step6-prev">Previous Step</a>
-                            <%= f.submit "Finish", class: "primary-btn checked-btn" %>
+                            <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>
                         </div>
                     </div>
                 </div>

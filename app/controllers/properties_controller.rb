@@ -24,6 +24,8 @@ class PropertiesController < ApplicationController
     else
       @property = current_user.properties.build(property_params)
       if @property.save
+        PropertyMailer.new_property_email(@property).deliver_later
+        PropertyMailer.new_property_admin_email(@property).deliver_later
         redirect_to @property, notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."
@@ -35,6 +37,8 @@ class PropertiesController < ApplicationController
   def update
     authorize! :update, @property
     if @property.update(property_params)
+      PropertyMailer.update_property_email(@property).deliver_later
+      PropertyMailer.update_property_admin_email(@property).deliver_later
       flash[:notice] = "Saved..."
     else
       flash[:alert] = "Something went wrong..."

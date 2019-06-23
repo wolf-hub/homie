@@ -78,6 +78,8 @@ class RequestsController < ApplicationController
   def update
     authorize! :update, @request
     if @request.update(request_params)
+      RequestMailer.update_request_email(@request).deliver_later
+        RequestMailer.update_request_admin_email(@request).deliver_later
       flash[:notice] = "Saved..."
 
     else
@@ -102,6 +104,8 @@ class RequestsController < ApplicationController
     else
       @request = current_user.requests.build(request_params)
       if @request.save
+        RequestMailer.new_request_email(@request).deliver_later
+        RequestMailer.new_request_admin_email(@request).deliver_later
         redirect_to @request, notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."
