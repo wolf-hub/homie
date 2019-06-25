@@ -38,6 +38,9 @@ class PurchasesController < ApplicationController
 
         if charge
           purchase.save
+          PurchaseMailer.new_purchase_email(purchase).deliver_later
+          PurchaseMailer.new_purchase_tenant_email(purchase).deliver_later
+          PurchaseMailer.new_purchase_admin_email(purchase).deliver_later
           flash[:notice] = "Reservation created successfully!"
         else
           flash[:alert] = "Cannot charge with this payment method!"

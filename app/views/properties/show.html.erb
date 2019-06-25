@@ -63,8 +63,13 @@
                     <div class="row">
                     	<div class="col-md-12">
                         <div class="pro-btn-sec">
-                          <a href="<%= all_requests_property_path %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>                         	
-                          <a href="<%= edit_property_path %>" class="light-red-btn">Deactivate</a>
+                          <a href="<%= all_requests_property_path %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>
+                          <% if @property.active? %>
+                            <%= link_to 'Deactivate', activate_property_path(@property),       method: :put, data: { confirm: 'This property would be deactivated' }, class: "light-red-btn" %>
+                          <% else %>
+                            <%= link_to 'Activate', activate_property_path(@property), method: :put, data: { confirm: 'This property would be activated' }, class: "light-red-btn" %>
+                          <% end %>                         	
+                          
                         </div>
                       </div>
                     </div>

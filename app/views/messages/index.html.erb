@@ -13,9 +13,17 @@
                 <% @conversations.each do |conversation| %>
                     <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
                     <%= link_to conversation_messages_path(conversation) do %>
-                        <div class="media"> <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                        <div class="media"> 
+                          <% if profile(other) %>                           
+                          <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                          <% end %>
                           <div class="media-body">
-                            <div class="chat-account-name"><%= profile(other).first_name %> <%= profile(other).last_name %> <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
+                            <div class="chat-account-name">
+                              <% if profile(other) %>
+                              
+                                <%= profile(other).first_name %> <%= profile(other).last_name %>
+                              <% end %> 
+                              <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
                             <% if conversation.messages.last %>
                               <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
                             <% end %>
@@ -35,11 +43,19 @@
         <div class="col-md-8">
           <div class="chat-right-section tenant-chat">
             <div class="chat-header">
-              <div class="chat-head-left"> <%= image_tag profile(@other).avatar, size: "50x50", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> </div>
+              <div class="chat-head-left"> 
+                <% if profile(@other) %>
+                
+                  <%= image_tag profile(@other).avatar, size: "50x50", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> 
+                <% end %>
+              </div>
               <div class="chat-head-right"> <a href="#" class="ellipsis"><i class="fa fa-ellipsis-v"></i></a>
                 <ul class="chat-menu">
                   <li>
-                    <%= link_to "View Profile", profile(@other) %>
+                    <% if profile(@other) %>
+                      <%= link_to "View Profile", profile(@other) %>
+                    <% end %>
+                    
                     </li>
                 </ul>
               </div>

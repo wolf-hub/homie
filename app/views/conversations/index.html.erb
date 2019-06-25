@@ -13,9 +13,21 @@
                 <% @conversations.each do |conversation| %>
                     <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
                     <%= link_to conversation_messages_path(conversation) do %>
-                        <div class="media"> <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                        <div class="media"> 
+                          <% if profile(other) %>
+                            <% if profile(other).avatar.attached? %>
+                              <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                            <% end %>
+                          <% end %>                          
                           <div class="media-body">
-                            <div class="chat-account-name"><%= profile(other).first_name %> <%= profile(other).last_name %> <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
+                            <div class="chat-account-name">
+                              <% if profile(other) %>
+                                <%= profile(other).first_name %> <%= profile(other).last_name %>
+                              <% else %>
+                                <%= other.email %>
+                              <% end %>
+                              
+                               <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
                             <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
                           </div>
                         </div>

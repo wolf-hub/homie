@@ -142,21 +142,28 @@
               	<div class="col-md-12">
                 	<div class="divider-h"></div>
                 	<div class="media l-media-object"> 
-                		<% if profile(@request.user).avatar.attached? %>
-                			<%= image_tag profile(@request.user).avatar, size: "75x75" , class: "mr-3  rounded-circle" %>
-                		<% end %>
+                		<% if profile(@request.user) %>
+                      <% if profile(@request.user).avatar.attached? %>
+                        <%= image_tag profile(@request.user).avatar, size: "75x75" , class: "mr-3  rounded-circle" %>
+                      <% end %>
+                    <% end %>
+                    
 
                 <div class="media-body">
-                  <h4><%= profile(@request.user).first_name %> <%= profile(@request.user).last_name %></h4>
+                  <% if profile(@request.user)  %>
+                    <h4><%= profile(@request.user).first_name %> <%= profile(@request.user).last_name %></h4>
+                  <% end %>
                   <span class="postion-text">Tenant</span>
                 </div>
               </div>
-                    <p class="mb-4"><%= profile(@request.user).information %></p>
-                    
-                    <ul class="credit-score-list">
-                    	<li><span class="credit-icon"><%= image_tag 'blue-credit-card.png' %></span> Credit Score: <span class="green"><%= profile(@request.user).credit_score %></span></li>
-                        <li><span class="credit-icon"><%= image_tag 'businessman.png' %></span> Enployment Status: <span class="grey"><%= profile(@request.user).employment_status %></span>
-                    </li></ul>
+                    <% if profile(@request.user) %>                    
+                      <p class="mb-4"><%= profile(@request.user).information %></p>
+                      
+                      <ul class="credit-score-list">
+                      	<li><span class="credit-icon"><%= image_tag 'blue-credit-card.png' %></span> Credit Score: <span class="green"><%= profile(@request.user).credit_score %></span></li>
+                          <li><span class="credit-icon"><%= image_tag 'businessman.png' %></span> Enployment Status: <span class="grey"><%= profile(@request.user).employment_status %></span>
+                      </li></ul>
+                    <% end %>
                     
                     <div class="chat-footer l-open-pro-footer">
             	<div class="row">
@@ -170,7 +177,11 @@
 						<% end %>     	           	
 	                </div>
 	                <div class="col-md-5">
-	                	<a href="#" class="primary-btn disabled-btn">Message <%= profile(@request.user).first_name %></a>
+	                	<a href="#" class="primary-btn disabled-btn">Message 
+                      <% if profile(@request.user) %>
+                        <%= profile(@request.user).first_name %>
+                      <% end %>                        
+                      </a>
 	                </div>
 				<% else %>
 					<div class="col-md-5">
@@ -178,7 +189,7 @@
 	                </div>
 	                <div class="col-md-5">
 	                	
-                    <%= link_to "Message " + profile(@request.user).first_name, conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
+                    <%= link_to "Message ", conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
                     
 	                </div>
                 <% end %> 

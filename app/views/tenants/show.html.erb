@@ -2,17 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-          	<div class="landloard-profile">
-            	<%= image_tag @tenant.avatar %>
-            </div>
-            <h6 class="text-center">Land Provided</h6>
-            <ul class="l-menu text-center center-menu">
-              <li> <a href="#"><span class="checked-tick-icon"></span> Email Address</a></li>
-              <li><a href="#"><span class="checked-tick-icon"></span> Phone Number</a></li>
-            </ul>
-            <div class="l-side-btn-sec"> <a href="<%= requests_new_path %>" class="light-blue-btn">+ New Request</a> </div>
-          </div>
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
         	<div class="card card-default">

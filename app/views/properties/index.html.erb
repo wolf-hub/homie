@@ -1,6 +1,6 @@
 <section class="landloard-content">
-  		<div class="container">
-        	<div class="row">
+  	<div class="container">
+       	<div class="row">
         	<div class="col-md-3">
             	<!-- Sidebar here -->
           		<%= render 'sidebar' %>
@@ -9,52 +9,11 @@
             <div class="col-md-9">
             	<div class="landloard-rt-sec">
                 	<div class="row">
-                    	
-                    	<% @properties.each do |property| %>
-                    		<div class="col-md-4">
-	                        	
-	                        	<div class="property-slide-bx">
-	                            	<div class="property-slider-01 owl-carousel owl-theme">
-		                                <% property.images.each do |image| %>
-		                                	<div class="item">
-				                            	<div class="propert-image-box">
-				                            		<%= image_tag image %>
-				                            	</div>
-			                                </div>
-		                                <% end %>	                                
-	                                </div>
-	                                <div class="property-detail-bx" style="display: flex;">
-	                                	<div class="pro-dtl-sec">
-	                                    	<%= link_to property do %>
-	                                    		<h5><%= property.property_name %></h5>
-	                                    	<% end %>
-	                                        <span class="city-name"><%= property.address %></span>
-	                                    </div>
-	                                    <div class="pro-bed-bx">
-	                                    	<ul>
-	                                        	<li><span class="bed-icon"><%= image_tag("bed-icon.png", :alt => "") %></span> <span class="pro-count"><%= property.bed_room %></span></li>
-	                                            <li><span class="bathtub-icon"><%= image_tag("bathtub-icon.png", :alt => "") %></span> <span class="pro-count"><%= property.bath_room %></span></li>
-	                                        </ul>
-	                                    </div>
-	                                </div>
-	                                <div class="pro-btn-sec">
-	                                	<% @requests = Request.where(home_type: property.home_type, room_type: property.room_type, duration: property.minimum_lease) %>
-	                                	<a href="<%= property_requests_url(property) %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>
-	                                    <a href="<%= edit_property_path(property) %>" class="light-red-btn">Deactivate</span></a>
-	                                </div>
-	                        	</div>
-	                        	
-	                        </div>
-                    	<% end %>
-
-                    	
-                        
-                        
-                        
+                    	<%= render @properties %>
                     </div>
                 </div>
             </div>
-            </div>
-        </div>	
-  </section>
-  <!-- landloard-profile end here -->
+        </div>
+    </div>	
+</section>
+<!-- landloard-profile end here -->

@@ -1,7 +1,7 @@
 <div class="l-sidebar">
   <div class="landloard-profile">
-    <% if profile(current_user).avatar.attached? %>
-      <%= image_tag profile(current_user).avatar %>
+    <% if @tenant.avatar.attached? %>
+      <%= image_tag @tenant.avatar %>
     <% end %>    
   </div>
   

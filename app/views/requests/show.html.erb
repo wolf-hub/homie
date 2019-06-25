@@ -1,52 +1,54 @@
-<section class="landloard-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <%= render 'sidebar' %>
-        </div>
-        <div class="col-md-9">
-        	
-          <div class="landloard-rt-sec">
-          		<div class="row">
-                	<div class="col-md-12">
-                    	<div class="back-to-req-sec">
-            	<a href="<%= requests_path %>" class="back-to-request">
+<section class="landloard-content main-landloard-profile-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'sidebar' %>
+      </div>
+      <div class="col-md-9">
+  	
+        <div class="landloard-rt-sec">
+       		<div class="row">
+           	<div class="col-md-12">
+             	<div class="back-to-req-sec">
+              	<a href="<%= requests_path %>" class="back-to-request">
                 	<span class="back-arrow"></span> <span>Back to requests</span>
                 </a>	
+              </div>
             </div>
-                    </div>
-                </div>
-            <div class="row">
-            
+          </div>
+          <div class="row">
             <div class="col-md-12">
             	<div class="pro-l-open-property">
-                
                 <div class="row pro-l-head">
-                <div class="col-md-3 pr-0"> <%= image_tag "apartment-big-icon.png" %> </div>
-                <div class="col-md-6">
-                  <h4><%= @request.home_type %></h4>
-                  <span class="location-address"><%= @request.address %></span>
-                  <ul class="pro-dtl-list">
-                    <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
-                    <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
-                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> <%= 'Accommodate'.pluralize(@request.accommodate) %> </li>
-                    <li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
-                    <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> <%= 'bedroom'.pluralize(@request.bed_room) %></li>
-                    <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> <%= 'bathroom'.pluralize(@request.bath_room) %></li>
+                  <div class="col-md-3 pr-0"> <%= image_tag "apartment-big-icon.png" %> </div>
+                  <div class="col-md-6">
+                    <h4><%= @request.home_type %></h4>
+                    <span class="location-address"><%= @request.address %></span>
+                    <ul class="pro-dtl-list">
+                      <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
+                      <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
+                      <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> <%= 'Accommodate'.pluralize(@request.accommodate) %> </li>
+                      <li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
+                      <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> <%= 'bedroom'.pluralize(@request.bed_room) %></li>
+                      <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> <%= 'bathroom'.pluralize(@request.bath_room) %></li>
 
-                  </ul>
-                </div>
-                <div class="col-md-3 text-right">
-                	<div class="budget ">Budget:</div>
-                	<h4>$<%= @request.min_budget %>-<%= @request.max_budget %></h4>
+                    </ul>
+                  </div>
+                  <div class="col-md-3 text-right">
+                	 <div class="budget ">Budget:</div>
+                	 <h4>$<%= @request.min_budget %>-<%= @request.max_budget %></h4>
                     <div class="rt-t-edit-sec">
-                    <a href="<%= edit_request_path %>" class="light-blue-btn"><i class="fa fa-pencil"></i> Edit Request</a>
-                    <a href="#" class="light-red-btn">Archive</a>
+                      <a href="<%= edit_request_path %>" class="light-blue-btn"><i class="fa fa-pencil"></i> Edit Request</a>
+                      <% if @request.active? %>
+                        <%= link_to 'Deactivate', activate_request_path(@request),       method: :put, data: { confirm: 'This request would be deactivated' }, class: "light-red-btn" %>
+                      <% else %>
+                        <%= link_to 'Activate', activate_request_path(@request), method: :put, data: { confirm: 'This request would be activated' }, class: "light-red-btn" %>
+                      <% end %>
                     </div>
-                 </div>
-                <div class="col-md-12">
-               		<hr>
-                </div>
+                   </div>
+                  <div class="col-md-12">
+               		 <hr>
+                  </div>
                 
                  
                 

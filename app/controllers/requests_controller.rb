@@ -6,47 +6,17 @@ class RequestsController < ApplicationController
     @property = Property.find(params[:format])
   end
   
-  def responses
-    
+  def responses    
     @purchases = Purchase.where(request_id: params[:id])    
   end
 
-  def step1
-    if user_signed_in?
-      @request = current_user.requests.build
+  def activate
+    if @request.active?
+      @request.update_attribute(:active, false)
     else
-      @request = Request.new
+      @request.update_attribute(:active, true)
     end
-  end
-
-  def step2
-    session[:request] ||= {}
-    session[:request].merge!{request_params}
-    @request = Request.new
-  end
-
-  def step3
-    session[:request] ||= {}
-    session[:request].merge!{request_params}
-    @request = Request.new
-  end
-
-  def step4
-    session[:request] ||= {}
-    session[:request].merge!{request_params}
-    @request = Request.new
-  end
-
-  def step5
-    session[:request] ||= {}
-    session[:request].merge!{request_params}
-    @request = Request.new
-  end
-
-  def step6    
-    session[:request] ||= {}
-    session[:request].merge!{request_params}
-    @request = Request.new
+    redirect_to request.referer
   end
 
   def steplast

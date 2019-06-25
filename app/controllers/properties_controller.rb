@@ -34,6 +34,15 @@ class PropertiesController < ApplicationController
     end    
   end
 
+  def activate
+    if @property.active?
+      @property.update_attribute(:active, false)
+    else
+      @property.update_attribute(:active, true)
+    end
+    redirect_to request.referer
+  end
+
   def update
     authorize! :update, @property
     if @property.update(property_params)

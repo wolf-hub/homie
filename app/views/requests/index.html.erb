@@ -1,46 +1,21 @@
-<section class="landloard-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <%= render "sidebar" %>
-        </div>
-        <div class="col-md-9">
-          <div class="landloard-rt-sec">
-            <div class="row">
-              
-              <% @requests.each do |request| %>
-              	<div class="col-md-4">
-                <div class="apartment-pro-bx list-common">
-                  <div class="apartment-header">
-                    <% if current_user.id == request.user_id %>
-                    	<a href="<%= request_path(request) %>"><h5><%= request.home_type %></h5></a>
-                    <% else %>
-                    	<a href="<%= property_request_path(@property, request) %>"><h5><%= request.home_type %></h5></a>
-                    <% end %>
-                    
-                    
-                    <div class="row">
-                      <div class="col-sm-6"> <span class="location-name"><%= request.address %></span> </div>
-                      <div class="col-md-6 text-right"> <span class="property-price"> $<%= request.min_budget %>-<%= request.max_budget %> </span> </div>
-                    </div>
-                  </div>
-                  <div class="apartment-dtl-list">
-                    <ul class="pro-dtl-list">
-                      <li><span class="f-icon"><%= image_tag 'calendar.png' %></span> <span><%= request.arrival_date %> - <%= request.duration %></span> Months</li>
-                      <li><span class="f-icon"><%= image_tag 'bed-grey-icon-1.png' %></span> <span><%= request.bed_room %></span> <%= 'bedroom'.pluralize(request.bed_room) %></li>
-                      <li><span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= request.bath_room %></span> <%= 'bathroom'.pluralize(request.bath_room) %></li>
-                    </ul>
-                    <% @purchases = Purchase.where(request_id: request.id) %>
-                    <div class="pro-btn-sec m-r-accepted-btn"> <a href="<%= responses_request_path(request) %>" class="light-blue-btn">Responses <span>(<%= @purchases.count %>)</span></a> <a href="<%= edit_request_path(request) %>" class="light-red-btn">Archive</a> </div>
-                  </div>
-                </div>
-              </div>
-              <% end %>              
-              
-            </div>
+<section class="landloard-content main-landloard-profile-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render "sidebar" %>
+      </div>
+      <div class="col-md-9">
+        <div class="landloard-rt-sec">
+          <div class="row">
+            <% if @requests.count > 0 %>
+              <%= render @requests %>
+            <% else %>
+              <p>Please create your first request</p>
+            <% end %> 
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- landloard-profile end here -->
+  </div>
+</section>
+<!-- landloard-profile end here -->

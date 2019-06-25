@@ -11,6 +11,7 @@ class Property < ApplicationRecord
   validates :bath_room, presence: true
 
   belongs_to :user
+  has_many :purchases
   has_many_attached :images
 
   geocoded_by :address

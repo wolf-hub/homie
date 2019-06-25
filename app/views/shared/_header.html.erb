@@ -24,7 +24,7 @@
         </div>
         <div class="col-sm-4">
           <div class="profile-rt-header">
-            <ul class="profile-rt">
+            <ul class="profile-rt profile-rt-wolf">
               <li>
               <%= link_to notifications_path do %>
                 <i class="fa fa-bell-o icon-babu"></i>
@@ -36,7 +36,7 @@
                 <% if profile(current_user) %>
                   <%= link_to current_user.email, profile(current_user), class: "user-email" %>
                 <% else %>
-                  <p class="user-email"><%= current_user.email %></p>
+                  <a href="<%= create_profile(current_user) %>" class="user-email"><%= current_user.email %></a>
                 <% end %>
                 
                 <span class="l-profile-img">

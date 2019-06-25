@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     member do
       get 'responses'
       get 'response_property'
+      patch :activate
+      put :activate
     end  
   end  
   resources :properties do
@@ -36,6 +38,8 @@ Rails.application.routes.draw do
       get 'all_requests'
       get 'show_request'
       delete :delete_image_attachment
+      patch :activate
+      put :activate
     end  
   end
 
@@ -47,18 +51,7 @@ Rails.application.routes.draw do
     end  
   end
 
-  get '/step1' => 'requests#step1'  
-  get '/step2' => 'requests#step2'
-  post '/step2' => 'requests#step2'  
-  get '/step3' => 'requests#step3'
-  post '/step3' => 'requests#step3'  
-  get '/step4' => 'requests#step4'
-  post '/step4' => 'requests#step4'   
-  get '/step5' => 'requests#step5' 
-  post '/step5' => 'requests#step5'  
-  get '/step6' => 'requests#step6' 
-  post '/step6' => 'requests#step6'
-  post '/steplast' => 'requests#steplast'  
+ 
 
   get '/notifications' => 'notifications#index'
 

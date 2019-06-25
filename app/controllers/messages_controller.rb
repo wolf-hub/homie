@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
     @messages = @conversation.messages.order("created_at ASC")
 
     if @message.save      
+      MessageMailer.new_message_email(@message, @conversation).deliver_later
       redirect_to conversation_messages_path(@conversation)
     end
   end

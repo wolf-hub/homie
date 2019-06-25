@@ -67,6 +67,8 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
+
+
 function step1valid(addrfield) {
     if (addrfield != '') {
         return true;
@@ -201,18 +203,65 @@ jQuery('#step2-prev').click(function(e){
 }); 
 
 
+function pstep1validadd(address) {
+    if (address != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
 
+function pstep1validnam(proname) {
+    if (proname != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function pstep1validinf(proinfo) {
+    if (proinfo != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 jQuery('#pstep1-btn').click(function(e){
     e.preventDefault();
-    jQuery('#pstep1').hide();
-    jQuery('#pstep2').show();
+    var address = jQuery('#property_address').val();
+    var proname = jQuery('#property_property_name').val();
+    var proinfo = jQuery('#property_summary').val();
+    if (!pstep1validadd(address)) {
+        alert('Please add address of your property');
+    } else if (!pstep1validnam(proname)) {
+        alert('Please add name of your propery');
+    } else if (!pstep1validinf(proinfo)) {
+        alert('Please add description of your proprty');
+    } else {
+        jQuery('#pstep1').hide();
+        jQuery('#pstep2').show();
+    }
+    
 });    
+
+function pstep2validhome(phometype) {
+    if (phometype.is(":checked")) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 jQuery('#pstep2-btn').click(function(e){
     e.preventDefault();
-    jQuery('#pstep2').hide();
+    var phometype = jQuery('input[name="property[home_type]"]');
+    if (!pstep2validhome(phometype)) {
+        alert('Please select type of your property');
+    } else {
+        jQuery('#pstep2').hide();
     jQuery('#pstep3').show();
+    }    
 }); 
 
 jQuery('#pstep3-btn').click(function(e){
@@ -227,10 +276,34 @@ jQuery('#pstep4-btn').click(function(e){
     jQuery('#pstep5').show();
 }); 
 
+function pstep5validleas(lease) {
+    if (lease.is(":checked")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function pstep5validprice(pprice) {
+    if (pprice != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 jQuery('#pstep5-btn').click(function(e){
     e.preventDefault();
-    jQuery('#pstep5').hide();
-    jQuery('#pstep6').show();
+    var lease = jQuery('input[name="property[minimum_lease]"]');
+    var pprice = jQuery('#property_price').val();
+    if (!pstep5validleas(lease)) {
+        alert('Please select minimal lease period');
+    } else if (!pstep5validprice(pprice)) {
+        alert('Please enter price with which you want rent your property');
+    } else {
+        jQuery('#pstep5').hide();
+        jQuery('#pstep6').show();
+    }    
 }); 
 
  
