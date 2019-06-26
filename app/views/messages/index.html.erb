@@ -44,6 +44,7 @@
           <div class="chat-right-section tenant-chat">
             <div class="chat-header">
               <div class="chat-head-left"> 
+                <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
                 <% if profile(@other) %>
                 
                   <%= image_tag profile(@other).avatar, size: "50x50", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> 
@@ -61,9 +62,12 @@
               </div>
             </div>
             <div class="chat-body custom-scrollbar" id="custom-scrollbar">
-              <% if @messages %>
+              <div id="chat">
+                <% if @messages %>
                 <%= render @messages %>                
               <% end %>
+              </div>
+              
               
               
               
@@ -74,7 +78,7 @@
                 <li><a href="#">+ File</a></li>
                 <li><a href="javascript:void(0);" data-toggle="modal" data-target="#send-property">+ Property</a></li>
               </ul>
-              <%= form_for [@conversation, @conversation.messages.new] do |f| %>
+              <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
                   <div class="form-group">
                     <%= f.text_field :context, placeholder: "Type your message here...", class: "form-control" %>
                   </div>

@@ -18,13 +18,18 @@ class MessagesController < ApplicationController
     @messages = @conversation.messages.order("created_at ASC")
 
     if @message.save      
+      ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
       MessageMailer.new_message_email(@message, @conversation).deliver_later
-      redirect_to conversation_messages_path(@conversation)
+      #redirect_to conversation_messages_path(@conversation)
     end
   end
 
   private   
 
+    def render_message(message)
+      self.render(partial: 'messages/message', locals: {message: message})
+    end
+    
     def set_conversation
       @conversation = Conversation.find(params[:conversation_id])
     end

@@ -14,6 +14,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require toastr
+//= require cable
 
 //= require card
 //= require_tree .

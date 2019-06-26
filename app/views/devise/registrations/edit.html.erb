@@ -1,51 +1,62 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h3>Delete my account</h3>
+<section class="landloard-content main-landlord-profile-sec">  
 
-      <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "light-red-btn" %></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <% if current_user.role == 'landlord' %>
+          <%= render 'landlords/sidebar' %>
+        <% else %>
+          <%= render 'tenants/sidebar' %>
+        <% end %>        
+      </div>
+      <div class="col-md-4">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-      <%= link_to "Back", :back, class: "primary-btn" %>
-    </div>
-    <div class="col-md-8">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-        </div>
-
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
-        <div class="form-group">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-          <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
-        </div>
 
-        <div class="form-group">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, autocomplete: "current-password" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "Update", class: "primary-btn" %>
-        </div>
-      <% end %>
+          <div class="form-group">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "current-password" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Update", class: "primary-btn" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <h3>Delete my account</h3>
+
+        <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "light-red-btn" %></p>
+
+        <%= link_to "Back", :back, class: "primary-btn" %>
+      </div>
     </div>
+
   </div>
 
-</div>
+</section>
