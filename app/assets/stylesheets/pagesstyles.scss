@@ -146,7 +146,7 @@ p{
 .banner-wrapper{ height:calc(100vh - 80px); background-size:82% !important; padding:40px 0 ; position:relative; }
 .banner-wrapper:before{ background:image-url("yellow-dot.jpg") 0 0 repeat-x; left:0; top:40px; width:8%; content:""; height:105px; position:absolute; z-index:1; }
 .banner-wrapper .container{ position:relative; }
-.banner-wrapper .lft-bnr-sec{ background:#fff; padding:40px 40px 40px 15px; display:flex; align-items:center; }
+.banner-wrapper .lft-bnr-sec{ border-radius: 5px; background:#fff; padding:40px 40px 40px 15px; display:flex; align-items:center; }
 .banner-wrapper .container, .banner-wrapper .container .row{ height:100%; }
 .banner-wrapper select{
   font-family: 'Sofia Pro';
@@ -2003,6 +2003,10 @@ ul.pro-list.c-p-step-list li {
 
 #pstep2, #pstep3, #pstep4, #pstep5, #pstep6 {
   display: none;
+}
+
+.brand-logo {
+  margin-bottom: 24px;
 }
 
 
