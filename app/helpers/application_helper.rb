@@ -18,7 +18,7 @@ module ApplicationHelper
 		else
 			new_tenant_path
 		end	
-	end
+	end	
 
 	def pluralize_without_count(count, noun, text = nil)
 	  if count != 0
