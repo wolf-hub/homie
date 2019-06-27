@@ -1,12 +1,31 @@
-<div class="card card-default">
-  <div class="card-body">
-    <div class="container" id="notifications">
-      <% if @notifications.count > 0 %>
-      	<%= render @notifications %>
-      <% else %>
-      	<p>You don't have new notification!</p>
-      <% end %>
-      
+
+ <section class="landloard-content">
+    <div class="container">
+      	<div class="row">
+        	<div class="col-md-3">
+          		<% if current_user.role == 'landlord' %>
+          			<%= render 'landlords/sidebar' %>
+          		<% else %>
+          			<%= render 'tenants/sidebar' %>
+          		<% end %>
+          		
+        	</div>
+        	<div class="col-md-9">
+           		<div class="card card-default">
+				  <div class="card-body">
+				    <div class="container" id="notifications">
+				      <% if @notifications.count > 0 %>
+				      	<%= render @notifications %>
+				      <% else %>
+				      	<p>You don't have new notification!</p>
+				      <% end %>
+				    </div>
+				  </div>
+				</div>
+        	</div>
+      	</div>
     </div>
-  </div>
-</div>
+</section>
+<!-- landloard-profile end here -->
+
+
