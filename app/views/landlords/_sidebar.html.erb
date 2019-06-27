@@ -1,10 +1,6 @@
 <div class="l-sidebar">
             <div class="landloard-profile">
-              <% if profile(current_user) %>
-                <% if profile(current_user).avatar.attached? %>
-                  <%= image_tag profile(current_user).avatar %>
-                <% end %>  
-              <% end %>
+              <%= showavatar(current_user) %>
             </div>
             <ul class="l-menu">
               

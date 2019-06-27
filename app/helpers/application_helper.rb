@@ -1,5 +1,17 @@
 module ApplicationHelper
 	
+	def showavatar(user)
+		if profile(user)
+			if profile(user).avatar.attached?
+				image_tag profile(user).avatar
+			else
+				image_tag 'noava.jpg'
+			end
+		else
+			image_tag 'noava.jpg'
+		end
+	end
+
 	def cp(path)
 	  "active" if current_page?(path)
 	end

@@ -3,7 +3,15 @@
           <div class="row">
               <div class="col-md-3"></div>
                 <div class="col-md-6 text-center">
-                  <h1 class="heading-level-01">Sign Up</h1>
+                  <%= request.referer %>
+                  <% if request.referer.include?('requests') %>
+                      <h1>Just finish step. Please Sign up to have a possibility get answers at your requests from landlords!</h1>                  
+                  <% elsif request.referer.include?('properties') %>
+                    <h1>Just finish step. Please Sign up to have a possibility get requests on your properties from tenants!</h1> 
+                  <% else %>
+                    <h1 class="heading-level-01">Sign Up</h1>  
+                  <% end %>
+                  
                     <div class="signin-outline">
                       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signin-form"})  do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -27,7 +35,12 @@
     <span class="visible-pw"><%= image_tag("not-visible.png", :alt => "not-visible") %></span>
   </div>  
   
-  <div class="row">
+  <% if request.referer.include?('requests') %>
+       <%= f.hidden_field :role, :value => 'tenant' %>              
+  <% elsif request.referer.include?('properties') %>
+    <%= f.hidden_field :role, :value => 'landlord' %>
+  <% else %>
+    <div class="row">
     <% User.roles.each do |role| %>
       <% if role[0]=='tenant' %>
         <div class="col-sm-6">
@@ -55,6 +68,9 @@
       
     <% end %>
   </div>
+  <% end %>
+
+  
  
 
   <div class="form-group mt-4" style="text-align: center;">
