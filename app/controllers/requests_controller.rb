@@ -76,7 +76,7 @@ class RequestsController < ApplicationController
       if @request.save
         RequestMailer.new_request_email(@request).deliver_later
         RequestMailer.new_request_admin_email(@request).deliver_later
-        redirect_to @request, notice: "Saved..."
+        render :congratulations, notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."
         render :new
@@ -89,7 +89,10 @@ class RequestsController < ApplicationController
       @request = current_user.requests.build
     else
       @request = Request.new
-    end
+    end    
+  end
+
+  def congratulations
     
   end
 

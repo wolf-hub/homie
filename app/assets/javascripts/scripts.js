@@ -166,10 +166,15 @@ jQuery('#stepfinish').click(function(e){
     } else if (parseInt(minbudg) > parseInt(maxbudg)) {
         alert('Max budget should be bigger than min budget!');
     } else {
-        jQuery('#new_request').submit();
+        $('#exampleModalCenter').modal();
+        //jQuery('#new_request').submit();
     }
 });
 
+jQuery('#pstepfinish').click(function(e){
+    e.preventDefault();
+    $('#exampleModalCenter2').modal();
+})
  
 
 jQuery('#step6-prev').click(function(e){

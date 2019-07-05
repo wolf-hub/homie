@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'properties/edit'
   get 'properties/destroy'
   devise_for :users,
+             :controllers => {registrations: 'registrations'},
              path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'}
              
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
       get 'response_property'
       patch :activate
       put :activate
+      get 'congratulations'
     end  
   end  
   resources :properties do
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
       delete :delete_image_attachment
       patch :activate
       put :activate
+      get 'congratulations'
     end  
   end
 

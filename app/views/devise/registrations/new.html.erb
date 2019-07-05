@@ -3,7 +3,7 @@
           <div class="row">
               <div class="col-md-3"></div>
                 <div class="col-md-6 text-center">
-                  <%= request.referer %>
+                  <%= request.request_parameters %>
                   <% if request.referer.include?('requests') %>
                       <h1>Just finish step. Please Sign up to have a possibility get answers at your requests from landlords!</h1>                  
                   <% elsif request.referer.include?('properties') %>

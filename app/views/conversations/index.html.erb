@@ -1,6 +1,15 @@
 <section class="chat-wrapper">
     <div class="container">
       <div class="row">
+        <div class="col-3">
+          <% if current_user.role == 'landlord' %>
+            <%= render 'landlords/sidebar' %>
+          <% else %>
+            <%= render 'tenants/sidebar' %>
+          <% end %>
+        </div>
+        <div class="col-9">
+          <div class="row">
         <div class="col-md-4">
           <ul class="nav nav-pills" role="tablist">            
             <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#messages"><i class="fa fa-envelope-open"></i> Your Conversations</a> </li>
@@ -45,6 +54,9 @@
           
         </div>
       </div>
+        </div>
+      </div>
+      
     </div>
   </section>
   <!-- chat-wrapper end here -->

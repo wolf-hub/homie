@@ -2009,6 +2009,12 @@ ul.pro-list.c-p-step-list li {
   margin-bottom: 24px;
 }
 
+.home-w-sec-3{ border-radius:4px; }
+.l-profile-img img{ border-radius:50%; }
+.lock-icon{top:8px;}
+.landloard-profile img{ border-radius:50%; }
+
+
 
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:46.5%; }
@@ -2129,4 +2135,11 @@ a.arrow-scroll-btn img{ width:30px; }
 .header .navbar li a{ color:#fff; }
 .header .navbar li a:after{ background:#fff; }
 .header .brand, .header .col-sm-10 { width:50%;}
+.home-sec-2 .col-sm-4 {margin-top: 10px;max-width: 33.33%;}
+.header .primary-btn {width:auto;background:#fff;border-radius:4px;color:#02a1b5 !important;}    
+.heading-level-02 br { display:none;}
+.heading-level-04{ font-size:15px; }
+.heading-level-02{ margin-bottom:15px; }
+.home-sec-2{ padding-top:35px; }
+.hero-select-bx select{-webkit-appearance: none; -webkit-border-radius: 0px;}
 	}

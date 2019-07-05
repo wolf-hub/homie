@@ -26,7 +26,7 @@ class PropertiesController < ApplicationController
       if @property.save
         PropertyMailer.new_property_email(@property).deliver_later
         PropertyMailer.new_property_admin_email(@property).deliver_later
-        redirect_to @property, notice: "Saved..."
+        render :congratulations, notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."
         render :new
@@ -85,9 +85,14 @@ class PropertiesController < ApplicationController
     redirect_back(fallback_location: request.referer, notice: "Saved...")
   end
 
-  private
+  def congratulations
+    
+  end
 
-  
+
+
+
+  private  
 
 
   def property_params

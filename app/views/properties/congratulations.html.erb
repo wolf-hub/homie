@@ -1,0 +1,92 @@
+<section class="landloard-step-sec">
+    <div class="container">
+        <div class="row landloar-cong-sec">
+        	
+            <div class="col-sm-12">
+            	<div class="row">
+                
+                	<div class="col-md-8">
+                    	<div class="step-header">
+                            <span class="step-name">Congratulations!</span>
+                           
+                        </div>
+                        <h2 class="heading-level-01">Your Property Has Been Added!</h2>
+                         
+                        <p class="next-steps">Your next steps:</p>
+                            
+                        <div class="row">
+                         		
+                            <div class="col-md-12">
+                              	<ul class="next-steps-list">
+                                   	<li class="active">
+                                      	<a href="#">
+                                           	<span class="step-icon-bx">
+                                               	<%= image_tag 'checked-symbol.png' %>
+                                                <% image_tag 'checked-symbol-active.png' %>
+                                            </span>
+                                            <span class="step-text">
+                                               	Your property has added!
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                      	<a href="#">
+                                           	<span class="step-icon-bx">
+                                               	<%= image_tag 'yellow-message.png' %>
+                                                <%= image_tag 'yellow-message-active.jpg' %>
+                                            </span>
+                                            <span class="step-text">
+                                               	Wait for tenants requests
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">
+                                       	<span class="step-icon-bx">
+                                           	<%= image_tag 'yellow-money.png' %>
+                                            <%= image_tag 'yellow-money-active.jpg' %>
+                                        </span>
+                                        <span class="step-text">
+                                           	Start earning with your property!
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                                    <div class="step-btn-pagination">
+                        	<div class="up-broken-line-arrow">
+                            	<ul>
+                              		<li>
+                                        <%= image_tag 'up-broken-line-arrow1.png' %></li>
+                                    <li>
+                                        <%= image_tag 'up-broken-line-arrow2.png' %></li>
+                                    <li>
+                                        <%= image_tag 'up-broken-line-arrow3.png' %></li>
+                                </ul>
+                            </div>
+                        	<% if profile(current_user) %>
+                              <a href="<%= tenant_path(profile(current_user)) %>" class="blue-outline-btn arrow-none-btn">Complete your profile</a>
+                            <% else %>
+                              <a href="<%= create_profile(current_user) %>" class="blue-outline-btn arrow-none-btn">Complete your profile</a>
+                            <% end %>
+                        	<a href="#" class="primary-btn">Go to inbox and get requests</a>
+                        </div>
+                                </div>
+                                 
+                         
+                         
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    	<div class="step-rt-img-sec">
+                    	<%= image_tag 'step-7.jpg' %>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- landloard-profile end here -->
