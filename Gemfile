@@ -51,6 +51,8 @@ gem 'toastr-rails'
 
 gem 'cancancan'
 
+gem 'city-state'
+
 group :production do 
   gem 'pg'
   gem 'rails_12factor'

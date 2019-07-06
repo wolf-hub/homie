@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  $("form#sign_up_user_tenant").bind("ajax:success", (event) ->
+  $("form#sign_up_user").bind("ajax:success", (event) ->
     $('.modal').modal('hide')
     jQuery('#new_request').submit()
     console.log(event)

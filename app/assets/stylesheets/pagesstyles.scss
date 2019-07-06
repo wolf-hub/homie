@@ -2014,6 +2014,77 @@ ul.pro-list.c-p-step-list li {
 .lock-icon{top:8px;}
 .landloard-profile img{ border-radius:50%; }
 
+.lt-chat-profile{display:inline-block;margin-right:20px;}
+.rt-chat-tool-tip-01{
+ font-size: 14px;
+ font-weight: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ color: #000000; position:relative;
+ background:rgba(64, 209, 228, 0.33); padding:15px;
+ display:inline-block; border-radius:5px;
+}
+.rt-chat-tool-tip-01:after {
+   width: 0;
+   height: 0;
+   content: "";
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+   position: absolute;
+   right: -10px;
+   top:15px;
+   border-left: 10px solid rgba(64, 209, 228, 0.33);
+}
+.rt-chat-profile{display:inline-block;margin-left:15px;}
+.chat-time-01{
+ font-size: 14px;
+ font-weight: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ color: #787676;
+ position: absolute;
+ left:0px;
+ bottom:-25px;
+}
+.chat-time-01.chat-time-02{ position:static; display:block; margin-top:4px; }
+.sent-request-01{
+ font-family: 'Sofia Pro';
+ font-size: 14px;
+ font-weight: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ color: #787676;
+}
+.chat-wrapper .tab-content.tab-content-01{ height:590px; }
+.l-sidebar.aside-1{ height:100%; position:relative;  }
+.l-sidebar.aside-1 .l-side-btn-sec {
+   position: absolute;
+   width: 80%;
+   left: 10%;
+   bottom: 30px;
+}
+.landloard-profile-inbox {
+   text-align: center;
+   padding-bottom: 30px;
+   margin-bottom: 30px;
+   border-bottom: 1px solid #e5e5e5;
+}
+.chat-menu1.show-menu{
+   display: block; right:0px; top:56px;
+}
+.chat-menu1.show-menu li{ padding:0px !important; float:left; width:100%; margin-bottom:5px; }
+.profile-rt-header ul.profile-rt li .chat-menu1.show-menu li a{ color:#000; }
+.profile-rt-header ul.profile-rt li .chat-menu1.show-menu li a:hover{ color:#02a1b5; }
+.chat-menu1.show-menu li:before{ display:none; }
+.chat-wrapper .tab-content-01 .offline-time{
+ font-family: 'Sofia Pro';
+ font-size: 14px;
+ font-weight: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ color: #c4c4c4;
+}
+
 
 
 @media(max-width:1330px){
