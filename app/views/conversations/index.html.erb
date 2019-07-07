@@ -8,15 +8,11 @@
             <%= render 'tenants/sidebar' %>
           <% end %>
         </div>
-        <div class="col-9">
-          <div class="row">
         <div class="col-md-4">
-          <ul class="nav nav-pills" role="tablist">            
-            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#messages"><i class="fa fa-envelope-open"></i> Your Conversations</a> </li>
-          </ul>
-          <div class="tab-content custom-scrollbar">
+          
+          <div class="tab-content tab-content-01 custom-scrollbar mt-0">
             
-            <div id="messages" class="tab-pane active">
+            <div id="requests" class="tab-pane active">
               <% if @conversations %>
                 
                 <% @conversations.each do |conversation| %>
@@ -25,7 +21,7 @@
                         <div class="media"> 
                           <% if profile(other) %>
                             <% if profile(other).avatar.attached? %>
-                              <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                              <%= image_tag profile(other).avatar, size: "40x40", class: "mr-3  rounded-circle" %>
                             <% end %>
                           <% end %>                          
                           <div class="media-body">
@@ -37,7 +33,7 @@
                               <% end %>
                               
                                <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
-                            <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                            <div class="sent-request-01"><%= conversation.messages.last.context.first(15) %></div>
                           </div>
                         </div>
                         
@@ -49,11 +45,7 @@
               
             </div>
           </div>
-        </div>
-        <div class="col-md-8">
-          
-        </div>
-      </div>
+        
         </div>
       </div>
       

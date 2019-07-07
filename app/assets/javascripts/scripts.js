@@ -69,6 +69,14 @@ jQuery(document).ready(function() {
 
 
 
+function step1validcity(cityfield) {
+    if (cityfield != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function step1valid(addrfield) {
     if (addrfield != '') {
         return true;
@@ -112,11 +120,14 @@ function step6validmax(maxbudg) {
 jQuery('#step1-btn').click(function(e){
     e.preventDefault();
     var addrfield = jQuery('.address-val').val();
-    if (step1valid(addrfield)) {
+    var cityfield = jQuery('.city-val').val();
+    if (!step1validcity(cityfield)) {
+        alert('City should be not empty!');
+    } else if (!step1valid(addrfield)) {
+        alert('District should be not empty!');
+    } else {        
         jQuery('#step1').hide();
         jQuery('#step2').show();
-    } else {
-        alert('Address should be not empty!');
     }    
 });    
 
@@ -207,6 +218,13 @@ jQuery('#step2-prev').click(function(e){
     jQuery('#step1').show();
 }); 
 
+function pstep1validcity(procity) {
+    if (procity != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function pstep1validadd(address) {
     if (address != '') {
@@ -234,11 +252,14 @@ function pstep1validinf(proinfo) {
 
 jQuery('#pstep1-btn').click(function(e){
     e.preventDefault();
+    var procity = jQuery('#property_city').val();
     var address = jQuery('#property_address').val();
     var proname = jQuery('#property_property_name').val();
     var proinfo = jQuery('#property_summary').val();
-    if (!pstep1validadd(address)) {
-        alert('Please add address of your property');
+    if (!pstep1validcity(procity)) {
+        alert('Please add city of your property!')
+    } else if (!pstep1validadd(address)) {
+        alert('Please add district of your property');
     } else if (!pstep1validnam(proname)) {
         alert('Please add name of your propery');
     } else if (!pstep1validinf(proinfo)) {

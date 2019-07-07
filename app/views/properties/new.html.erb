@@ -25,8 +25,12 @@
             <h2 class="heading-level-01">Where is Your House Located?</h2>
             <p class="select-step-label">Please select the closest city.</p>
             <div class="select-outline">
-              <%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+              <%= f.select :city, ['Los Angeles'], {prompt: "What is your city?"}, {class: "city-val"} %>
             </div>
+            <p class="light-text">Pick Districts in your property is located</p>
+                    <div class="hero-select-bx">
+                <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {prompt: "Please select district"}, {:class => 'form-control address-val'} %>
+              </div>
             <p class="select-step-label" style="margin-top: 30px; margin-bottom: 15px;">Please add pretty name for your property </p>
             <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
             <label>Add a description</label>               

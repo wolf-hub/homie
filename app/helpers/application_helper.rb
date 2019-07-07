@@ -1,16 +1,6 @@
 module ApplicationHelper
 	
-	def showavatar(user)
-		if profile(user)
-			if profile(user).avatar.attached?
-				image_tag profile(user).avatar
-			else
-				image_tag 'noava.jpg'
-			end
-		else
-			image_tag 'noava.jpg'
-		end
-	end
+	
 
 	def cp(path)
 	  "active" if current_page?(path)
@@ -36,6 +26,30 @@ module ApplicationHelper
 	  if count != 0
 	    count == 1 ? "#{noun}#{text}" : "#{noun.pluralize}#{text}"
 	  end
+	end
+
+	def showavatar(user)
+		if profile(user)
+			if profile(user).avatar.attached?
+				image_tag profile(user).avatar
+			else
+				image_tag 'noava.jpg'
+			end
+		else
+			image_tag 'noava.jpg'
+		end
+	end
+
+	def showavatarurl(user)
+		if profile(user)
+			if profile(user).avatar.attached?
+				profile(user).avatar
+			else
+				'noava.jpg'
+			end
+		else
+			'noava.jpg'
+		end
 	end
 
 

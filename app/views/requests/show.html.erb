@@ -23,7 +23,11 @@
                   <div class="col-md-3 pr-0"> <%= image_tag "apartment-big-icon.png" %> </div>
                   <div class="col-md-6">
                     <h4><%= @request.home_type %></h4>
-                    <span class="location-address"><%= @request.address %></span>
+                    <span class="location-address"><%= @request.city %> 
+                      <% @districts = @request.address.gsub(/(\[\"|\"\])/, '').split('", "') %>                      
+                      (<%= @districts.map{|district| district}.join(", ") %>)
+                      
+                    </span>
                     <ul class="pro-dtl-list">
                       <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
                       <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>

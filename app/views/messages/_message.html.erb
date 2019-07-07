@@ -1,18 +1,31 @@
 <% if message.user_id == current_user.id %>
-    <div class="row" style="margin-bottom: 2rem;">
-        <div class="col-md-1"> </div>
-        <div class="col-md-6">
-            <div class="incoming-chat-bx"> <span class="chat-time"><%= timeago(message.created_at) %></span> <%= message.context %>
-                        
+    
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="lt-chat-profile">
+                
+                <%= image_tag showavatarurl(current_user), size: "40x40", class: "rounded-circle" %>                
+                
+            </div>
+            <div class="incoming-chat-bx">
+                <%= message.context %>
+                <span class="chat-time-01"><%= timeago(message.created_at) %></span>
             </div>
         </div>
     </div>
 <% else %>
-    <div class="row" style="margin-bottom: 2rem;">
-        <div class="col-md-5"> </div>
-        <div class="col-md-6">
-            <div class="media-chat-bx rt-chat-tool-tip sm-v-line"> <span class="chat-time"><%= timeago(message.created_at) %></span> <%= message.context %> 
+    
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+        <div class="col-md-7 text-right">
+                      
+            <div class="rt-chat-tool-tip-01"> 
+                <%= message.context %>  
             </div>
+            <div class="rt-chat-profile">
+                <%= image_tag showavatarurl(@other), size: "40x40", class: "rounded-circle" %>
+            </div>
+            <span class="chat-time-01 chat-time-02"><%= timeago(message.created_at) %></span>
         </div>
     </div>
 <% end %>

@@ -9,6 +9,7 @@ class Request < ApplicationRecord
 	validates :arrival_date, presence: true
 	validates :min_budget, presence: true
 	validates :max_budget, presence: true
+	
 
 	belongs_to :user
 	has_many :purchases

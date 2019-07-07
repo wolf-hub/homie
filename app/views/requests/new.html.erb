@@ -22,9 +22,14 @@
                       <span class="step-name">Step 1</span>
                     </div>
                     <h2 class="heading-level-01">Where Are You Looking To Move?</h2>
-                    <div class="select-outline">
-                      <%= f.text_field :address, placeholder: "Where are you looking to move?", class: "form-control address-val" %> 
+                    <p class="light-text">Pick From Our List Of Available Cities</p>
+                    <div class="select-outline">                      
+                      <%= f.select :city, ['Los Angeles'], {prompt: "Where are you looking to move?"}, {class: "city-val"} %>
                     </div>
+                    <p class="light-text">Pick Districts which you prefer (multiple select allowed)</p>
+                    <div class="hero-select-bx">
+                <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {include_hidden: false}, { :multiple => true, :size => 4, :class => 'form-control address-val'} %>                
+              </div>
                   </div>
                     
                   <div class="col-sm-4">

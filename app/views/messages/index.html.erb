@@ -2,24 +2,11 @@
     <div class="container">
       <div class="row">
       <div class="col-md-3">
-          <div class="l-sidebar aside-1">
-            <div class="landloard-profile-inbox">
-              <%= image_tag 'landloard-profile.png' %>
-            </div>
-            
-            <ul class="l-menu">
-              <li> <a href="#"><span class="l-p-icon">
-                <%= image_tag 'home-icon.png' %></span>My properties</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag 'user.png' %></span>My profile</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag 'mail-icon-grey.png' %>
-                </span>My messages</a></li>
-              <li><a href="#"><span class="l-p-icon">
-                <%= image_tag 'padlock-grey.png' %></span>Security</a></li>
-              <li class="logout-link"><a href="#"><span class="l-p-icon"><%= image_tag 'logout.png' %></span>Log out</a></li>
-            </ul>
-            
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+          <% if current_user.role == 'landlord' %>
+            <%= render 'landlords/sidebar' %>
+          <% else %>
+            <%= render 'tenants/sidebar' %>
+          <% end %>
       </div>
         <div class="col-md-4">
           
@@ -32,7 +19,7 @@
                     <%= link_to conversation_messages_path(conversation) do %>
                         <div class="media"> 
                           <% if profile(other) %>                           
-                          <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
+                          <%= image_tag profile(other).avatar, size: "40x40", class: "mr-3  rounded-circle" %>
                           <% end %>
                           
                           <div class="media-body">
@@ -43,7 +30,7 @@
                               <% end %> 
                               <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
                             <% if conversation.messages.last %>
-                              <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
+                              <div class="sent-request-01"><%= conversation.messages.last.context.first(15) %></div>
                             <% end %>
                             
                           </div>
@@ -53,81 +40,7 @@
                     <% end %>
                 <% end %>
               <% end %>
-
-              <div class="media"> 
-                <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Anna Black <span class="offline-time">Yesterday</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-               <div class="media active-chat"> 
-                <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Anna Black <span class="away-icon"></span> <span class="offline-time">Yesterday</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown <span class="online-icon"></span> <span class="offline-time">Online</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown <span class="offline-icon"></span> <span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
-              <div class="media"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %>
-                <div class="media-body">
-                  <div class="chat-account-name">Victoria Brown<span class="offline-time">2 days ago</span></div>
-                  <div class="sent-request-01">Sent a request</div>
-                </div>
-              </div>
+              
             </div>
             
           </div>
@@ -135,153 +48,30 @@
         <div class="col-md-5">
           <div class="chat-right-section">
             <div class="chat-header">
-              <div class="chat-head-left"> <%= image_tag 'l-profile.png', class: "mr-3  rounded-circle" %> John D. </div>
-              <div class="chat-head-right">
-              <a href="#" class="ellipsis"><i class="fa fa-ellipsis-v"></i></a>
-                <ul class="chat-menu">
-                  <li><a href="#">View Prifile</a></li>
-                    <li><a href="#">Delete Request</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="chat-body custom-scrollbar">
-              <div class="chat-day">
-                <!--<span>Yesterday</span>-->
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-7">
-                      <div class="lt-chat-profile">
-                          <%= image_tag 'chat-profile.png', class: "rounded" %>
-                        </div>
-                      <div class="incoming-chat-bx">
-                          Hi! How are you today? 
-                            <span class="chat-time-01">5 minutes ago</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row mb-3">
-                  <div class="col-md-5"></div>
-                    <div class="col-md-7 text-right">
-                      
-                      <div class="rt-chat-tool-tip-01"> 
-                        Hi! 
-                        
-                    </div>
-                        <div class="rt-chat-profile">
-                          <%= image_tag 'chat-profile.png', class: "rounded" %>
-                        </div>
-                        <span class="chat-time-01 chat-time-02">less than 2 minutes ago</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="chat-input-box">
-              <a class="attach-btn" href="javascript:void(0)"><%= image_tag 'attach-icon.png' %></a>
-                <ul class="attached-menu">
-                  <li><a href="#">+ Picture</a></li>
-                    <li><a href="#">+ File</a></li>
-                     <li><a href="javascript:void(0);" data-toggle="modal" data-target="#send-property">+ Property</a></li>
-                </ul>
-              <input type="text" value="" placeholder="Type your message here..." class="form-control">
-                <a class="send-btn" href="#">
-                  <%= image_tag 'send-icon.png' %></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- chat-wrapper end here -->
-<section class="chat-wrapper">
-    <div class="container">
-      <div class="row"> 
-        <div class="col-md-3">
-          <% if current_user.role == 'landlord' %>
-            <%= render 'landlords/sidebar' %>
-          <% else %>
-            <%= render 'tenants/sidebar' %>
-          <% end %>
-        </div>
-        <div class="col-md-9">
-          <div class="row">
-        <div class="col-md-4">
-          <ul class="nav nav-pills" role="tablist">            
-            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#messages"><i class="fa fa-envelope-open"></i> Messages</a> </li>
-          </ul>
-          <div class="tab-content custom-scrollbar">
-            
-            <div id="messages" class="tab-pane active">
-              <% if @conversations %>
-                
-                <% @conversations.each do |conversation| %>
-                    <% other = current_user == conversation.sender ? conversation.recepient : conversation.sender %>
-                    <%= link_to conversation_messages_path(conversation) do %>
-                        <div class="media"> 
-                          <% if profile(other) %>                           
-                          <%= image_tag profile(other).avatar, size: "50x50", class: "mr-3  rounded-circle" %>
-                          <% end %>
-                          <div class="media-body">
-                            <div class="chat-account-name">
-                              <% if profile(other) %>
-                              
-                                <%= profile(other).first_name %> <%= profile(other).last_name %>
-                              <% end %> 
-                              <span class="offline-time"><%= time_ago_in_words(conversation.created_at) %></span></div>
-                            <% if conversation.messages.last %>
-                              <div class="sent-request"><%= conversation.messages.last.context.first(15) %></div>
-                            <% end %>
-                            
-                          </div>
-                        </div>
-                        
-
-                    <% end %>
-                <% end %>
-              <% end %>
-              
-              
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="chat-right-section tenant-chat">
-            <div class="chat-header">
               <div class="chat-head-left"> 
                 <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
                 <% if profile(@other) %>
                 
-                  <%= image_tag profile(@other).avatar, size: "50x50", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> 
-                <% end %>
-              </div>
-              <div class="chat-head-right"> <a href="#" class="ellipsis"><i class="fa fa-ellipsis-v"></i></a>
+                  <%= image_tag profile(@other).avatar, size: "40x40", class: "mr-3  rounded-circle" %> <%= profile(@other).first_name %> <%= profile(@other).last_name %> 
+                <% end %></div>
+              <div class="chat-head-right">
+              <a href="#" class="ellipsis"><i class="fa fa-ellipsis-v"></i></a>
                 <ul class="chat-menu">
-                  <li>
-                    <% if profile(@other) %>
+                  <li><% if profile(@other) %>
                       <%= link_to "View Profile", profile(@other) %>
-                    <% end %>
-                    
-                    </li>
+                    <% end %></li>
                 </ul>
               </div>
             </div>
             <div class="chat-body custom-scrollbar" id="custom-scrollbar">
               <div id="chat">
                 <% if @messages %>
-                <%= render @messages %>                
-              <% end %>
-              </div>
-              
-              
-              
-              
+                  <%= render @messages %>                
+                <% end %>                
+              </div>   
             </div>
-            <div class="chat-input-box"> <a class="attach-btn" href="javascript:void(0)"><%= image_tag 'attach-icon.png' %></a>
-              <ul class="attached-menu">
-                <li><a href="#">+ Picture</a></li>
-                <li><a href="#">+ File</a></li>
-                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#send-property">+ Property</a></li>
-              </ul>
+            
+            <div class="chat-input-box">
               <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
                   <div class="form-group">
                     <%= f.text_field :context, placeholder: "Type your message here...", class: "form-control" %>
@@ -295,12 +85,10 @@
           </div>
         </div>
       </div>
-        </div>
-      </div>
-      
     </div>
   </section>
   <!-- chat-wrapper end here -->
+
 <script>
   window.onload = function(){
 

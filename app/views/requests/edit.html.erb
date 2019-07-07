@@ -23,8 +23,12 @@
             <div class="col-md-6">
               <h5 class="heading-level-05">Where Are You Looking to Move?</h5>
               <div class="hero-select-bx">
-                <%= f.text_field :address, placeholder: "Where are you looking to move?", class: "form-control" %>                
+                <%= f.select :city, ['Los Angeles'], {}, {class: "form-control"} %>               
               </div>
+              <div class="hero-select-bx">
+                <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {include_hidden: false}, { :multiple => true, :size => 4, :class => 'form-control'} %>                
+              </div>
+              
             </div>
             <div class="col-md-5 text-right">
                <label class="remember-sec">

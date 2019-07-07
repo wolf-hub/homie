@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  
   before_action :set_request, except: [:index, :new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
   before_action :authenticate_user!, except: [:new, :create, :step1, :step2, :step3, :step4, :step5, :step6, :steplast]
 
@@ -100,7 +101,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-      params.require(:request).permit(:min_budget, :max_budget, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :is_air, :is_parking, :is_washer, :is_balcony, :is_fireplace, :is_internet, :is_gym, :is_pool, :is_dogs, :is_cats, :is_wheelchair, :is_smoking, :address, :duration, :arrival_date, :active)
+      params.require(:request).permit(:min_budget, :max_budget, :home_type, :room_type, :accommodate, :bed_room, :bath_room, :is_air, :is_parking, :is_washer, :is_balcony, :is_fireplace, :is_internet, :is_gym, :is_pool, :is_dogs, :is_cats, :is_wheelchair, :is_smoking, :city, :duration, :arrival_date, :active, address: [])
   end
 
   def set_request
