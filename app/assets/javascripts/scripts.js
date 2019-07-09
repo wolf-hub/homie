@@ -67,7 +67,9 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
-
+jQuery('.l-profile-img ').click(function() {
+   jQuery('.chat-menu1').toggleClass("show-menu");
+});
 
 function step1validcity(cityfield) {
     if (cityfield != '') {

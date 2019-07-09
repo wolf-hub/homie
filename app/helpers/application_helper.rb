@@ -40,6 +40,18 @@ module ApplicationHelper
 		end
 	end
 
+	def showavatarsmall(user)
+		if profile(user)
+			if profile(user).avatar.attached?
+				image_tag profile(user).avatar, size: "50x50"
+			else
+				image_tag 'noava.jpg'
+			end
+		else
+			image_tag 'noava.jpg'
+		end
+	end
+
 	def showavatarurl(user)
 		if profile(user)
 			if profile(user).avatar.attached?

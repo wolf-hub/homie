@@ -158,7 +158,7 @@ p{
   color: #787676; padding:15px 20px 15px  60px; 
   background:image-url("location-pin.png") 30px center no-repeat; background-size:12px 15px;}
 .banner-wrapper .hero-select-bx{ padding:30px 0 0 0;  }
-.banner-wrapper .start-btn-sec{ padding:30px 0; position:relative;}
+.banner-wrapper .start-btn-sec{ padding:30px 0; position:relative; padding-top: 0;}
 .banner-wrapper .start-btn-sec:before{background:image-url("dotted-bg.jpg") 90px 25px repeat-x; content:""; position:absolute; left:90px; top:15px; height:105px; width:90%; z-index:1; }
 .banner-wrapper .bnr-inr-content{ position:relative; z-index:2; }
 .banner-wrapper p{ color:#333; }
@@ -966,7 +966,7 @@ div#myModal {
   background: image-url('home-icon.png') left center no-repeat; background-size:20px;  padding-left:30px;
 }
 .l-sidebar .l-menu li a:hover, .l-sidebar .l-menu li.active a{
-    text-shadow: 0 1px 1px #000;
+    font-wight: 600;
 }
 .l-sidebar .l-menu li.logout-link a{ color:#e23737; }
 .l-sidebar .l-menu li.logout-link a:hover{ text-shadow:none; }
@@ -2083,6 +2083,50 @@ ul.pro-list.c-p-step-list li {
  line-height: normal;
  letter-spacing: normal;
  color: #c4c4c4;
+}
+
+.chat-menu1{
+ box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+ background-color: #ffffff; display:none;
+ width:158px; position:absolute;right:20px;
+ top:71px;border-radius:5px; padding:15px; z-index:9;
+}
+
+.chat-menu1:before{
+ width: 0;
+ height: 0;
+ border-left: 7px solid transparent;
+ border-right: 7px solid transparent;
+ border-bottom: 7px solid #fff;
+ position:absolute; top:-7px; right:15px; content:"";
+}
+.chat-head-right .chat-menu1.show-menu{ display:block; }
+.chat-menu1 li{
+ font-family: 'Sofia Pro';
+ font-size: 16px;
+ font-weight: normal;
+ line-height: normal;
+ letter-spacing: normal;
+ color: #000000;
+ text-align:left;
+}
+.chat-menu1 li a{ display:block; padding:2px 5px; color:#000; }
+.chat-menu1 li a:hover{ color:#02a1b5; }
+.chat-menu1.show-menu, .profile-rt-header ul.profile-rt li .l-profile-img:hover .chat-menu1{
+   display: block; right:0px; top:40px;
+}
+ul.chat-menu1 li {
+   padding: 0 !important;
+   text-align: left !important;
+   float: left; margin-bottom:5px;
+}
+ul.chat-menu1 li:nth-child(2):before{display:none;}
+.chat-menu1.show-menu li{ padding:0px !important; float:left; width:100%; margin-bottom:5px; }
+.profile-rt-header ul.profile-rt li .chat-menu1 li a{ color:#000; }
+.profile-rt-header ul.profile-rt li .chat-menu1.show-menu li a:hover{ color:#02a1b5; }
+.chat-menu1.show-menu li:before{ display:none; }
+.l-profile-img:hover .chat-menu1{
+  display: block; right:0px; top:40px;
 }
 
 

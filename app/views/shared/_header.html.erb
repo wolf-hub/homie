@@ -11,10 +11,8 @@
               <ul class="nav navbar-nav">
                 <% if current_user.role == 'landlord' %>
                   <li class="active"><a href="<%= properties_new_path %>">+ New Property</a></li>
-                  <li><a href="<%= properties_path %>">My Properties</a></li>
                 <% else %>
                   <li class="active"><a href="<%= requests_new_path %>">+ New Request</a></li>
-                <li><a href="<%= requests_path %>">My Requests</a></li>
                 <% end %>
                 
                 <li><a href="<%= conversations_path %>"><%= image_tag 'mail.svg' %></a></li>
@@ -34,9 +32,19 @@
                 
                  </li>
                 <li style="vertical-align: middle;" class="">
-                  <div class="l-profile-img " style="height: 50px;
-                width: 50px; background-image: url(<%=image_url('noava.jpg') %>); background-position: center; background-size: cover; border-radius: 50%;" >
-                </div>               
+                  <div class="l-profile-img " >
+                    <%= showavatarsmall(current_user) %>
+                    <ul class=" chat-menu1">
+                      <li><% if profile(current_user) %>
+                  <%= link_to 'View Profile', profile(current_user) %>
+                <% else %>
+                  <a href="<%= create_profile(current_user) %>">View profile</a>
+                <% end %></li>
+                      <li><%= link_to destroy_user_session_path, method: :delete do %>
+      Log out
+      <% end %></li>
+                    </ul>
+                  </div>
                 </li>
                 
               </ul>
