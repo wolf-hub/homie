@@ -67,10 +67,19 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
-jQuery('.l-profile-img ').click(function() {
-   jQuery('.chat-menu1').toggleClass("show-menu");
+const $menu = $('.chat-menu1');
+
+$(document).mouseup(function (e) {
+  if (!$menu.is(e.target)
+  && $menu.has(e.target).length === 0)
+  {
+    $menu.removeClass('show-menu');
+ }
 });
 
+$('.l-profile-img').on('click', () => {
+ $menu.toggleClass('show-menu');
+});
 function step1validcity(cityfield) {
     if (cityfield != '') {
         return true;
