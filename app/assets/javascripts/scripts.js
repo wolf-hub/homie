@@ -67,7 +67,7 @@ function myFunction() {
 }
 jQuery(document).ready(function() {
 
-const $menu = $('.chat-menu1');
+ $menu = $('.chat-menu1');
 
 $(document).mouseup(function (e) {
   if (!$menu.is(e.target)
