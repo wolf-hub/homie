@@ -45,10 +45,10 @@ module ApplicationHelper
 			if profile(user).avatar.attached?
 				image_tag profile(user).avatar, size: "50x50"
 			else
-				image_tag 'noava.jpg'
+				image_tag 'noava.jpg',, size: "50x50"
 			end
 		else
-			image_tag 'noava.jpg'
+			image_tag 'noava.jpg',, size: "50x50"
 		end
 	end
 

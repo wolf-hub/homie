@@ -12,15 +12,13 @@
 
   <body>
       <div class="canvas">
-        <% if request.fullpath.include?('registration') %>
-            
-        <% else %>
+        
             <% if user_signed_in? %>
               <%= render 'shared/header' %>
             <% else %>
               <%= render 'shared/notlogedheader' %>
             <% end %>
-        <% end %>
+       
         
         
         <!-- header end here -->
@@ -29,9 +27,7 @@
         <input type="hidden" id="user_id" value="<%= current_user.id %>">
       <% end %>
       <%= yield %>
-      <% if request.fullpath.include?('registration')  %>
-        
-      <% else %>
+      
         <footer>
         <section class="footer-top">
           <div class="container">
@@ -86,7 +82,7 @@
         </section>
         </div>
       </footer>
-      <% end %>
+      
       
       <!-- footer end here -->    
     </div>
