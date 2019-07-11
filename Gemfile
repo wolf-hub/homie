@@ -53,6 +53,12 @@ gem 'cancancan'
 
 gem 'city-state'
 
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rvm', github: "capistrano/rvm"
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
 group :production do 
   gem 'pg'
   gem 'rails_12factor'
