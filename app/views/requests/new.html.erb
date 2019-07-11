@@ -541,7 +541,12 @@
                                 </ul>
                             </div>
                             <a href="javascript: void" class="blue-outline-btn" id="step6-prev">Previous Step</a>
-                            <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>                            
+                            <% if user_signed_in? %>
+                              <%= f.submit "Finish", id: "stepfinishsign", class: "primary-btn checked-btn" %>
+                            <% else %>
+                              <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>
+                            <% end %>
+                                                        
                         </div>
                     </div>
                 </div>

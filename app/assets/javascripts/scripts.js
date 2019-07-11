@@ -193,10 +193,30 @@ jQuery('#stepfinish').click(function(e){
     }
 });
 
+jQuery('#stepfinishsign').click(function(e){
+    e.preventDefault();
+    var minbudg = jQuery('#request_min_budget').val();
+    var maxbudg = jQuery('#request_max_budget').val();
+    if (!step6validmin(minbudg) ) {
+        alert('Please add your min budget!');
+    } else if (!step6validmax(maxbudg)) {
+        alert('Please add your max budget!');
+    } else if (parseInt(minbudg) > parseInt(maxbudg)) {
+        alert('Max budget should be bigger than min budget!');
+    } else {
+        jQuery('#new_request').submit();
+    }
+});
+
 jQuery('#pstepfinish').click(function(e){
     e.preventDefault();
     $('#exampleModalCenter2').modal();
-})
+});
+
+jQuery('#pstepfinishsign').click(function(e){
+    e.preventDefault();
+    jQuery('#new_property').submit();
+});
  
 
 jQuery('#step6-prev').click(function(e){
