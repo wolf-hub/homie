@@ -64,11 +64,11 @@
                                 </ul>
                             </div>
                         	<% if profile(current_user) %>
-                              <a href="<%= tenant_path(profile(current_user)) %>" class="blue-outline-btn arrow-none-btn">Complete your profile</a>
+                              <a href="<%= landlord_path(profile(current_user)) %>" class="blue-outline-btn arrow-none-btn">View your profile</a>
                             <% else %>
                               <a href="<%= create_profile(current_user) %>" class="blue-outline-btn arrow-none-btn">Complete your profile</a>
                             <% end %>
-                        	<a href="#" class="primary-btn">Go to inbox and get requests</a>
+                        	<a href="<%= properties_path %>" class="primary-btn">Go to properties and get requests</a>
                         </div>
                                 </div>
                                  
