@@ -26,7 +26,7 @@ class PropertiesController < ApplicationController
       if @property.save
         PropertyMailer.new_property_email(@property).deliver_later
         PropertyMailer.new_property_admin_email(@property).deliver_later
-        render :congratulations, notice: "Saved..."
+        redirect_to congratulations_property_path(@property), notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."
         render :new

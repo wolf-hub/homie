@@ -1,0 +1,54 @@
+<footer>
+        <section class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+              <div class="brand-logo"><a href="index.html"><%= image_tag("logo.png", :alt => "logo") %></a></div>
+                <p>Homie makes finding a place to live quick and easy.</p>
+              </div>
+              <div class="col-md-3">
+                <h5>Tenants</h5>
+                <ul class="f-menu">
+                  <li><a href="contact-us.html">How It Works</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h5>Landlords</h5>
+                <ul class="f-menu">
+                  <li><a href="contact-us.html">Publish Your Property</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <ul class="social-media">
+                  <li class="social-media-1"><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+                  <li class="social-media-2"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li class="social-media-3"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="social-media-4"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="container">
+        <section class="copyright-footer">
+          
+            <div class="row">
+              <div class="col-md-5">
+                <p>Copyright © 2019. Homie. All rights reserved</p>
+              </div>
+              <div class="col-md-7">
+                <ul class="term-menu">
+                  <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Frequently asked Questions</a></li>
+                    <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+                </ul>
+              </div>
+            </div>
+        </section>
+        </div>
+      </footer>
