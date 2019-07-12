@@ -9,7 +9,8 @@ class ConversationsController < ApplicationController
   	if Conversation.between(params[:sender_id], params[:recepient_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:recepient_id]).first
     else
-      @conversation = Conversation.create(conversation_params)
+      @conversation = Conversation.create(sender_id: params[:sender_id], recepient_id: params[:recepient_id])
+      
     end
 
     redirect_to conversation_messages_path(@conversation)
@@ -18,6 +19,6 @@ class ConversationsController < ApplicationController
   private
 
     def conversation_params
-      params.permit(:sender_id, :recepient_id)
+      params.require(:conversation).permit(:sender_id, :recepient_id)
     end
 end

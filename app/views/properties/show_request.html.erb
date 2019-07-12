@@ -188,7 +188,7 @@
 	            		<p class="primary-btn disabled-btn">Request Accepted</p>
 	                </div>
 	                <div class="col-md-5">
-	                	
+                    
                     <%= link_to "Message ", conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
                     
 	                </div>

@@ -4,7 +4,7 @@
   </div>
   <ul class="l-menu">
               
-    <li class="<%= cp(properties_path) %>"> <a href="<%= properties_path %>"><span class="l-p-icon"><%= image_tag 'home-icon.png' %></span> Properties</a></li>
+    <li class="<%= cp(properties_path) %>"> <a href="<%= properties_path %>"><span class="l-p-icon"><%= image_tag 'home-icon.png' %></span>Properties</a></li>
     <% if profile(current_user) %>
       <li class="<%= cp(landlord_path(profile(current_user))) %>"> 
         <a href="<%= landlord_path(profile(current_user)) %>"><span class="l-p-icon">                
@@ -18,7 +18,7 @@
         </span>Profile</a>
       </li>
     <% end %>
-    <li class="<%= cp(conversations_path) %>"><a href="<%= conversations_path %>"><span class="l-p-icon"><%= image_tag "mail-icon-grey.png" %></span> Messages</a></li>
+    <li class="<%= cp(conversations_path) %>"><a href="<%= conversations_path %>"><span class="l-p-icon"><%= image_tag "mail-icon-grey.png" %></span>Messages</a></li>
     <li class="<%= cp(edit_user_registration_path) %>"><a href="<%= edit_user_registration_path %>"><span class="l-p-icon"><%= image_tag 'padlock-grey.png' %></span>Security</a></li>
     <% if current_user.stripe_id  %>
       <li class="<%= cp(payment_method_path) %>"><a href="<%= payment_method_path %>"><span class="l-p-icon"><%= image_tag 'credit-card.png' %></span>Update Credit Card</a></li>
