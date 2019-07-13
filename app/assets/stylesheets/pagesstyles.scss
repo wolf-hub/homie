@@ -2203,6 +2203,8 @@ div#error_explanation h2, div#error_explanation ul li {
   font-size:14px;
   color: #ff0000;
 }
+.new-rt-landloard-sec .col-md-4{flex: 0 0 50%;max-width: 50%;}
+button:focus{outline: none !important;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2357,4 +2359,8 @@ a.arrow-scroll-btn img{ width:30px; }
 .password-new{width:320px;}
 .password-new > h2{font-size:20px;}
 .password-new label{font-size:14px;}
+.landloard-rt-sec .col-md-4 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
 }
