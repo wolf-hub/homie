@@ -48,25 +48,22 @@
                     </div>
                   </div>
                   
-                  <div class="form-group ">
+                   <div class="form-group ">
                     <div class="row v-center">
-                    
-                      <div class="col-sm-1"><label>From</label></div>
-                        <div class="col-sm-2">
+                      
+                        <div class="col-sm-4">
+                        <label>From</label>
                           <%= f.select :from_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>     
                         </div>
                         
-                        <div class="col-sm-1"><label>To</label></div>
-                        <div class="col-sm-2">
+                        
+                        <div class="col-sm-4">
+
+                        <label>To</label>
                           <%= f.select :to_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>      
                         </div>
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label>Add Your Credit Score</label>
-                    <div class="row">
-                      <div class="col-md-2">
+                        <div class="col-md-4">
+                      <label>Add Your Credit Score</label>
                         <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
                       </div>
                     </div>
