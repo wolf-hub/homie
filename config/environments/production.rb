@@ -41,7 +41,7 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
-  config.action_cable.url = [/ws:\/\/*/, /wss:\/\/*/]
+  config.action_cable.url = '/cable'
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
   # Mount Action Cable outside main process or domain
