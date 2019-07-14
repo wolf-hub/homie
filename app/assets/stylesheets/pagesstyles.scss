@@ -2205,6 +2205,9 @@ div#error_explanation h2, div#error_explanation ul li {
 }
 .new-rt-landloard-sec .col-md-4{flex: 0 0 50%;max-width: 50%;}
 button:focus{outline: none !important;}
+.l-step-1 .select-outline {
+    width: 100%;
+}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
