@@ -34,11 +34,9 @@
       <% @purchases = Purchase.where(request_id: request.id) %>
       <div class="pro-btn-sec m-r-accepted-btn"> 
         <a href="<%= responses_request_path(request) %>" class="light-blue-btn">Responses <span>(<%= @purchases.count %>)</span></a> 
-        <% if request.active? %>
-          <%= link_to 'Deactivate', activate_request_path(request),       method: :put, data: { confirm: 'This request would be deactivated' }, class: "light-red-btn" %>
-        <% else %>
-          <%= link_to 'Activate', activate_request_path(request), method: :put, data: { confirm: 'This request would be activated' }, class: "light-red-btn" %>
-        <% end %>         
+        
+          <%= link_to 'Edit', edit_request_path(request), class: "light-red-btn" %>
+                
       </div>
     </div>
   </div>
