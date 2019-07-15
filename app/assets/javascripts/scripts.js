@@ -571,5 +571,9 @@ jQuery('option').mousedown(function(e) {
     jQuery(this).prop('selected', !jQuery(this).prop('selected'));
     return false;
 });
+
+$(".city-val").click(function(){
+    $(".distt-sec").show();
+  });
 });
 

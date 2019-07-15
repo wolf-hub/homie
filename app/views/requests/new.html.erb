@@ -26,9 +26,11 @@
                     <div class="select-outline">                      
                       <%= f.select :city, ['Los Angeles'], {prompt: "Where are you looking to move?"}, {class: "city-val"} %>
                     </div>
+                    <div class="distt-sec">
                     <p class="light-text">Pick Districts which you prefer (multiple select allowed)</p>
                     <div class="hero-select-bx">
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {include_hidden: false}, { :multiple => true, :size => 4, :class => 'form-control address-val'} %>                
+              </div>
               </div>
                   </div>
                     
@@ -519,16 +521,21 @@
               <div class="step-header"> <span class="location-2"><%= image_tag 'debit-card.png' %></span> <span class="step-name">Step 6</span> </div>
               <h2 class="heading-level-01">What Is Your Monthly Budget? </h2>
               <div class="row">
+                <div class="col-sm-12">
+                <div class="range-slider">
+                <input type="text" class="js-range-slider" value="" />
+            </div>
+                </div>
                 <div class="col-sm-6">
                   <label class="price-label">From</label>
                   <div class="price-select-sec">
-                    <%= f.number_field :min_budget, class: "form-control" %>
+                    <%= f.number_field :min_budget, class: "js-input-from form-control" %>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <label class="price-label">To</label>
                   <div class="price-select-sec">
-                    <%= f.number_field :max_budget, class: "form-control" %>
+                    <%= f.number_field :max_budget, class: "js-input-to form-control" %>
                   </div>
                 </div>
               </div>

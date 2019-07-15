@@ -27,13 +27,15 @@
             <div class="select-outline">
               <%= f.select :city, ['Los Angeles'], {prompt: "What is your city?"}, {class: "city-val"} %>
             </div>
+            <div class="distt-sec">
             <p class="light-text">Pick Districts in your property is located</p>
                     <div class="hero-select-bx">
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {prompt: "Please select district"}, {:class => 'form-control address-val'} %>
+              </div> 
               </div>
             <p class="select-step-label" style="margin-top: 30px; margin-bottom: 15px;">Please add pretty name for your property </p>
             <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
-            <label>Add a description</label>               
+            <label class="mt-4 pt-2">Add a description</label>               
                 <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control add-description" %>
                
           </div>
