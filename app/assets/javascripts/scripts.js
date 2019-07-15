@@ -572,8 +572,17 @@ jQuery('option').mousedown(function(e) {
     return false;
 });
 
-$(".city-val").click(function(){
-    $(".distt-sec").show();
-  });
+var elem = document.getElementById("request_city");
+elem.onchange = function(e){
+    var hiddenDiv = document.getElementById("distts-sec");
+    hiddenDiv.style.display = (this.value == "") ? "none":"block";
+};
 });
 
+$(document).ready(function(e) {
+var elem = document.getElementById("property_city");
+elem.onchange = function(e){
+    var hiddenDiv = document.getElementById("distt-sec");
+    hiddenDiv.style.display = (this.value == "") ? "none":"block";
+};
+});
