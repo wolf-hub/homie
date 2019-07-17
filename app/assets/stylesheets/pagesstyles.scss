@@ -2489,7 +2489,7 @@ button:focus{outline: none !important;}
 }
 /* range slider css end here */
 .credit-score-list li{margin:5px 0;}
-
+#pstepfinishsign:hover{box-shadow: none !important;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2610,7 +2610,7 @@ a.arrow-scroll-btn img{ width:30px; }
 .navbar-header a img:last-child, .navbar-header.active-menu a img:first-child{width:0px; transition:all 0.5s ease-in-out; }
 .navbar-header.active-menu a img:last-child{ width:30px; }
 .header .navbar li a{ display:inline-block; }
-.header .navbar li{ text-align:center; font-size:20px; line-height:24px; margin:20px 0; }
+.header .navbar li{ text-align:center; font-size:16px; line-height:24px; margin:20px 0; }
 .header .navbar li a{ color:#fff; }
 .header .navbar li a:after{ background:#fff; }
 .header .brand, .header .col-sm-10 { width:50%;}
@@ -2672,7 +2672,7 @@ footer .footer-top {padding:40px 0 20px;}
   margin-top: -1px;
   z-index: -1;
 }
-.up-broken-line-arrow {text-align:right;width:280px;margin:0 auto;}
+.up-broken-line-arrow {text-align:right;width:280px !important;margin:0 auto;}
 .upload-sec-gallery .upload-step-pic {position: absolute;width: 90%;left: 5%;}
 .landloar-cong-sec .up-broken-line-arrow {width:272px;margin:0 auto;}
 .next-steps-list li{float:left; width:33.33%; padding: 1%;}
@@ -2683,4 +2683,23 @@ footer .footer-top {padding:40px 0 20px;}
 .landloard-rt-sec .owl-nav .owl-prev, .landloard-rt-sec .owl-nav .owl-next{width:40px;height:40px;}
 .landloard-rt-sec .owl-nav .owl-prev span, .landloard-rt-sec .owl-nav .owl-next span{background-size:20px !important; height:40px;}
 .landloard-rt-sec .col-md-4.text-right {text-align:left !important;}
+.landloard-step-sec h5, .landloard-step-sec .h5 {font-size:14px;}
+i.fa.fa-exclamation{margin-bottom: 8px;}
+.tenant-cong .full-btn, .tenant-cong .up-broken-line-arrow{width:100%;}
+ul.l-step-2-bed-list li .number-bed-text{ font-size: 14px; }
+.step-btn-pagination{padding-top: 30px;}
+.card.card-default > .card-body {padding:1.25rem 0;}
+
+input#pstepfinishsign {
+  padding: 5px 30px !important;
+  min-width: 100px;
+  max-width: 100px;
+  position: relative;
+  top: 20px;
+}
+.upload-sec-gallery .upload-step-pic div {width:100%;}
+.landloard-content.main-landlord-profile-sec h2 , .landloard-content.main-landlord-profile-sec h3{
+  margin-top: 30px;
+  font-size: 24px;
+}
 }

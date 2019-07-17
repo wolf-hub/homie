@@ -573,14 +573,6 @@ jQuery('option').mousedown(function(e) {
 });
 
 var elem = document.getElementById("request_city");
-<<<<<<< HEAD
-if(elem){
-elem.onchange = function(){
-    var hiddenDiv = document.getElementById("distts-sec");
-    hiddenDiv.style.display = (this.value == "") ? "none":"block";
-};
-};
-=======
 if(elem != null)
 {
     elem.onchange = function(e){
@@ -588,22 +580,12 @@ if(elem != null)
         hiddenDiv.style.display = (this.value == "") ? "none":"block";
     };
 }
->>>>>>> 0f629f53034c3325e79c906b5a6ecaabcb4a50dd
 });
 
 
 $(document).ready(function() {
 
 var elem = document.getElementById("property_city");
-<<<<<<< HEAD
-if(elem){
-elem.onchange = function(){
-    var hiddenDiv = document.getElementById("distt-sec");
-    hiddenDiv.style.display = (this.value == "") ? "none":"block";
-};
-};
-});
-=======
 if (elem != null)
 {
     elem.onchange = function(e){
@@ -612,4 +594,3 @@ if (elem != null)
     };
 }
 });
->>>>>>> 0f629f53034c3325e79c906b5a6ecaabcb4a50dd
