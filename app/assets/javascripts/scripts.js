@@ -472,7 +472,7 @@ jQuery('.check2').click(function() {
 });	 
 
 jQuery('.visible-pw').click(function() {
-    // debugger;
+    debugger;
     $input = $($(this).closest('.form-group').find('input'));
     // if($input.val() != "")
     // {
