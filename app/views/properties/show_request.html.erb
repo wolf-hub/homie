@@ -29,8 +29,7 @@
                   <span class="location-address"><%= @request.address %></span>
                   <ul class="pro-dtl-list">
                     <li><span class="f-icon"><%= image_tag("real-estate.png", :alt => "") %></span> <%= @request.home_type %></li>
-                    <li><span class="f-icon"><%= image_tag("shared.png", :alt => "") %></span> <%= @request.room_type %></li>
-                    <li><span class="f-icon"><%= image_tag("accommodate.png", :alt => "") %></span><span class="f-count"><%= @request.accommodate %></span> <%= pluralize_without_count(@request.accommodate, 'Accomodate') %> </li>
+                    
 					<li><span class="f-icon"><%= image_tag "calendar.png" %></span> <span><%= @request.arrival_date %> - <%= @request.duration %></span> Months</li>
                     <li><span class="f-icon"><%= image_tag "bed-grey-icon-1.png" %></span> <span><%= @request.bed_room %></span> <%= pluralize_without_count(@request.bed_room, 'bedroom') %></li>
                     <li><span class="f-icon"><%= image_tag "bathtub-grey-icon-1.png" %></span> <span><%= @request.bath_room %></span> <%= pluralize_without_count(@request.bath_room, 'bathroom') %></li>                    
