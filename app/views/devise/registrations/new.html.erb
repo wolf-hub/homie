@@ -12,22 +12,22 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group mt-4">
-    <span class="mail-icon"><%= image_tag("mail-icon.png", :alt => "mail-icon") %></span>
+    <span class="mail-icon"><%= image_tag("email.png", :alt => "mail-icon") %></span>
     <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "johndoe@gmail.com" %>
   </div>
 
   <div class="form-group">
-    <span class="lock-icon"><%= image_tag("padlock.png", :alt => "padlock") %> </span>
+    <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
     
-    <%= f.password_field :password, placeholder: '123456', class: "form-control", autocomplete: "new-password" %>
-    <span class="visible-pw">
-      <%= image_tag("visible.png", :alt => "visible") %></span>
+    <%= f.password_field :password, placeholder: 'password', class: "form-control", autocomplete: "new-password" %>
+    <span class="visible-pw not-visible-pw">
+      <%= image_tag("not-visible.png", :alt => "visible") %></span>
   </div>
 
   <div class="form-group">
-    <span class="lock-icon"><%= image_tag("padlock.png", :alt => "padlock") %> </span>
-    <%= f.password_field :password_confirmation, class: "form-control", value: '123456', autocomplete: "new-password" %>
-    <span class="visible-pw"><%= image_tag("not-visible.png", :alt => "not-visible") %></span>
+    <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
+    <%= f.password_field :password_confirmation, class: "form-control",placeholder: 'confirm password', autocomplete: "new-password" %>
+    <span class="visible-pw not-visible-pw"><%= image_tag("not-visible.png", :alt => "not-visible") %></span>
   </div>  
   
   
@@ -35,9 +35,10 @@
     <% User.roles.each do |role| %>
       <% if role[0]=='tenant' %>
         <div class="col-sm-6">
-          <label class="remember-sec active  user-label tenant">
+          <label class="remember-sec user-label tenant">
             <div class="inner-user-bx">
-              <%= f.radio_button :role, role[0], {:checked => true} %>
+              <%# <%= f.radio_button :role, role[0],class:'toggleTypeIcon1' {:checked => true} %>
+              <%= f.radio_button :role, role[0],class:'toggleTypeIcon1' %>
               <span class="checkmark check1"></span>
               <span class="user-icon"><%= image_tag("tenant-icon.png", :alt => "tenant-icon") %> <%= image_tag("tenant-icon-active.png", :alt => "tenant-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>
@@ -48,7 +49,7 @@
         <div class="col-sm-6">
           <label class="remember-sec user-label landlord">
             <div class="inner-user-bx">
-              <%= f.radio_button :role, role[0] %>
+              <%= f.radio_button :role, role[0],class:'toggleTypeIcon2' %>
               <span class="checkmark check2"></span>
               <span class="user-icon"><%= image_tag("landloard-icon.png", :alt => "landord-icon") %> <%= image_tag("landloard-icon-active.png", :alt => "landlord-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>
