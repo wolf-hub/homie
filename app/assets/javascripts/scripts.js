@@ -616,7 +616,9 @@ if(elem != null)
 }
 });
 
-$(document).ready(function(e) {
+
+$(document).ready(function() {
+
 var elem = document.getElementById("property_city");
 if (elem != null)
 {
