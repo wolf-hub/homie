@@ -573,16 +573,22 @@ jQuery('option').mousedown(function(e) {
 });
 
 var elem = document.getElementById("request_city");
-elem.onchange = function(e){
+if(elem){
+elem.onchange = function(){
     var hiddenDiv = document.getElementById("distts-sec");
     hiddenDiv.style.display = (this.value == "") ? "none":"block";
 };
+};
 });
 
-$(document).ready(function(e) {
+
+$(document).ready(function() {
+
 var elem = document.getElementById("property_city");
-elem.onchange = function(e){
+if(elem){
+elem.onchange = function(){
     var hiddenDiv = document.getElementById("distt-sec");
     hiddenDiv.style.display = (this.value == "") ? "none":"block";
+};
 };
 });
