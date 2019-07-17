@@ -238,7 +238,7 @@ footer .term-menu li a{ color:#787676; }
     left: 20px;
     top: 14px;
 }
-.mail-icon img, .lock-icon img{ width:15px; }
+.mail-icon img, .lock-icon img{ width:23px; }
 .lock-icon {
     position: absolute;
     left: 15px;
@@ -250,6 +250,24 @@ footer .term-menu li a{ color:#787676; }
     top: 13px;
     width: 20px;
 }
+
+.checkmark{
+  margin-top: -5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(200, 202, 204) !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(200, 202, 204) !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(200, 202, 204) !important;
+}
+
 .visible-pw img:nth-child(2){ display:none; }
 .visible-pw.active img:nth-child(2){ display:inline-block; }
 .visible-pw.active img:first-child{ display:none; }
@@ -2645,4 +2663,8 @@ a.arrow-scroll-btn img{ width:30px; }
   flex: 0 0 100%;
   max-width: 100%;
 }
+}
+
+input[type=text]{
+  height: 52px;
 }

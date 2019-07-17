@@ -57,14 +57,14 @@ window.onload = function(){
     }
 }
 
-function myFunction() {
-  var x = document.getElementById("password-input");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+// function myFunction() {
+//   var x = document.getElementById("password-input");
+//   if (x.type === "password") {
+//     x.type = "text";
+//   } else {
+//     x.type = "password";
+//   }
+// }
 jQuery(document).ready(function() {
 
  $menu = $('.chat-menu1');
@@ -470,9 +470,43 @@ jQuery('.check1').click(function() {
 jQuery('.check2').click(function() {
     jQuery('.landlord').toggleClass("active");
 });	 
+
 jQuery('.visible-pw').click(function() {
-    jQuery('.visible-pw').toggleClass("active");
-});	
+    // debugger;
+    $input = $($(this).closest('.form-group').find('input'));
+    // if($input.val() != "")
+    // {
+        if ($(this).hasClass("not-visible-pw"))
+        {
+            $input.attr("type","text");
+            $(this).removeClass("not-visible-pw");
+            $($(this).children('img')[0]).attr("src","assets/visible.png");
+        }else{
+            $(this).addClass("not-visible-pw");
+            $input.attr("type","password");
+            $($(this).children('img')[0]).attr("src","assets/not-visible.png");
+        }
+    // }
+});
+
+$('.toggleTypeIcon1').click(function(){
+    if($($(this).closest('.user-label')).hasClass("active")){
+        $($(this).closest('.user-label')).removeClass("active");
+    }else{
+        $($(this).closest('.user-label')).addClass("active");
+        $('.toggleTypeIcon2').closest('.user-label').removeClass("active");
+    }
+});
+
+$('.toggleTypeIcon2').click(function(){
+    if($($(this).closest('.user-label')).hasClass("active")){
+        $($(this).closest('.user-label')).removeClass("active");
+    }else{
+        $($(this).closest('.user-label')).addClass("active");
+        $('.toggleTypeIcon1').closest('.user-label').removeClass("active");
+    }
+});
+
 
 
 
@@ -591,4 +625,22 @@ if (elem != null)
         hiddenDiv.style.display = (this.value == "") ? "none":"block";
     };
 }
+});
+
+$('.toggleTypeIcon1').click(function(){
+    if($($(this).closest('.user-label')).hasClass("active")){
+        $($(this).closest('.user-label')).removeClass("active");
+    }else{
+        $($(this).closest('.user-label')).addClass("active");
+        $('.toggleTypeIcon2').closest('.user-label').removeClass("active");
+    }
+});
+
+$('.toggleTypeIcon2').click(function(){
+    if($($(this).closest('.user-label')).hasClass("active")){
+        $($(this).closest('.user-label')).removeClass("active");
+    }else{
+        $($(this).closest('.user-label')).addClass("active");
+        $('.toggleTypeIcon1').closest('.user-label').removeClass("active");
+    }
 });
