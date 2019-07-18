@@ -479,11 +479,11 @@ jQuery('.visible-pw').click(function() {
         {
             $input.attr("type","text");
             $(this).removeClass("not-visible-pw");
-            $($(this).children('img')[0]).attr("src","assets/visible.png");
+            $($(this).children('img')[0]).attr("src","/assets/visible.png");
         }else{
             $(this).addClass("not-visible-pw");
             $input.attr("type","password");
-            $($(this).children('img')[0]).attr("src","assets/not-visible.png");
+            $($(this).children('img')[0]).attr("src","/assets/not-visible.png");
         }
     // }
 });
