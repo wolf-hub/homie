@@ -44,7 +44,7 @@
             <div class="inner-user-bx">
               <%# <%= f.radio_button :role, role[0],class:'toggleTypeIcon1' {:checked => true} %>
               <%= f.radio_button :role, role[0],class:'toggleTypeIcon1' %>
-              <span class="checkmark check1"></span>
+              <span class="checkmark check1 toggleTypeIcon1"></span>
               <span class="user-icon"><%= image_tag("tenant-icon.png", :alt => "tenant-icon") %> <%= image_tag("tenant-icon-active.png", :alt => "tenant-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>
             </div>
@@ -55,7 +55,7 @@
           <label class="remember-sec user-label landlord">
             <div class="inner-user-bx">
               <%= f.radio_button :role, role[0],class:'toggleTypeIcon2' %>
-              <span class="checkmark check2"></span>
+              <span class="checkmark check2 toggleTypeIcon2"></span>
               <span class="user-icon"><%= image_tag("landloard-icon.png", :alt => "landord-icon") %> <%= image_tag("landloard-icon-active.png", :alt => "landlord-icon-active") %></span>
               <div class="text-label">I am a <%= role[0].to_sym %></div>
             </div>

@@ -275,7 +275,7 @@ footer .term-menu li a{ color:#787676; }
 .form-control, .form-group input[type=email], .form-group input[type=password]{
   height: 52px;
   border-radius: 5px;
-  border: solid 1px #02a1b5;
+  // border: solid 1px #02a1b5;
   background-color: #ffffff;
   font-size: 16px;
   font-weight: normal;
@@ -765,6 +765,9 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
 }
 .hide{
   display: none;
+}
+.form-control:focus, .form-group input[type=email]:focus, .form-group input[type=password]:focus,.form-group input[type=text]:focus{
+  border: solid 1px #02a1b5;
 }
 .step-header .step-name{
   font-size: 20px;
