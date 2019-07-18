@@ -44,7 +44,7 @@ Rails.application.configure do
   config.active_storage.service = :local
   config.action_cable.url = '/cable'
   # config.action_cable.allowed_request_origins = ['http://142.93.86.230','142.93.86.230']
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
+  config.action_cable.allowed_request_origins = ['http://homie.seedx.us']
   config.action_cable.disable_request_forgery_protection = true
 
   # Mount Action Cable outside main process or domain
