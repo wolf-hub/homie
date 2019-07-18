@@ -2514,6 +2514,8 @@ button:focus{outline: none !important;}
 /* range slider css end here */
 .credit-score-list li{margin:5px 0;}
 #pstepfinishsign:hover{box-shadow: none !important;}
+.chat-menu1 li, .chat-menu1 li a{display:block; width: 100%;}
+.chat-input-box .send-btn{height: auto !important; top: 50%; margin-top:-22px;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2634,8 +2636,9 @@ a.arrow-scroll-btn img{ width:30px; }
 .navbar-header a img:last-child, .navbar-header.active-menu a img:first-child{width:0px; transition:all 0.5s ease-in-out; }
 .navbar-header.active-menu a img:last-child{ width:30px; }
 .header .navbar li a{ display:inline-block; }
-.header .navbar li{ text-align:center; font-size:16px; line-height:24px; margin:20px 0; }
+.header .navbar li{ text-align:center; font-size:20px; line-height:24px; margin:20px 0; }
 .header .navbar li a{ color:#fff; }
+.landloard-profile-head .navbar li a{padding:10px 25px;}
 .header .navbar li a:after{ background:#fff; }
 .header .brand, .header .col-sm-10 { width:50%;}
 .home-sec-2 .col-sm-4 {margin-top: 10px;max-width: 33.33%;}
@@ -2712,7 +2715,7 @@ i.fa.fa-exclamation{margin-bottom: 8px;}
 .tenant-cong .full-btn, .tenant-cong .up-broken-line-arrow{width:100%;}
 ul.l-step-2-bed-list li .number-bed-text{ font-size: 14px; }
 .step-btn-pagination{padding-top: 30px;}
-.card.card-default > .card-body {padding:1.25rem 0;}
+
 
 input#pstepfinishsign {
   padding: 5px 30px !important;
