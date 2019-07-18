@@ -21,13 +21,18 @@
     
     <%= f.password_field :password, placeholder: 'password', class: "form-control", autocomplete: "new-password" %>
     <span class="visible-pw not-visible-pw">
-      <%= image_tag("not-visible.png", :alt => "visible") %></span>
+      <%= image_tag("not-visible.png", :alt => "visible") %>
+      <%= image_tag("visible.png", :alt => "visible") %>
+    </span>
   </div>
 
   <div class="form-group">
     <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
     <%= f.password_field :password_confirmation, class: "form-control",placeholder: 'confirm password', autocomplete: "new-password" %>
-    <span class="visible-pw not-visible-pw"><%= image_tag("not-visible.png", :alt => "not-visible") %></span>
+    <span class="visible-pw not-visible-pw">
+      <%= image_tag("not-visible.png", :alt => "visible") %>
+      <%= image_tag("visible.png", :alt => "visible") %>
+    </span>
   </div>  
   
   
