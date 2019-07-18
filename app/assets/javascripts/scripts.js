@@ -472,7 +472,6 @@ jQuery('.check2').click(function() {
 });	 
 
 jQuery('.visible-pw').click(function() {
-    debugger;
     $input = $($(this).closest('.form-group').find('input'));
     // if($input.val() != "")
     // {
@@ -480,11 +479,11 @@ jQuery('.visible-pw').click(function() {
         {
             $input.attr("type","text");
             $(this).removeClass("not-visible-pw");
-            $($(this).children('img')[0]).attr("src","assets/visible.png");
+            $($(this).children('img')[0]).attr("src","/assets/visible.png");
         }else{
             $(this).addClass("not-visible-pw");
             $input.attr("type","password");
-            $($(this).children('img')[0]).attr("src","assets/not-visible.png");
+            $($(this).children('img')[0]).attr("src","/assets/not-visible.png");
         }
     // }
 });
