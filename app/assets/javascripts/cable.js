@@ -8,6 +8,6 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer("ws://homie.seedx.us/cable");
+  App.cable = ActionCable.createConsumer("/cable");
 
 }).call(this);
