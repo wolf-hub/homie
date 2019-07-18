@@ -15,7 +15,10 @@
                         <div class="form-group">
                           <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
                           <%= f.password_field :password, class: "form-control", id: "password-input",placeholder:'password', autocomplete: "current-password" %>    
-                          <span class="visible-pw not-visible-pw"><%= image_tag("not-visible.png", :alt => "visible") %></span>
+                          <span class="visible-pw not-visible-pw">
+                            <%= image_tag("not-visible.png", :alt => "visible") %>
+                            <%= image_tag("visible.png", :alt => "visible") %>
+                          </span>
                         </div>
 
                         <div class="form-group text-left">

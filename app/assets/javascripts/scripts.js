@@ -475,18 +475,30 @@ jQuery('.visible-pw').click(function() {
     $input = $($(this).closest('.form-group').find('input'));
     // if($input.val() != "")
     // {
+        // debugger;
         if ($(this).hasClass("not-visible-pw"))
         {
             $input.attr("type","text");
             $(this).removeClass("not-visible-pw");
             // $($(this).children('img')[0]).attr("src","/assets/visible.png");
-            $($(this).children('img')[0]).remove();
-            $(this).prepend('<img id="theImg" src="/assets/visible.png" />');
+            img_tags=$(this).children('img');
+            first_img_src = $(img_tags[0]).attr("src");
+            second_img_src = $(img_tags[1]).attr("src");
+            $(img_tags[0]).attr("src",second_img_src);
+            $(img_tags[1]).attr("src",first_img_src);
+
+            // $($(this).children('img')[0]).remove();
+            // $(this).prepend('<img id="theImg" src="/assets/visible.png" />');
         }else{
             $(this).addClass("not-visible-pw");
             $input.attr("type","password");
-            $($(this).children('img')[0]).remove();
-            $(this).prepend('<img id="theImg" src="/assets/not-visible.png" />');
+            // $($(this).children('img')[0]).remove();
+            // $(this).prepend('<img id="theImg" src="/assets/not-visible.png" />');
+            img_tags=$(this).children('img');
+            first_img_src = $(img_tags[0]).attr("src");
+            second_img_src = $(img_tags[1]).attr("src");
+            $(img_tags[0]).attr("src",second_img_src);
+            $(img_tags[1]).attr("src",first_img_src);
         }
     // }
 });
