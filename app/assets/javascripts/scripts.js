@@ -503,6 +503,7 @@ jQuery('.visible-pw').click(function() {
     // }
 });
 
+
 $('.toggleTypeIcon1').click(function(){
     if($($(this).closest('.user-label')).hasClass("active")){
         $($(this).closest('.user-label')).removeClass("active");
@@ -643,20 +644,22 @@ if (elem != null)
 }
 });
 
-$('.toggleTypeIcon1').click(function(){
-    if($($(this).closest('.user-label')).hasClass("active")){
-        $($(this).closest('.user-label')).removeClass("active");
-    }else{
-        $($(this).closest('.user-label')).addClass("active");
-        $('.toggleTypeIcon2').closest('.user-label').removeClass("active");
-    }
-});
+// $('.toggleTypeIcon1').click(function(){
+//     debugger;
+//     if($($(this).closest('.user-label')).hasClass("active")){
+//         $($(this).closest('.user-label')).removeClass("active");
+//     }else{
+//         $($(this).closest('.user-label')).addClass("active");
+//         $('.toggleTypeIcon2').closest('.user-label').removeClass("active");
+//     }
+// });
 
-$('.toggleTypeIcon2').click(function(){
-    if($($(this).closest('.user-label')).hasClass("active")){
-        $($(this).closest('.user-label')).removeClass("active");
-    }else{
-        $($(this).closest('.user-label')).addClass("active");
-        $('.toggleTypeIcon1').closest('.user-label').removeClass("active");
-    }
-});
+// $('.toggleTypeIcon2').click(function(){
+//     debugger;
+//     if($($(this).closest('.user-label')).hasClass("active")){
+//         $($(this).closest('.user-label')).removeClass("active");
+//     }else{
+//         $($(this).closest('.user-label')).addClass("active");
+//         $('.toggleTypeIcon1').closest('.user-label').removeClass("active");
+//     }
+// });
