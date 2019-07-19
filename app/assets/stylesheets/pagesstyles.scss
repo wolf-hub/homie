@@ -903,7 +903,7 @@ ul.l-step-2-bed-list li .number-bed-text{
 .arrow-none-btn{ background-image:none !important; padding:13px 35px; }
 .next-steps{ font-size:18px; color:#333; font-weight:normal; }
 .next-steps-list{ margin-top:20px; }
-.next-steps-list li{ display:inline-block; width:32%; text-align:center; padding-right:12%; background:url(../images/up-broken-line-arrow-grey.png) right top no-repeat; }
+.next-steps-list li{ display:inline-block; width:32%; text-align:center; padding-right:12%; background:url(images/up-broken-line-arrow-grey.png) right top no-repeat; }
 .next-steps-list li:last-child{ background:none; }
 .next-steps-list li a .step-text{
   font-size: 18px;
@@ -931,7 +931,7 @@ ul.l-step-2-bed-list li .number-bed-text{
 .next-steps-list li+li+li .step-icon-bx img{ width:35px; }
 .next-steps-list li .step-icon-bx img:nth-child(2){display:none}
 .next-steps-list li.active .step-icon-bx img:nth-child(2){ display:inline-block; }
-.next-steps-list li.active .step-icon-bx img:first-child{ display:none; }
+/*.next-steps-list li.active .step-icon-bx img:first-child{ display:none; }*/
 
 .landloar-cong-sec .step-btn-pagination {
     margin: 0;
@@ -2418,11 +2418,11 @@ button:focus{outline: none !important;}
   }
 
 .irs-bar {
-  height: 10px; top: 33px;
-  border-top: 1px solid #428bca;
-  border-bottom: 1px solid #428bca;
-  background: #428bca;
-  background: linear-gradient(to top, rgba(66,139,202,1) 0%,rgba(127,195,232,1) 100%); /* W3C */
+  height: 10px;
+  top: 33px;
+  border-top: 1px solid #01a1b5;
+  border-bottom: 1px solid #01a1b5;
+  background: #01a1b5;
 }
   .irs-bar-edge {
       height: 10px; top: 33px;
@@ -2482,7 +2482,7 @@ button:focus{outline: none !important;}
   font-size: 14px; line-height: 1.333;
   text-shadow: none;
   padding: 1px 5px;
-  background: #428bca;
+  background: #01a1b5;
   border-radius: 3px;
   -moz-border-radius: 3px;
 }
@@ -2513,6 +2513,13 @@ button:focus{outline: none !important;}
 #pstepfinishsign:hover{box-shadow: none !important;}
 .chat-menu1 li, .chat-menu1 li a{display:block; width: 100%;}
 .chat-input-box .send-btn{height: auto !important; top: 50%; margin-top:-22px;}
+input#pstepfinishsign {
+  padding: 5px 30px !important;
+  min-width: 100px;
+  max-width: 100px;
+  position: relative;
+  top: 20px;
+}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2595,7 +2602,19 @@ h5.heading-level-05.mb-3.mt-5 {
     width: 115px;
     height: 115px;
 }
-	
+.up-broken-line-arrow{width:60%;}
+.upload-sec-gallery .upload-step-pic{height:180px; width: 100%;}
+.upload-sec-gallery .step-6-gallery {padding-top:220px;}
+.upload-step-pic .upload-btn-text{padding-bottom:0px;}
+.col-sm-3.check-property-step{
+  -webkit-box-flex: 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.next-steps-list li{padding-right:4%;}
+.next-steps-list li a .step-text{font-size:14px;}
+.step-btn-pagination a {margin:0 0 15px;width:100%;}
+.next-steps-list li{background-size:42px;background-position: right 20px;}
 	}
 @media(max-width:767px){
 body{ padding-top:51px; }
@@ -2663,6 +2682,8 @@ a.arrow-scroll-btn img{ width:30px; }
   line-height: 36px;
   margin-bottom: 20px;
 }
+
+.upload-sec-gallery .step-6-gallery .space-div{display: none;}
 .l-left-step-sec-01 .light-text{margin-top:30px; font-size:16px;}
 .l-step-1 .select-outline select {margin-top:20px;}
 .landloard-step-sec ul.step-list li.active:after {
@@ -2713,14 +2734,8 @@ i.fa.fa-exclamation{margin-bottom: 8px;}
 ul.l-step-2-bed-list li .number-bed-text{ font-size: 14px; }
 .step-btn-pagination{padding-top: 30px;}
 
+.card.card-default > .card-body {padding:1.25rem 0;}
 
-input#pstepfinishsign {
-  padding: 5px 30px !important;
-  min-width: 100px;
-  max-width: 100px;
-  position: relative;
-  top: 20px;
-}
 .upload-sec-gallery .upload-step-pic div {width:100%;}
 .landloard-content.main-landlord-profile-sec h2 , .landloard-content.main-landlord-profile-sec h3{
   margin-top:30px;font-size:24px;}
@@ -2734,8 +2749,11 @@ input#pstepfinishsign {
 .user-label .text-label {font-size:14px;}
 .chat-footer{padding: 15px 0px;}
 .chat-footer .primary-btn {margin:0;width:100% !important;margin-bottom:30px;}
-.chat-footer a.light-blue-btn.f-btn {width:100% !important;padding:12px 15px 13px !important;
-}
+.chat-footer a.light-blue-btn.f-btn {width:100% !important;padding:12px 15px 13px !important;}
+.home-inr-sec-3 {background-position:center bottom !important;}
+.upload-sec-gallery .step-6-gallery span, .upload-sec-gallery .step-6-gallery div{width:32%;}
+.landloard-step-sec .col-sm-1, .landloard-step-sec .col-sm-8, .landloard-step-sec .col-sm-4, .landloard-step-sec .col-sm-11 {flex:0 0 100%;max-width:100%;}
+
 }
 
 input[type=text]{
