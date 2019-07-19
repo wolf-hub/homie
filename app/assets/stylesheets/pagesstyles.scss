@@ -1455,6 +1455,7 @@ ul.card-detail li a:hover{ color:#02a1b5 }
   color: #000000; position:relative;
   background:#fff; padding:15px;
   display:inline-block; border-radius:5px;
+  line-height: 20px;
 }
 .tenant-chat .incoming-chat-bx{ padding:15px 15px 15px 40px; }
 .tenant-chat .incoming-chat-bx:after {
@@ -2047,7 +2048,7 @@ ul.pro-list.c-p-step-list li {
  letter-spacing: normal;
  color: #000000; position:relative;
  background:rgba(64, 209, 228, 0.33); padding:15px;
- display:inline-block; border-radius:5px;
+ display:inline-block; border-radius:5px; line-height: 20px;
 }
 .rt-chat-tool-tip-01:after {
    width: 0;
@@ -2082,23 +2083,11 @@ ul.pro-list.c-p-step-list li {
 }
 .chat-wrapper .tab-content.tab-content-01{ height:590px; }
 .l-sidebar.aside-1{ height:100%; position:relative;  }
-.l-sidebar.aside-1 .l-side-btn-sec {
-   width:100%;
-   left: 0;
-   bottom: 30px;
-}
+.l-sidebar.aside-1 .l-side-btn-sec {width:100%;left:0;bottom:30px;}
 .l-sidebar .light-blue-btn{ padding: 10px 0; }
 .l-sidebar.aside-1 .landloard-profile-inbox .l-side-btn-sec{width:100%;}
-.landloard-profile-inbox {
-   text-align: center; 
-   padding-bottom: 30px;
-   margin-bottom: 30px;
-   border-bottom: 1px solid #e5e5e5;
-}
-
-.chat-menu1.show-menu{
-   display: block; right:0px; top:56px;
-}
+.landloard-profile-inbox {text-align:center;padding-bottom:30px;margin-bottom:30px;border-bottom:1px solid #e5e5e5;}
+.chat-menu1.show-menu{display:block;right:0px;top:56px;}
 .chat-menu1.show-menu li{ padding:0px !important; float:left; width:100%; margin-bottom:5px; }
 .profile-rt-header ul.profile-rt li .chat-menu1.show-menu li a{ color:#000; }
 .profile-rt-header ul.profile-rt li .chat-menu1.show-menu li a:hover{ color:#02a1b5; }
@@ -2132,16 +2121,14 @@ ul.pro-list.c-p-step-list li {
  font-family: 'Sofia Pro';
  font-size: 16px;
  font-weight: normal;
- line-height: normal;
+ line-height: normal; 
  letter-spacing: normal;
  color: #000000;
  text-align:left;
 }
 .chat-menu1 li a{ display:block; padding:2px 5px; color:#000; }
 .chat-menu1 li a:hover{ color:#02a1b5; }
-.chat-menu1.show-menu, .profile-rt-header ul.profile-rt li .l-profile-img:hover .chat-menu1{
-   display: block; right:0px; top:40px;
-}
+.chat-menu1.show-menu, .profile-rt-header ul.profile-rt li .l-profile-img:hover .chat-menu1{display: block; right:0px; top:40px;}
 ul.chat-menu1 li {
    padding: 0 !important;
    text-align: left !important;
@@ -2523,6 +2510,21 @@ input#pstepfinishsign {
   position: relative;
   top: 20px;
 }
+input#pstepfinish {
+  max-width: 100px;
+  padding: 10px 35px !important;
+  min-width: 1px;
+  position: relative;
+  top: 20px;
+}
+input#pstepfinish:hover {
+  box-shadow: none !important;
+}
+div#exampleModalCenter2 .modal-footer {
+  display: none;
+}
+div#exampleModalCenter2 .signup-form{margin-bottom: 0px;}
+
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2605,7 +2607,7 @@ h5.heading-level-05.mb-3.mt-5 {
     width: 115px;
     height: 115px;
 }
-.up-broken-line-arrow{width:60%;}
+.up-broken-line-arrow{width:38%;}
 .upload-sec-gallery .upload-step-pic{height:180px; width: 100%;}
 .upload-sec-gallery .step-6-gallery {padding-top:220px;}
 .upload-step-pic .upload-btn-text{padding-bottom:0px;}
@@ -2737,7 +2739,7 @@ i.fa.fa-exclamation{margin-bottom: 8px;}
 ul.l-step-2-bed-list li .number-bed-text{ font-size: 14px; }
 .step-btn-pagination{padding-top: 30px;}
 
-.card.card-default > .card-body {padding:1.25rem 0;}
+/*.card.card-default > .card-body {padding:1.25rem 0;}*/
 
 .upload-sec-gallery .upload-step-pic div {width:100%;}
 .landloard-content.main-landlord-profile-sec h2 , .landloard-content.main-landlord-profile-sec h3{
@@ -2756,7 +2758,18 @@ ul.l-step-2-bed-list li .number-bed-text{ font-size: 14px; }
 .home-inr-sec-3 {background-position:center bottom !important;}
 .upload-sec-gallery .step-6-gallery span, .upload-sec-gallery .step-6-gallery div{width:32%;}
 .landloard-step-sec .col-sm-1, .landloard-step-sec .col-sm-8, .landloard-step-sec .col-sm-4, .landloard-step-sec .col-sm-11 {flex:0 0 100%;max-width:100%;}
-
+.property-top-title{font-size:16px; line-height: 24px;}
+ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
+.pro-l-open-property ul.features-list li{width:100%; margin-right:0px;}
+.chat-footer.l-open-pro-footer .primary-btn {margin:0 0 15px !important;}
+.pro-l-head h4{margin-top:30px;}
+.next-steps-list li{background-size:24px;}
+.primary-btn:hover{box-shadow: none !important;}
+.property-slide-bx h5{font-size: 16px;}
+.property-slide-bx .city-name{font-size: 13px;}
+.l-profile-img .chat-menu1{position: relative; float: left; width:100%;}
+.l-profile-img .chat-menu1 li{margin: 0px;}
+.l-profile-img .chat-menu1 li a{ color:#333333; }
 }
 
 input[type=text]{
