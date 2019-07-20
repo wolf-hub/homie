@@ -1,5 +1,5 @@
 <div id="map" style="width: 100%; height: 400px"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAP_API'] %>"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= $GOOGLEMAP_API %>"></script>
 <script>
 function initialize() {
     var location = {lat: <%= @property.latitude %>, lng: <%= @property.longitude %>};
