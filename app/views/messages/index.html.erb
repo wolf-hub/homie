@@ -99,4 +99,8 @@
 
     updateScroll();
   };
+  $("body").on('DOMSubtreeModified', "#custom-scrollbar", function() {
+    alert('changed');
+    updateScroll();
+});
 </script>
