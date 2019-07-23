@@ -24,18 +24,20 @@ class ApplicationController < ActionController::Base
       		#redirect
       		flash[:notice] = "Sweet, logged in. Nice list, btw :)"      
       		if current_user.role == 'landlord'
-		    	if current_user.landlord
-		    		landlord_path(current_user.landlord)
-		    	else
-		    		new_landlord_path
-		    	end
+		    	#if current_user.landlord
+		    		#landlord_path(current_user.landlord)
+		    	#else
+		    		#new_landlord_path
+		    	#end
+		    	properties_path
 		    		
 		    else
-		    	if current_user.tenant
-		    		tenant_path(current_user.tenant)
-		    	else
-		    		new_tenant_path
-		    	end   	
+		    	#if current_user.tenant
+		    		#tenant_path(current_user.tenant)
+		    	#else
+		    		#new_tenant_path
+		    	#end 
+		    	requests_path  	
 		    end
 	    
 	    elsif session[:property].present?
@@ -49,34 +51,38 @@ class ApplicationController < ActionController::Base
       		#redirect
       		flash[:notice] = "Sweet, logged in. Nice list, btw :)"      
       		if current_user.role == 'landlord'
-		    	if current_user.landlord
-		    		landlord_path(current_user.landlord)
-		    	else
-		    		new_landlord_path
-		    	end
+		    	#if current_user.landlord
+		    		#landlord_path(current_user.landlord)
+		    	#else
+		    		#new_landlord_path
+		    	#end
+		    	properties_path
 		    		
 		    else
-		    	if current_user.tenant
-		    		tenant_path(current_user.tenant)
-		    	else
-		    		new_tenant_path
-		    	end   	
+		    	#if current_user.tenant
+		    		#tenant_path(current_user.tenant)
+		    	#else
+		    		#new_tenant_path
+		    	#end
+		    	requests_path   	
 		    end
 	    
 	    else
 	    	if current_user.role == 'landlord'
-		    	if current_user.landlord
-		    		landlord_path(current_user.landlord)
-		    	else
-		    		new_landlord_path
-		    	end
+		    	#if current_user.landlord
+		    		#landlord_path(current_user.landlord)
+		    	#else
+		    		#new_landlord_path
+		    	#end
+		    	properties_path
 		    		
 		    else
-		    	if current_user.tenant
-		    		tenant_path(current_user.tenant)
-		    	else
-		    		new_tenant_path
-		    	end   	
+		    	#if current_user.tenant
+		    		#tenant_path(current_user.tenant)
+		    	#else
+		    		#new_tenant_path
+		    	#end   
+		    	requests_path 	
 		    end
 	    end
 	    # return the path based on resource
