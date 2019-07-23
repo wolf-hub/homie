@@ -90,6 +90,12 @@ class LandlordsController < ApplicationController
     redirect_to payment_method_path
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: request.referer, notice: "Saved...")
+  end
+
   private 
   def set_landlord
       @landlord = Landlord.find(params[:id])
