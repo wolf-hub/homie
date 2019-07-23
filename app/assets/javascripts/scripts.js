@@ -1,3 +1,8 @@
+function updateScroll(){
+      var element = document.getElementById("custom-scrollbar");
+      element.scrollTop = element.scrollHeight;
+    };
+
 window.onload = function(){
 
 
