@@ -21,6 +21,12 @@ class LandlordsController < ApplicationController
     if @landlord.save
       redirect_to @landlord, notice: "Data saved"
     else
+      if @landlord.errors.full_messages.present?
+        if @landlord.errors.full_messages.each_with_index do |msg,i|
+          flash["alert"+i.to_s] = msg
+        end
+        end
+      end
       render :new
     end  
   end
@@ -30,7 +36,13 @@ class LandlordsController < ApplicationController
     if @landlord.update(landlord_params)
       redirect_to @landlord, notice: "Data saved"
     else
-      flash[:alert] = "Something went wrong..."
+      if @landlord.errors.full_messages.present?
+        if @landlord.errors.full_messages.each_with_index do |msg,i|
+          flash["alert"+i.to_s] = msg
+        end
+        end
+      end
+      # flash[:alert] = "Something went wrong..."
       render 'edit'
     end
     

@@ -25,17 +25,17 @@
             <h2 class="heading-level-01">Where is Your House Located?</h2>
             <p class="select-step-label">Please select the closest city.</p>
             <div class="select-outline">
-              <%= f.select :city, ['Los Angeles', 'Los Angeles', 'Los Angeles' ], { prompt: "What is your city?"}, {class: "city-val"} %>
+              <%= f.select :city, ['Los Angeles' ], { prompt: "What is your city?"}, {class: "city-val"} %>
             </div>
             <div id="distt-sec">
-            <p class="light-text">Pick Districts in your property is located</p>
+            <p class="select-step-label">Pick Districts in your property is located</p>
                     <div class="hero-select-bx">
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {prompt: "Please select district"}, {:class => 'form-control address-val'} %>
               </div> 
               </div>
-            <p class="select-step-label" style="margin-top: 30px; margin-bottom: 15px;">Please add pretty name for your property </p>
+              <p class="select-step-label">Please add pretty name for your property </p>
             <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
-            <label class="mt-4 pt-2">Add a description</label>               
+            <p class="select-step-label">Add a description</p>               
                 <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control add-description" %>
                
           </div>
@@ -468,7 +468,7 @@
                          
             <div class="row"> 
               <div class="col-sm-12">
-                <p class="p-step">What is the monthly rent?</p>
+                <p class="select-step-label">What is the monthly rent?</p>
                   <div class="price-select-sec">
                     <%= f.number_field :price, class: "form-control" %>
                   </div>
@@ -476,7 +476,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 mt-3">
-                  <label>Choose a room type</label>
+                  <p class="select-step-label">Choose a room type</p>
                   <div class="price-select-sec">
                     <%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]], {class: "arrow-select"} %>
                   </div>
@@ -484,7 +484,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12 mt-3">
-                  <label>Accommodate </label>
+                <p class="select-step-label">Accommodate </p>
                   <div class="price-select-sec">
                     <%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], {class: "arrow-select"} %>
                   </div>

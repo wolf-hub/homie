@@ -10,6 +10,13 @@ class TenantsController < ApplicationController
     if @tenant.save
       redirect_to @tenant, notice: "Data saved"
     else
+      if @tenant.errors.full_messages.present?
+        if @tenant.errors.full_messages.each_with_index do |msg,i|
+          flash["alert"+i.to_s] = msg
+        end
+        end
+      end
+      # flash[:alert] = "You have not filled all the fields"
       render :new
     end  
   end
@@ -18,10 +25,17 @@ class TenantsController < ApplicationController
     authorize! :update, @tenant
     if @tenant.update(tenant_params)
       flash[:notice] = "Saved..."
+      redirect_to :action => 'show'
     else
-      flash[:alert] = "Something went wrong..."
+      if @tenant.errors.full_messages.present?
+        if @tenant.errors.full_messages.each_with_index do |msg,i|
+          flash["alert"+i.to_s] = msg
+        end
+        end
+      end
+      render :edit
+      # flash[:alert] = "Something went wrong..."
     end
-    redirect_to :action => 'show'
   end
 
   def edit

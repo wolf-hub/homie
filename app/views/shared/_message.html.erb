@@ -1,6 +1,11 @@
 <% unless flash.empty? %>
   <script type="text/javascript">
     <% flash.each do |key, value| %>
+      <% if key.include? "alert" %>
+        <% key = "alert" %>
+      <% elsif key.include? "error" %>
+        <% key = "error" %>
+      <% end %>
       <% type = key.to_s.gsub('alert','error').gsub('notice','success') %>
       toastr['<%= type %>']('<%= value %>')
     <% end %>
