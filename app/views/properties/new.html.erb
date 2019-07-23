@@ -16,7 +16,7 @@
       <div class="col-sm-11">
         <div class="row">
                 
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'location-2.png' %></span>
               <span class="step-name">Step 1</span>
@@ -33,14 +33,14 @@
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {prompt: "Please select district"}, {:class => 'form-control address-val'} %>
               </div> 
               </div>
-              <p class="select-step-label">Please add pretty name for your property </p>
+              <p class="select-step-label">Please name your property</p>
             <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
             <p class="select-step-label">Add a description</p>               
                 <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control add-description" %>
                
           </div>
                     
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
               <%= image_tag 'globe.jpg' %>
             </div>
@@ -78,7 +78,7 @@
       <div class="col-sm-11">
         <div class="row">
                
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'choice.png' %></span>
               <span class="step-name">Step 2</span>
@@ -166,7 +166,7 @@
         </div> 
       </div>
                     
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <div class="step-rt-img-sec">
           <%= image_tag 'step-2.jpg' %>
         </div>
@@ -176,8 +176,9 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="step-btn-pagination">
-              <a href="javascript: void" class="blue-outline-btn" id="pstep2-prev">Previous Step</a>
+              
               <a href="javascript: void" class="primary-btn arrow-rt" id="pstep2-btn">Next step</a>
+              <a href="javascript: void" class="blue-outline-btn" id="pstep2-prev">Previous Step</a>
             </div>
           </div>
         </div>
@@ -203,7 +204,7 @@
       <div class="col-sm-11">
         <div class="row">
                 
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'research.png' %></span>
               <span class="step-name">Step 3</span>
@@ -217,7 +218,7 @@
                   <div class="inner-user-bx">
                     <%= f.check_box :is_air %>
                     <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'air-conditioner.png' %> <%= image_tag 'air-conditioner-active.png' %></span>
-                    <div class="text-label">Airconditioning</div>
+                    <div class="text-label">Air conditioning</div>
                   </div>
                 </label>
               </div>
@@ -295,7 +296,7 @@
             </div>  
           </div>
                     
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
               <%= image_tag 'step-4.jpg' %>
             </div>
@@ -305,8 +306,9 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="step-btn-pagination">
-              <a href="javascript: void" class="blue-outline-btn" id="pstep3-prev">Previous Step</a>
+              
               <a href="javascript: void" class="primary-btn arrow-rt" id="pstep3-btn">Next step</a>
+              <a href="javascript: void" class="blue-outline-btn" id="pstep3-prev">Previous Step</a>
             </div>
           </div>
         </div>
@@ -333,7 +335,7 @@
       <div class="col-sm-11">
         <div class="row">
                 
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'research.png' %></span>
               <span class="step-name">Step 4</span>
@@ -391,7 +393,7 @@
             </div>  
           </div>
                     
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
               <%= image_tag 'step-4.jpg' %>
             </div>
@@ -401,8 +403,9 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="step-btn-pagination">
-              <a href="javascript: void" class="blue-outline-btn" id="pstep4-prev">Previous Step</a>
+              
               <a href="javascript: void" class="primary-btn arrow-rt" id="pstep4-btn">Next step</a>
+              <a href="javascript: void" class="blue-outline-btn" id="pstep4-prev">Previous Step</a>
             </div>
           </div>
         </div>
@@ -429,7 +432,7 @@
       <div class="col-sm-11">
         <div class="row">
                 
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'calendar.png' %></span>
               <span class="step-name">Step 5</span>
@@ -492,7 +495,7 @@
               </div>
           </div>
                     
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <div class="step-rt-img-sec">
                 <%= image_tag 'step-5.jpg' %>
               </div>
@@ -502,8 +505,9 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="step-btn-pagination">
-                <a href="javascript: void" class="blue-outline-btn" id="pstep5-prev">Previous Step</a>
+                
                 <a href="javascript: void" class="primary-btn arrow-rt" id="pstep5-btn">Next step</a>
+                <a href="javascript: void" class="blue-outline-btn" id="pstep5-prev">Previous Step</a>
               </div>
             </div>
           </div>
@@ -529,7 +533,7 @@
       <div class="col-sm-11">
         <div class="row">
                 
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'gallery.png' %></span>
               <span class="step-name">Step 6</span>
@@ -555,7 +559,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
               <%= image_tag 'step-5.jpg' %>
             </div>
