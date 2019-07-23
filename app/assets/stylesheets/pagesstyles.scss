@@ -74,12 +74,19 @@ p{
 .primary-btn{
   border-radius:5px;
   box-shadow: -2px 10px 15px 0 rgba(64, 209, 228, 0.5);
-  background-image: linear-gradient(to top, #02a1b5, #40d1e4);
+  background: rgba(2,160,181,1);
+background: -moz-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(2,160,181,1)), color-stop(41%, rgba(2,160,181,1)), color-stop(90%, rgba(64,209,228,1)), color-stop(100%, rgba(64,209,228,1)));
+background: -webkit-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
+background: -o-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
+background: -ms-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
+background: linear-gradient(to right, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a0b5', endColorstr='#40d1e4', GradientType=1 );
   font-size:16px;
   line-height: normal;
   font-weight:normal;
   color:#ffffff !important;
-  padding:15px 40px !important;
+  padding:16px 33px !important;
   transition:all 0.5s ease-in-out;
   display:inline-block;
   position:relative; z-index:1;
@@ -87,9 +94,9 @@ p{
    font-family: 'Sofia Pro';
   border:none; cursor:pointer;
 }
-.arrow-rt{ padding-right:70px !important; }
-.arrow-rt:after{ content:""; background:image-url("next-arrow.png") 0 center no-repeat; width:23px; height:16px; background-size:23px 16px; position:absolute; right:25px; transition:all 0.5s ease-in-out; height:100%; top:0px; }
-.arrow-rt:hover:after{ right:15px; }
+.arrow-rt{ padding-right:60px !important; }
+.arrow-rt:after{ content:""; background:image-url("next-arrow.png") 0 center no-repeat; width:20px; height:13px; background-size:20px 13px; position:absolute; right:12px; transition:all 0.5s ease-in-out; height:100%; top:0px; }
+.arrow-rt:hover:after{ right:12px; }
 .primary-btn:hover{ box-shadow:30px 0 0 30px rgba(64, 209, 228, 0.5) inset; color:#fff; }
 
 .default-btn{ box-shadow: -2px 10px 15px 0 rgba(255, 255, 255, 0.5); background-color: #ffffff; transition:0.5s all ease-in-out; padding:22px 50px; font-size:24px;font-weight:normal;color: #02a1b5; border-radius:5px; display:inline-block;}
@@ -110,13 +117,13 @@ p{
   background-color: #ffffff;
   font-weight: normal;
   line-height: normal;
-  padding:13px 15px 13px 55px;
+  padding:14px 12px 14px 38px;
   color: #02a1b5;
   text-align:center;
-  background:image-url("blue-rt-arrow.png") 15px center no-repeat; background-size:25px;
+  background:image-url("blue-rt-arrow.png") 10px center no-repeat; background-size:20px;
   margin-right:15px; display:inline-block;
 }
-.blue-outline-btn:hover{ background:#02a1b5 image-url("blue-rt-arrow-hover.png") 15px center no-repeat; background-size:25px; color:#fff; }
+.blue-outline-btn:hover{ background:#02a1b5 image-url("blue-rt-arrow-hover.png") 10px center no-repeat; background-size:20px; color:#fff; }
 .show-all-link{
    font-family: 'Sofia Pro';
   font-size: 20px;
@@ -372,10 +379,10 @@ footer .term-menu li a{ color:#787676; }
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height:18px;
+  width:18px;
   background-color: #eee;
-  border-radius:4px;
+  border-radius:2px;
 }
 
 
@@ -398,19 +405,19 @@ footer .term-menu li a{ color:#787676; }
 
 /* Style the checkmark/indicator */
 .remember-sec .checkmark:after {
-  left: 9px;
-  top:4px;
-  width:8px;
-  height:14px;
+  left: 5px;
+  top:1px;
+  width:7px;
+  height:11px;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.user-label{ display:flex; align-items:center; justify-content:center; height:100%; width:100%; padding:15px; border:1px solid #e5e5e5; border-radius:5px; color:#787676; font-size:18px; line-height:1; }
+.user-label{ display:flex; align-items:center; justify-content:center; height:100%; width:100%; padding:15px 15px 8px; border:1px solid #e5e5e5; border-radius:5px; color:#787676; font-size:18px; line-height:1; }
 .user-label .inner-user-bx{ text-align:center; }
-.user-label .checkmark{ left:auto; right:10px; top:10px; background:none; border:1px solid #e5e5e5; }
+.user-label .checkmark{ left:auto; right:8px; top:12px; background:none; border:1px solid #e5e5e5; }
 
 
 /* When the checkbox is checked, add a blue background */
@@ -751,15 +758,15 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
     padding:12px 20px 12px 45px;
     background: image-url("location-pin.png") 16px center no-repeat;
     background-size: 12px 15px;
-    border:1px solid #e5e5e5;
+    border:1px solid rgb(169, 169, 169);
     border-radius: 4px;
 }
-.landloard-step-sec .step-rt-img-sec{ margin-bottom:50px; }
+.landloard-step-sec .step-rt-img-sec{ margin-bottom:50px; padding-left:35px; margin-top:30px; }
 .step-rt-img-sec{ position:relative; }
 .step-rt-img-sec img{ border-radius:5px; position:relative; z-index:1; }
 .step-rt-img-sec:before{background:image-url("dotted-bg.jpg") 90px 25px repeat-x; content:""; position:absolute; right:-70px; bottom:-50px; height:105px; width:90%; z-index:1; }
 .landloard-step-sec .l-left-step-sec-01 {
-    padding: 0 60px;
+    padding: 0 15px 0 50px;
 }
 .step-header .location-2 {
     display: block;
@@ -794,7 +801,7 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
     margin:30px 0 0 50px;
 	width:75%;
 }
-.step-btn-pagination a{ font-size:18px; }
+.step-btn-pagination a{ font-size:20px; font-family: "Sofia Pro";; }
 .check-property-step {
     margin-bottom: 30px;
 } 
@@ -1136,7 +1143,7 @@ label span{ color:#787676; display:block; }
   line-height: normal;
   letter-spacing: normal;
   color: #787676 !important;
-  border: solid 1px #e5e5e5 !important;
+  border: solid 1px rgb(169, 169, 169) !important;
   border-radius:5px; }
 .trashed-btn{ color:#e54a4a !important; font-size:20px; }
 .payment-history-sec{ margin-top:30px; }
@@ -2476,7 +2483,7 @@ button:focus{outline: none !important;}
   border-radius: 3px;
   -moz-border-radius: 3px;
 }
-.lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
+.lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single { 
   background: #999;
 }
 
@@ -2513,7 +2520,7 @@ input#pstepfinishsign {
 input#pstepfinish {
   max-width: 100px;
   padding: 10px 35px !important;
-  min-width: 1px;
+  min-width: 1px; 
   position: relative;
   top: 20px;
 }
@@ -2533,6 +2540,13 @@ select.form-control {padding:13px 15px;height:auto;}
   width: 200px;
   border: solid 1px #02a1b5 !important;
 }
+.col-sm-3.check-property-step {
+  padding-left: 15px;
+  padding-right: 0;
+  margin-bottom: 15px;
+}
+.step-btn-pagination .blue-outline-btn{float:left;margin-right:30px;}
+section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2553,6 +2567,7 @@ select.form-control {padding:13px 15px;height:auto;}
     top: 6px;
   
 }
+.user-label{font-size:15px;}
   .l-sidebar .l-menu li{ font-size:13px; }
   .main-landloard-profile-sec p{ font-size:14px; line-height:24px; }
   .l-a-landloard-header .col-md-5 {
@@ -2709,7 +2724,7 @@ footer .social-media li{margin-left:0px; }
   content: "";
   margin-top: -1px; z-index:-1;
 }
-.landloard-step-sec .l-left-step-sec-01 {padding:15px;}
+.landloard-step-sec .l-left-step-sec-01 {padding:15px !important;}
 .select-outline {width:100%;}
 .landloard-step-sec .l-left-step-sec-01{margin-bottom:0px; }
 .password-new{width:320px;}
@@ -2784,8 +2799,12 @@ ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
 .landloard-step-sec .col-md-1 {flex:0 0 100%;max-width:100%;}
 .l-left-step-sec-01 .user-icon img {width:30px;}
 .remember-sec .checkmark:after {left:6px;top:0px;}
-.checkmark{width:20px;height:20px;}
 .landloar-cong-sec .col-md-8 {flex:0 0 100%;max-width:100%;}
+.user-label .checkmark{right:6px !important;}
+.landloard-step-sec .l-left-step-sec-01 {padding:0 15px 0 50px;flex:0 0 100%;max-width:100%;}
+.step-btn-pagination .blue-outline-btn{margin-right:0;}
+section#pstep6 .step-btn-pagination .blue-outline-btn, #step6 .step-btn-pagination .blue-outline-btn {float:none;width:auto;margin-right:5px;}
+
 }
 
 input[type=text]{
