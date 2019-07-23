@@ -23,8 +23,16 @@ Rails.application.routes.draw do
              path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'}
              
-  resources :landlords
-  resources :tenants
+  resources :landlords do
+    member do
+      delete :delete_image_attachment
+    end  
+  end  
+  resources :tenants do
+    member do
+      delete :delete_image_attachment
+    end  
+  end  
   resources :properties
   resources :requests do
     member do

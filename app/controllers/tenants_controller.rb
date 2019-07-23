@@ -40,6 +40,12 @@ class TenantsController < ApplicationController
     authorize! :read, @tenant
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: request.referer, notice: "Saved...")
+  end
+
   private 
   def set_tenant
       @tenant = Tenant.find(params[:id])
