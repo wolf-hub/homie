@@ -1,7 +1,13 @@
 <header class="header landloard-profile-head border-bottom" style="margin-bottom: 30px;">
   <div class="container">
     <div class="row">
-      <div class="col-sm-2 brand"> <a href="/"><%= image_tag("logo.png", :alt => "") %></a> </div>
+      <div class="col-sm-2 brand"> <a href="
+        <% if current_user.role == 'landlord' %>
+          <%= properties_path %>
+        <% else %>
+          <%= requests_path %>
+        <% end %>
+        "><%= image_tag("logo.png", :alt => "") %></a> </div>
         <div class="col-sm-10">
           <nav class="navbar">
             <div class="navbar-header"> 

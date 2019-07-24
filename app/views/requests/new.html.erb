@@ -16,25 +16,25 @@
             <div class="col-md-11">
               
                 <div class="row">                
-                  <div class="col-sm-8 l-left-step-sec-01">
+                  <div class="col-sm-7 l-left-step-sec-01">
                     <div class="step-header">
                       <span class="location-2"><%= image_tag 'tenant-step-1.png' %></span>
                       <span class="step-name">Step 1</span>
                     </div>
                     <h2 class="heading-level-01">Where Are You Looking To Move?</h2>
-                    <p class="light-text">Pick From Our List Of Available Cities</p>
+                    <p class="select-step-label">Pick From Our List Of Available Cities</p>
                     <div class="select-outline">                      
                       <%= f.select :city, ['Los Angeles'], {prompt: "Where are you looking to move?"}, {class: "city-val"} %>
                     </div>  
                     <div id="distts-sec">
-                    <p class="light-text">Pick Districts which you prefer (multiple select allowed)</p>
+                    <p class="select-step-label">Pick Districts which you prefer (multiple select allowed)</p>
                     <div class="hero-select-bx">
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {include_hidden: false}, { :multiple => true, :size => 4, :class => 'form-control address-val'} %>                
               </div>
               </div>
                   </div>
                     
-                  <div class="col-sm-4">
+                  <div class="col-sm-5">
                     <div class="step-rt-img-sec">
                       <%= image_tag 'tenant-image-step-1.jpg' %>
                     </div>
@@ -72,7 +72,7 @@
       <div class="col-sm-11">
         
         <div class="row">
-            <div class="col-sm-8 l-left-step-sec-01">
+            <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
                 <span class="location-2"><%= image_tag 'choice.png' %></span>
               <span class="step-name">Step 2</span>
@@ -160,7 +160,7 @@
                          </div> 
                     </div>
                     
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <div class="step-rt-img-sec">
                         <%= image_tag 'tenant-image-step-2.jpg' %>
                         </div>
@@ -170,8 +170,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="step-btn-pagination">
-                            <a href="javascript: void" class="blue-outline-btn" id="step2-prev">Previous Step</a>
                             <a href="javascript: void" class="primary-btn arrow-rt" id="step2-btn">Next step</a>
+                            <a href="javascript: void" class="blue-outline-btn" id="step2-prev">Previous Step</a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
           <div class="col-sm-11">
             
             <div class="row">
-              <div class="col-sm-8 l-left-step-sec-01">
+              <div class="col-sm-7 l-left-step-sec-01">
                 <div class="step-header">
                     <span class="location-2"><%= image_tag 'research.png' %></span>
                   <span class="step-name">Step 3</span>
@@ -210,7 +210,7 @@
                     <div class="inner-user-bx">
                       <%= f.check_box :is_air %>
                       <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'air-conditioner.png' %> <%= image_tag 'air-conditioner-active.png' %></span>
-                      <div class="text-label">Airconditioning</div>
+                      <div class="text-label">Air conditioning</div>
                     </div>
                     </label>
                   </div>
@@ -288,7 +288,7 @@
                 </div>  
               </div>
                     
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
                 <%= image_tag 'tenant-image-step-3.jpg' %>
             </div>
@@ -298,8 +298,9 @@
         <div class="row">
             <div class="col-sm-12">
             <div class="step-btn-pagination">
-                <a href="javascript: void" class="blue-outline-btn" id="step3-prev">Previous Step</a>
+                
                 <a href="javascript: void" class="primary-btn arrow-rt" id="step3-btn">Next step</a>
+                <a href="javascript: void" class="blue-outline-btn" id="step3-prev">Previous Step</a>
             </div>
           </div>
         </div>
@@ -327,7 +328,7 @@
       <div class="col-sm-11">
         
         <div class="row">
-          <div class="col-sm-8 l-left-step-sec-01">
+          <div class="col-sm-7 l-left-step-sec-01">
             <div class="step-header">
               <span class="location-2"><%= image_tag 'tenant-step-4.png' %></span>
               <span class="step-name">Step 4</span>
@@ -385,7 +386,7 @@
             </div>  
           </div>
                     
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="step-rt-img-sec">
                 <%= image_tag 'tenant-image-step-4.jpg' %>
             </div>
@@ -395,8 +396,9 @@
         <div class="row">
             <div class="col-sm-12">
             <div class="step-btn-pagination">
-                <a href="javascript: void" class="blue-outline-btn" id="step4-prev">Previous Step</a>
+                
                 <a href="javascript: void" class="primary-btn arrow-rt" id="step4-btn">Next step</a>
+                <a href="javascript: void" class="blue-outline-btn" id="step4-prev">Previous Step</a>
             </div>
           </div>
         </div>
@@ -424,10 +426,10 @@
         <div class="col-sm-11">
           
           <div class="row">
-            <div class="col-sm-8 l-left-step-sec-01">
+            <div class="col-sm-7 l-left-step-sec-01">
               <div class="step-header"> <span class="location-2"><%= image_tag 'calendar.png' %></span> <span class="step-name">Step 5</span> </div>
               <h2 class="heading-level-01">When Are You Looking To Move?</h2>
-              <p class="p-step">Choose the dutarion of stay</p>
+              <p class="select-step-label">Choose the dutarion of stay</p>
               <div class="row">
                 <div class="col-sm-3 check-property-step">
                   <label class="remember-sec user-label landlord">
@@ -460,8 +462,8 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <p class="p-step">Choose the arrival date</p>
-                  <label>Select Date: </label>
+                <p class="select-step-label">Choose the arrival date</p>
+                  <!--<label>Select Date: </label>-->
                   <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
                     <%= f.date_field :arrival_date, class: "form-control" %>
                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span> </div>
@@ -470,15 +472,16 @@
               
               
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <div class="step-rt-img-sec"> <%= image_tag 'tenant-image-step-5.jpg' %> </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <div class="step-btn-pagination"> 
-                <a href="javascript: void" class="blue-outline-btn" id="step5-prev">Previous Step</a> 
+                 
                 <a href="javascript: void" class="primary-btn arrow-rt" id="step5-btn">Next step</a>
+                <a href="javascript: void" class="blue-outline-btn" id="step5-prev">Previous Step</a>
                 </div>
             </div>
           </div>
@@ -503,7 +506,7 @@
         </div>
         <div class="col-sm-11">          
           <div class="row">
-            <div class="col-sm-8 l-left-step-sec-01">
+            <div class="col-sm-7 l-left-step-sec-01">
               <div class="step-header"> <span class="location-2"><%= image_tag 'debit-card.png' %></span> <span class="step-name">Step 6</span> </div>
               <h2 class="heading-level-01">What Is Your Monthly Budget? </h2>
               <div class="row">
@@ -512,13 +515,13 @@
                 <input type="text" class="js-range-slider" value="" />
             </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 mt-3">
                   <label class="price-label">From</label>
                   <div class="price-select-sec">
                     <%= f.number_field :min_budget, class: "js-input-from form-control" %>
                   </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 mt-3">
                   <label class="price-label">To</label>
                   <div class="price-select-sec">
                     <%= f.number_field :max_budget, class: "js-input-to form-control" %>
@@ -546,7 +549,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
               <div class="step-rt-img-sec"> <%= image_tag 'tenant-image-step-6.jpg' %> </div>
             </div>
           </div>
@@ -566,7 +569,7 @@
       
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'sign_up_user', class: "signup-form signin-form", 'data-type' => 'json', style: "border: none;"}, remote: true ) do |f| %>
-  <h2 style="text-align: center;">One Last Thing</h2>
+  <h2 style="text-align: center;">One last thing! Create an account to receive your messages!</h2>
 
   <div class="form-group mt-4">
     <span class="mail-icon"><%= image_tag("mail-icon.png", :alt => "mail-icon") %></span>

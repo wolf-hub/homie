@@ -9,7 +9,7 @@
                   
                     <div class="signin-outline">
                       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signin-form"})  do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render 'shared/devisemes', resource: resource %>
 
   <div class="form-group mt-4">
     <span class="mail-icon"><%= image_tag("email.png", :alt => "mail-icon") %></span>
