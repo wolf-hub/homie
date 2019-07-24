@@ -2154,7 +2154,8 @@ ul.chat-menu1 li:nth-child(2):before{display:none;}
 .form-control:focus, select:focus{outline:none; box-shadow:none !important; }
 
 .landloard-profile-btn-sec input#tenant_avatar{ width:58%; }
-#exampleModalCenter .form-control {padding:10px 40px;}
+#exampleModalCenter .form-control {padding:10px 55px;}
+#exampleModalCenter h2 span{font-size: 18px;}
 a:hover{text-decoration: none !important; outline: none;}
 select{-moz-appearance:none; -webkit-appearance:none; appearance:none; border-radius:0;}
 .signup-form .form-control {
@@ -2530,7 +2531,7 @@ input#pstepfinish:hover {
 div#exampleModalCenter2 .modal-footer {
   display: none;
 }
-div#exampleModalCenter2 .signup-form{margin-bottom: 0px;}
+div#exampleModalCenter2 .signup-form{margin: 0px;border:none; padding:0px 20px; width:100%;}
 .form-control, .form-group input[type=email], .form-group input[type=password]{border:1px solid #e5e5e5;}
 select.form-control {padding:13px 15px;height:auto;}
 .form-control{ border-radius: 4px !important; }
@@ -2547,6 +2548,7 @@ select.form-control {padding:13px 15px;height:auto;}
 }
 .step-btn-pagination .blue-outline-btn{float:left;margin-right:30px;}
 section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
+#exampleModalCenter .signin-form{padding:20px; margin:0px;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2804,9 +2806,15 @@ ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
 .landloard-step-sec .l-left-step-sec-01 {padding:0 15px 0 50px;flex:0 0 100%;max-width:100%;}
 .step-btn-pagination .blue-outline-btn{margin-right:0;}
 section#pstep6 .step-btn-pagination .blue-outline-btn, #step6 .step-btn-pagination .blue-outline-btn {float:none;width:auto;margin-right:5px;}
-
+#exampleModalCenter h2 {line-height:30px;}
+#exampleModalCenter .signin-form{padding:10px;}
+div#exampleModalCenter {padding:0px !important;}
+div#exampleModalCenter2 {padding:0 !important; }
+div#exampleModalCenter2 .signup-form{padding:0 10px !important;}
 }
-
+@media(max-width:575px){
+.price-select-sec input{width:100%;}
+}
 input[type=text]{
   height: 52px;
 }

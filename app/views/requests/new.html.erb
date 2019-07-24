@@ -569,15 +569,15 @@
       
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'sign_up_user', class: "signup-form signin-form", 'data-type' => 'json', style: "border: none;"}, remote: true ) do |f| %>
-  <h2 style="text-align: center;">One Last Thing</h2>
+  <h2 style="text-align: center;">One last thing! <br><span>Create an account to receive your messages!</span></h2>
 
   <div class="form-group mt-4">
-    <span class="mail-icon"><%= image_tag("mail-icon.png", :alt => "mail-icon") %></span>
+    <span class="mail-icon"><%= image_tag("email.png", :alt => "mail-icon") %></span>
     <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "johndoe@gmail.com" %>
   </div>
 
   <div class="form-group">
-    <span class="lock-icon"><%= image_tag("padlock.png", :alt => "padlock") %> </span>
+    <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
     
     <%= f.password_field :password, placeholder: '123456', class: "form-control", autocomplete: "new-password" %>
     <span class="visible-pw">
@@ -585,7 +585,7 @@
   </div>
 
   <div class="form-group">
-    <span class="lock-icon"><%= image_tag("padlock.png", :alt => "padlock") %> </span>
+    <span class="lock-icon"><%= image_tag("lock.png", :alt => "padlock") %> </span>
     <%= f.password_field :password_confirmation, class: "form-control", value: '123456', autocomplete: "new-password" %>
     <span class="visible-pw"><%= image_tag("not-visible.png", :alt => "not-visible") %></span>
   </div>  
@@ -598,8 +598,6 @@
   
 <% end %>
       </div>
-      <div class="modal-footer" style="border: none;">
-  </div>
-    </div>
+      </div>
   </div>
 </div>
