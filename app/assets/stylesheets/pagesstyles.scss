@@ -242,7 +242,7 @@ footer .term-menu li a{ color:#787676; }
 .signin-form .form-group{ position:relative; clear:both; }
 .mail-icon {
     position: absolute;
-    left: 20px;
+    left:15px;
     top: 14px;
 }
 .mail-icon img, .lock-icon img{ width:23px; }
@@ -474,8 +474,9 @@ footer .term-menu li a{ color:#787676; }
 
 .landloard-content{ padding:40px 0; }
 .landloard-profile-head .navbar li{ padding:0px; }
-.landloard-profile-head .navbar li a{ padding:10px 20px; }
-.landloard-profile-head .navbar li a:hover, .landloard-profile-head .navbar li.active a{ background:#e6f6f8; border-radius:5px; color:#02a1b5;}
+.landloard-profile-head .navbar li a{ padding:6px 20px; color:#333; }
+.landloard-profile-head .navbar li a:hover{background:#02a1b5; color:#fff;border-radius:5px;}
+.landloard-profile-head .navbar li.active a{ background:#e6f6f8; border-radius:5px; color:#02a1b5;}
 .landloard-profile-head .navbar li a:after{ display:none; }
 
 .l-sidebar {
@@ -1716,7 +1717,7 @@ div#send-property {
   font-weight: normal;
   line-height:normal;
   letter-spacing: normal;
-  color: #000000; background:#fff !important; height:auto; padding:7px 10px 9px 40px;
+  color: #000000; background:#fff !important; height:auto; padding:13px 10px 13px 40px;
 }
 #datepicker .form-control:focus{box-shadow:0 0 10px 0 rgba(64, 209, 228, 0.5) !important;border: solid 1px #02a1b5;}
 
@@ -1724,7 +1725,7 @@ div#send-property {
 #datepicker .input-group-addon {
     position: absolute;
     left: 15px;
-    top:10px; z-index:9; opacity:0.7;
+    top:15px; z-index:9; opacity:0.7;
 }
 .datepicker-months {
     width: 300px;
@@ -2154,7 +2155,8 @@ ul.chat-menu1 li:nth-child(2):before{display:none;}
 .form-control:focus, select:focus{outline:none; box-shadow:none !important; }
 
 .landloard-profile-btn-sec input#tenant_avatar{ width:58%; }
-#exampleModalCenter .form-control {padding:10px 40px;}
+#exampleModalCenter .form-control {padding:10px 55px;}
+#exampleModalCenter h2 span{font-size: 18px;}
 a:hover{text-decoration: none !important; outline: none;}
 select{-moz-appearance:none; -webkit-appearance:none; appearance:none; border-radius:0;}
 .signup-form .form-control {
@@ -2196,7 +2198,7 @@ select{-moz-appearance:none; -webkit-appearance:none; appearance:none; border-ra
   font-size: 18px;
   line-height: normal;
   font-weight: normal;
-  color: #ffffff !important;
+  color: #ffffff !important;  
   padding: 15px 40px !important;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -2530,7 +2532,7 @@ input#pstepfinish:hover {
 div#exampleModalCenter2 .modal-footer {
   display: none;
 }
-div#exampleModalCenter2 .signup-form{margin-bottom: 0px;}
+div#exampleModalCenter2 .signup-form{margin: 0px;border:none; padding:0px 20px; width:100%;}
 .form-control, .form-group input[type=email], .form-group input[type=password]{border:1px solid #e5e5e5;}
 select.form-control {padding:13px 15px;height:auto;}
 .form-control{ border-radius: 4px !important; }
@@ -2547,16 +2549,25 @@ select.form-control {padding:13px 15px;height:auto;}
 }
 .step-btn-pagination .blue-outline-btn{float:left;margin-right:30px;}
 section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
+#exampleModalCenter .signin-form{padding:20px; margin:0px;}
+.landloard-profile-head .navbar li a{line-height:30px;transition:none;}
+.landloard-profile-head .navbar li .fa{font-size:22px; position: relative; top:3px;}
+.landloard-profile-head .navbar li{padding-left: 30px;}
+.landloard-profile-head .navbar li:nth-child(4){position: relative;}
+.landloard-profile-head .navbar li:nth-child(4):before{content: ""; width:1px; height:30px; background: #e5e5e5; position: absolute; left: 10px; top:7px;}
+.landloard-profile-head .navbar li ul.chat-menu1 li a {
+  line-height: normal; padding: 10px 15px;
+}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
 @media(max-width:1199px){
   .landloard-profile-head .navbar li a{ padding:10px; }
   .landloard-profile-head .navbar{ right:0px; }
-  .header .navbar li{ padding:0px; font-size:13px; }
+  .header .navbar li{  font-size:13px; }
   .profile-rt-header .l-profile-img{ margin-left:0px; }
   .profile-rt-header ul.profile-rt li a{ font-size:13px; }
-  .profile-rt-header ul.profile-rt li{ padding:0 5px; }
+  .profile-rt-header ul.profile-rt li{ padding:0 5px; }.landloard-profile-head .navbar li:nth-child(4):before
   .l-sidebar{ padding:15px; }
   .main-landloard-profile-sec .checked-tick-icon {
     width: 20px;
@@ -2804,9 +2815,20 @@ ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
 .landloard-step-sec .l-left-step-sec-01 {padding:0 15px 0 50px;flex:0 0 100%;max-width:100%;}
 .step-btn-pagination .blue-outline-btn{margin-right:0;}
 section#pstep6 .step-btn-pagination .blue-outline-btn, #step6 .step-btn-pagination .blue-outline-btn {float:none;width:auto;margin-right:5px;}
+#exampleModalCenter h2 {line-height:30px;}
+#exampleModalCenter .signin-form{padding:10px;}
+div#exampleModalCenter {padding:0px !important;}
+div#exampleModalCenter2 {padding:0 !important; }
+div#exampleModalCenter2 .signup-form{padding:0 10px !important;}
+.landloard-profile-head .navbar li:nth-child(4):before{display:none; }
+}
+@media(max-width:767px){
+  .l-sidebar.aside-1{display: none;}
 
 }
-
+@media(max-width:575px){
+.price-select-sec input{width:100%;}
+}
 input[type=text]{
   height: 52px;
 }

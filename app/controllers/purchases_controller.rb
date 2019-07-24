@@ -3,12 +3,13 @@ class PurchasesController < ApplicationController
   end
 
   def create
+
   	@property = Property.find(purchase_params[:property_id])
   	@request = Request.find(purchase_params[:request_id])
   	@purchase = @request.purchases.build(purchase_params)
   	@purchase.user_id = current_user.id
 
-  	if current_user.stripe_id.blank?
+    if current_user.stripe_id.blank?
       flash[:alert] = "Please update your payment method."
       return redirect_to payment_method_path
   		

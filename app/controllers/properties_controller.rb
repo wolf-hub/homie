@@ -66,6 +66,7 @@ class PropertiesController < ApplicationController
   end
 
   def show_request
+    session["property_id"] = params[:id]
     @property = Property.find(params[:id])
     @request = Request.find(params[:format])
     @purchase = @request.purchases.build

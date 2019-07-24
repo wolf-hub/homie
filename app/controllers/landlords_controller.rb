@@ -11,8 +11,7 @@ class LandlordsController < ApplicationController
        else
          @landlord = Landlord.new(user_id: current_user.id)
        end
-       
-     end     
+     end  
   end
 
   def create
@@ -65,9 +64,11 @@ class LandlordsController < ApplicationController
   end
 
   def payment
+    session["HTTP_REFERER"] = request.headers["HTTP_REFERER"]
   end
 
   def add_card
+    updated = false
     if current_user.stripe_id.blank?
       customer = Stripe::Customer.create(
         email: current_user.email
@@ -81,10 +82,31 @@ class LandlordsController < ApplicationController
       customer = Stripe::Customer.retrieve(current_user.stripe_id)
       customer.source = params[:stripeToken]
       customer.save
+      updated = true
     end
 
-    flash[:notice] = "Your card is saved."
-    redirect_to payment_method_path
+    if updated == true
+      flash[:notice] = "Your card is updated."
+    else
+      flash[:notice] = "Your card is saved."
+    end    
+    if session["HTTP_REFERER"].present?
+      if session["HTTP_REFERER"].include? "/landlords/new"
+        redirect_to new_landlord_path
+      elsif session["HTTP_REFERER"].include? "/payment_method"
+        redirect_to payment_method_path
+      elsif session["HTTP_REFERER"].include? "/show_request"
+        if session["property_id"].present?
+          redirect_to all_requests_property_path(session["property_id"])
+        else
+          redirect_to root_path
+        end
+      else
+        redirect_to root_path
+      end
+    else
+      redirect_to root_path
+    end
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to payment_method_path
