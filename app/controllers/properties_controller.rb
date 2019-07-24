@@ -56,13 +56,13 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @requests = Request.where(home_type: @property.home_type, duration: @property.minimum_lease)
+    @requests = helpers.getenquires(@property)
     authorize! :read, @property   
   end
   
   def all_requests
     @property = Property.find(params[:id])
-    @requests = Request.where(home_type: @property.home_type, duration: @property.minimum_lease)
+    @requests = helpers.getenquires(@property)
   end
 
   def show_request

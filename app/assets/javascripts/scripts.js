@@ -72,6 +72,8 @@ window.onload = function(){
 // }
 jQuery(document).ready(function() {
 
+ 
+
  $menu = $('.chat-menu1');
 
 $(document).mouseup(function (e) {

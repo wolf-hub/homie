@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_07_112801) do
+ActiveRecord::Schema.define(version: 2019_07_24_073647) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_07_07_112801) do
     t.string "address"
     t.string "minimum_lease"
     t.text "summary"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

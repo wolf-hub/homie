@@ -28,7 +28,7 @@
 	        </div>
 	    </div>
 	    <div class="pro-btn-sec">
-	       	<% @requests = Request.where(home_type: property.home_type, room_type: property.room_type, duration: property.minimum_lease) %>
+	       	<% @requests = getenquires(property) %>
 	        <a href="<%= all_requests_property_url(property) %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>
 	        
 	        <% if property.active? %>

@@ -1,6 +1,8 @@
 module ApplicationHelper
 	
-	
+	def getenquires(property)
+		Request.where(home_type: property.home_type, duration: property.minimum_lease, city: property.city)
+	end
 
 	def cp(path)
 	  "active" if current_page?(path)
