@@ -647,6 +647,36 @@ if (elem != null)
         hiddenDiv.style.display = (this.value == "") ? "none":"block";
     };
 }
+$('.step-btn-pagination a').click(function() {
+
+    $('html, body').animate({
+      scrollTop: '0px'
+    });
+  
+  });
+  jQuery('.inner-user-bx input:radio').change(function(){
+    if($(this).is(":checked")) {
+        $('.user-label').removeClass('active');
+        $(this).closest('.user-label').addClass('active')
+   } else {
+       $(this).closest('.user-label').removeClass("active");
+   }
+   
+   
+});
+
+
+$(function(){
+	
+	$('.navbar-nav a').each(function() {
+		
+        if ($(this).attr('href') == window.location.pathname) {
+        	
+            $(this).parent().addClass('active');
+        }
+    });
+});
+
 });
 
 // $('.toggleTypeIcon1').click(function(){
