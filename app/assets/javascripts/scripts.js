@@ -667,7 +667,16 @@ $('.step-btn-pagination a').click(function() {
    
 });
 
-
+jQuery('.inner-user-bx input:checkbox').change(function(){
+    if($(this).is(":checked")) {
+       
+        $(this).closest('.user-label').addClass('active')
+   } else {
+       $(this).closest('.user-label').removeClass("active");
+   }
+   
+   
+});
 $(function(){
 	
 	$('.navbar-nav a').each(function() {

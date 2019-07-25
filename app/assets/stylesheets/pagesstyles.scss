@@ -82,7 +82,7 @@ background: -o-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%
 background: -ms-linear-gradient(left, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
 background: linear-gradient(to right, rgba(2,160,181,1) 0%, rgba(2,160,181,1) 41%, rgba(64,209,228,1) 90%, rgba(64,209,228,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a0b5', endColorstr='#40d1e4', GradientType=1 );
-  font-size:16px;
+  font-size:20px;
   line-height: normal;
   font-weight:normal;
   color:#ffffff !important;
@@ -102,11 +102,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a0b5', end
 .default-btn{ box-shadow: -2px 10px 15px 0 rgba(255, 255, 255, 0.5); background-color: #ffffff; transition:0.5s all ease-in-out; padding:22px 50px; font-size:24px;font-weight:normal;color: #02a1b5; border-radius:5px; display:inline-block;}
 .default-btn:hover{ box-shadow:none; }
 
-.light-blue-btn{ background-color: rgba(2, 161, 181, 0.1); font-family: 'Sofia Pro'; font-weight: normal; color: #02a1b5; padding:3px 10px 7px; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center; }
+.light-blue-btn{ background-color: rgba(2, 161, 181, 0.1); font-family: 'Sofia Pro'; font-weight: normal; color: #02a1b5; padding:11px 8px 10px; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center; }
 
 .light-blue-btn:hover{ box-shadow:0 50px 0 #40d1e4 inset; color:#fff; }
 .light-red-btn{ background-color: rgba(226, 55, 55, 0.1); font-family: 'Sofia Pro'; font-weight: normal; color: #e23737
-; padding:7px 10px; border:none; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center;}
+; padding:11px 10px 10px; border:none; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center;}
 
 .light-red-btn:hover{ box-shadow:0 50px 0 #e23737 inset; color:#fff; }
 
@@ -795,11 +795,11 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
   margin-bottom: 10px;
   margin-top: 25px;
 }
-.step-btn-pagination {
-    margin-top: 120px;
+
+.step-btn-pagination { 
     padding-top: 50px;
     border-top: 1px solid #efefef;
-    margin:30px 0 0 50px;
+    margin:30px 0 0 35px;
 	width:75%;
 }
 .step-btn-pagination a{ font-size:20px; font-family: "Sofia Pro";; }
@@ -2156,7 +2156,8 @@ ul.chat-menu1 li:nth-child(2):before{display:none;}
 
 .landloard-profile-btn-sec input#tenant_avatar{ width:58%; }
 #exampleModalCenter .form-control {padding:10px 55px;}
-#exampleModalCenter h2 span{font-size: 18px;}
+#exampleModalCenter h2 span, #exampleModalCenter2 h2 span{font-size: 18px;}
+#exampleModalCenter h2, #exampleModalCenter2 h2{margin-bottom:20px;}
 a:hover{text-decoration: none !important; outline: none;}
 select{-moz-appearance:none; -webkit-appearance:none; appearance:none; border-radius:0;}
 .signup-form .form-control {
@@ -2532,7 +2533,7 @@ input#pstepfinish:hover {
 div#exampleModalCenter2 .modal-footer {
   display: none;
 }
-div#exampleModalCenter2 .signup-form{margin: 0px;border:none; padding:0px 20px; width:100%;}
+div#exampleModalCenter2 .signup-form{margin: 0px;border:none; padding:40px; width:100%;}
 .form-control, .form-group input[type=email], .form-group input[type=password]{border:1px solid #e5e5e5;}
 select.form-control {padding:13px 15px;height:auto;}
 .form-control{ border-radius: 4px !important; }
@@ -2549,15 +2550,17 @@ select.form-control {padding:13px 15px;height:auto;}
 }
 .step-btn-pagination .blue-outline-btn{float:left;margin-right:30px;}
 section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
-#exampleModalCenter .signin-form{padding:20px; margin:0px;}
+#exampleModalCenter .signin-form{padding:40px; margin:0px; width:100%;}
 .landloard-profile-head .navbar li a{line-height:30px;transition:none;}
 .landloard-profile-head .navbar li .fa{font-size:22px; position: relative; top:3px;}
 .landloard-profile-head .navbar li{padding-left: 30px;}
 .landloard-profile-head .navbar li:nth-child(4){position: relative;}
 .landloard-profile-head .navbar li:nth-child(4):before{content: ""; width:1px; height:30px; background: #e5e5e5; position: absolute; left: 10px; top:7px;}
-.landloard-profile-head .navbar li ul.chat-menu1 li a {
-  line-height: normal; padding: 10px 15px;
-}
+.landloard-profile-head .navbar li ul.chat-menu1 li a {line-height: normal; padding: 10px 15px;}
+#exampleModalCenter .signin-form .primary-btn, #exampleModalCenter2 .signin-form .primary-btn{width: 100%;}
+.modal-backdrop.show{opacity:0.9 !important;}
+.modal-backdrop{background:#fff !important;}
+.modal-content{border: none !important;box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
