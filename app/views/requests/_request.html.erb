@@ -1,6 +1,8 @@
 <div class="col-md-4">
-  <div class="apartment-pro-bx list-common">
+  <div class="apartment-pro-bx  new-design list-common">
     <div class="apartment-header">
+    <div class="apt-inr-head">
+    <span class="property-price"> $<%= request.min_budget %>-<%= request.max_budget %> </span>
       <% if current_user.id == request.user_id %>
        	<a href="<%= request_path(request) %>">
           <h5><%= request.home_type %></h5>
@@ -10,25 +12,19 @@
           <h5><%= request.home_type %></h5>
         </a>
       <% end %>
-      <div class="row">
-        <div class="col-sm-6">
-          <span class="location-name"><%= request.city %></span> 
-        </div>
-        <div class="col-md-6 text-right"> 
-          <span class="property-price"> $<%= request.min_budget %>-<%= request.max_budget %> </span> 
-        </div>
+      <span class="location-name"><%= request.city %></span> 
       </div>
     </div>
     <div class="apartment-dtl-list">
       <ul class="pro-dtl-list">
         <li>
-          <span class="f-icon"><%= image_tag 'calendar.png' %></span> <span><%= request.arrival_date %> - <%= request.duration %></span> Months
+          <span class="f-icon"><%= image_tag 'calendar.png' %> <span><%= request.arrival_date %> </span></span>  <span class="duration"><span><%= request.duration %></span> Months</span>
         </li>
         <li>
-          <span class="f-icon"><%= image_tag 'bed-grey-icon-1.png' %></span> <span><%= request.bed_room %></span> <%= 'bedroom'.pluralize(request.bed_room) %>
+          <span class="f-icon"><%= image_tag 'bed-icon.png' %> <span><%= request.bed_room %></span> </span>  <span class="duration"><%= 'bedroom'.pluralize(request.bed_room) %></span>
         </li>
         <li>
-          <span class="f-icon"><%= image_tag 'bathtub-grey-icon-1.png' %></span> <span><%= request.bath_room %></span> <%= 'bathroom'.pluralize(request.bath_room) %>
+          <span class="f-icon"><%= image_tag 'bathtub-icon.png' %> <span><%= request.bath_room %></span></span> <span class="duration"><%= 'bathroom'.pluralize(request.bath_room) %></span>
         </li>
       </ul>
       <% @purchases = Purchase.where(request_id: request.id) %>

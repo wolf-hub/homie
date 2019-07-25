@@ -8,18 +8,20 @@
       </div>
 
       <div class="col-md-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">Payment Method</div>
-          <div class="panel-body">
+        
+          
+          
             <div class="container">
+            <div class="payment-card-dt">
+            <div class="panel-heading">Payment Method</div>
                 <%= form_tag("/add_card", method: "post", id: "add-card") do %>
                   <label>
-                    <span>Name</span>
+                    <span>Name on Card <span class="red-color">*</span></span>
                     <input name="cardholder-name" class="field" placeholder="Jane Doe" />
                   </label>
 
                   <label>
-                    <span>Card</span>
+                    <span>Card Number <span class="red-color">*</span></span>
                     <div id="card-element" class="field"></div>
                   </label>
 
@@ -36,7 +38,7 @@
             </div>
           </div>
         </div>
-      </div>
+     
     </div>
   </div>
 </section>
