@@ -1,7 +1,7 @@
 module ApplicationHelper
 	
 	def getenquires(property)
-		Request.where(home_type: property.home_type, duration: property.minimum_lease, city: property.city)
+		Request.where(home_type: property.home_type, duration: property.minimum_lease, city: property.city).where("address like ? and min_budget <= ? and max_budget >= ? ","%#{property.address}%",property.price,property.price)
 	end
 
 	def cp(path)
