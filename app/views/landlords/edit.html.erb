@@ -39,12 +39,12 @@
                   </div>
                   <div class="form-group">
                     <label>Add your address</label>
-                    <%= f.text_field :address, class: "form-control" %> 
+                    <%= f.text_field :address, class: "form-control tenant-address" %> 
                   </div>
-                  <div class="form-group">
+                  <div class="form-group ">
                     <label>Add a phone number <span>Only tenants can see it to contact you.</span></label>
                     <div class="row">                      
-                      <div class="col-md-6">
+                      <div class="col-md-6 phonne-tenant">
                         <%= f.telephone_field :phone_number, class: "form-control p-number" %> 
                       </div>
                     </div>

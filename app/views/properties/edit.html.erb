@@ -8,12 +8,23 @@
       <div class="col-md-9">
         <%= form_for @property do |f| %>
         <div class="landloard-rt-sec tenant-edit-request">
-          <div class="row">
+          <div class="row v-center">
             <div class="col-md-7">
               <div class="back-to-req-sec"> <a href="<%= property_path %>" class="back-to-request"> <span class="back-arrow"></span> <span>Back to Property</span> </a> </div>
             </div>
-            <div class="col-md-5 text-right mb-0"> <%= f.submit "Save", class: "primary-btn" %> </div>
+            <div class="col-md-5 text-right">
+               <label class="remember-sec">
+                   <%= f.check_box :active %>
+                   <span class="checkmark"></span>  Active
+                 </label></div>
+                 
+                 <!--<div class="col-md-5 text-right mb-0"> <%= f.submit "Save", class: "primary-btn" %> </div>-->
           </div>
+          <div class="row">
+                  <div class="col-md-12">
+                  <div class="divider-line"></div>
+                  </div>
+                 </div>
           <div class="row">
             <div class="col-md-12">
               <div class="divider-h divider-h-2"></div>
@@ -21,11 +32,7 @@
                  <div class="col-md-7">
                   <%= f.text_field :property_name, placeholder: "Add name of property", class: "form-control" %>
                </div>
-               <div class="col-md-5 text-right">
-               <label class="remember-sec">
-                   <%= f.check_box :active %>
-                   <span class="checkmark"></span>  Active
-                 </label></div>
+               
              </div>
               <h5 class="heading-level-05 mb-3">Which Type of Property Do You Have?</h5>
               <ul class="pro-list">
@@ -317,7 +324,7 @@
             </div>
             <div class="col-md-4 mb-0">
               <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 l-price-sec">
                   <label class="lebel-margin-t">What is the monthly rent? </label>
                   <div class="price-select-sec price-symbol">
                     <%= f.number_field :price, class: "form-control" %>
@@ -327,7 +334,7 @@
             </div>
           </div>
           
-          <div class="row">
+          <div class="row l-price-sec"">
             <div class="col-md-4 mt-3">
               <label>Choose a room type</label>
               <div class="price-select-sec">
@@ -352,7 +359,7 @@
           
           <div class="row">
             <div class="col-md-12">
-              <div class="chat-footer l-open-pro-footer">
+              <div class="chat-footer l-open-pro-footer mt-2 mb-3 pl-0 mbb-0">
                 <div class="row">
                   <div class="col-md-12"> <%= f.submit "Save", class: "primary-btn f-btn" %>
                  <a href="#" class="light-blue-btn f-btn">Cancel</a> </div>
