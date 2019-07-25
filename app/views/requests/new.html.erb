@@ -27,7 +27,7 @@
                       <%= f.select :city, ['Los Angeles'], {prompt: "Where are you looking to move?"}, {class: "city-val"} %>
                     </div>  
                     <div id="distts-sec">
-                    <p class="select-step-label">Pick Districts which you prefer (multiple select allowed)</p>
+                    <p class="select-step-label">Pick Which Neighborhoods You Prefer (multiple select allowed)</p>
                     <div class="hero-select-bx">
                 <%= f.select :address, ['Beverly Hills', 'Brentwood', 'Downtown', 'Hollywood', 'Manhattan Beach', 'Miracle Mile', 'Santa Monica', 'Silver Lake and Echo Park', 'The Valley', 'Venice', 'West Hollywood', 'West LA and Culver City', 'Westwood'], {include_hidden: false}, { :multiple => true, :size => 4, :class => 'form-control address-val'} %>                
               </div>
@@ -210,7 +210,7 @@
                     <div class="inner-user-bx">
                       <%= f.check_box :is_air %>
                       <span class="checkmark"></span> <span class="user-icon"><%= image_tag 'air-conditioner.png' %> <%= image_tag 'air-conditioner-active.png' %></span>
-                      <div class="text-label">Air conditioning</div>
+                      <div class="text-label">Air Conditioning</div>
                     </div>
                     </label>
                   </div>
@@ -515,13 +515,13 @@
                 <input type="text" class="js-range-slider" value="" />
             </div>
                 </div>
-                <div class="col-sm-6 mt-3">
+                <div class="col-sm-6 mt-3 range-in-bx-l">
                   <label class="price-label">From</label>
                   <div class="price-select-sec">
                     <%= f.number_field :min_budget, class: "js-input-from form-control" %>
                   </div>
                 </div>
-                <div class="col-sm-6 mt-3">
+                <div class="col-sm-6 mt-3 range-in-bx-r">
                   <label class="price-label">To</label>
                   <div class="price-select-sec">
                     <%= f.number_field :max_budget, class: "js-input-to form-control" %>
@@ -538,12 +538,13 @@
                                     <li><%= image_tag 'up-broken-line-arrow3.png' %></li>
                                 </ul>
                             </div>
-                            <a href="javascript: void" class="blue-outline-btn" id="step6-prev">Previous Step</a>
                             <% if user_signed_in? %>
-                              <%= f.submit "Finish", id: "stepfinishsign", class: "primary-btn checked-btn" %>
-                            <% else %>
-                              <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>
-                            <% end %>
+                            <%= f.submit "Finish", id: "stepfinishsign", class: "primary-btn checked-btn" %>
+                          <% else %>
+                            <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>
+                          <% end %>
+                            <a href="javascript: void" class="blue-outline-btn" id="step6-prev">Previous Step</a>
+                           
                                                         
                         </div>
                     </div>

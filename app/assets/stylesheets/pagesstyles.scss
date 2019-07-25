@@ -104,11 +104,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a0b5', end
 
 .light-blue-btn{ background-color: rgba(2, 161, 181, 0.1); font-family: 'Sofia Pro'; font-weight: normal; color: #02a1b5; padding:11px 8px 10px; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center; }
 
-.light-blue-btn:hover{ box-shadow:0 50px 0 #40d1e4 inset; color:#fff; }
+.light-blue-btn:hover{ box-shadow:0 55px 0 #40d1e4 inset; color:#fff; }
 .light-red-btn{ background-color: rgba(226, 55, 55, 0.1); font-family: 'Sofia Pro'; font-weight: normal; color: #e23737
 ; padding:11px 10px 10px; border:none; border-radius:5px; transition:all 0.5s ease-in-out; display:inline-block; text-align:center;}
 
-.light-red-btn:hover{ box-shadow:0 50px 0 #e23737 inset; color:#fff; }
+.light-red-btn:hover{ box-shadow:0 55px 0 #e23737 inset; color:#fff; }
 
 .blue-outline-btn{
   font-size: 20px;
@@ -258,9 +258,7 @@ footer .term-menu li a{ color:#787676; }
     width: 20px;
 }
 
-.checkmark{
-  margin-top: -5px;
-}
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(200, 202, 204) !important;
@@ -379,8 +377,8 @@ footer .term-menu li a{ color:#787676; }
   position: absolute;
   top: 0;
   left: 0;
-  height:18px;
-  width:18px;
+  height:20px;
+  width:20px;
   background-color: #eee;
   border-radius:2px;
 }
@@ -405,19 +403,19 @@ footer .term-menu li a{ color:#787676; }
 
 /* Style the checkmark/indicator */
 .remember-sec .checkmark:after {
-  left: 5px;
-  top:1px;
-  width:7px;
+  left: 6px;
+  top:2px;
+  width:6px;
   height:11px;
   border: solid white;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .user-label{ display:flex; align-items:center; justify-content:center; height:100%; width:100%; padding:15px 15px 8px; border:1px solid #e5e5e5; border-radius:5px; color:#787676; font-size:18px; line-height:1; }
 .user-label .inner-user-bx{ text-align:center; }
-.user-label .checkmark{ left:auto; right:8px; top:12px; background:none; border:1px solid #e5e5e5; }
+.user-label .checkmark{ left:auto; right:8px; top:8px; background:none; border:1px solid #e5e5e5; }
 
 
 /* When the checkbox is checked, add a blue background */
@@ -822,9 +820,11 @@ div#sync2 .item img{ background-size:cover !important; height:100%; width:100%; 
   content: '$';
   position: absolute;
   line-height: 38px;
-  margin-left: -15px;
+  margin-left:15px;
 }
-
+.price-select-sec.price-symbol input {
+  padding-left: 32px;
+}
 .l-step-2-bed-list select {
     width:84px;
     padding:5px 0px 5px 11px;
@@ -1717,7 +1717,7 @@ div#send-property {
   font-weight: normal;
   line-height:normal;
   letter-spacing: normal;
-  color: #000000; background:#fff !important; height:auto; padding:13px 10px 13px 40px;
+  color: #000000; background:#fff !important; height:52px !important; padding:13px 10px 13px 40px;
 }
 #datepicker .form-control:focus{box-shadow:0 0 10px 0 rgba(64, 209, 228, 0.5) !important;border: solid 1px #02a1b5;}
 
@@ -1884,7 +1884,7 @@ ul.pro-list.c-p-step-list li {
 .remove-image-btn img{ width:14px !important; height:auto !important; }
 .f-btn {
     font-size: 20px !important;
-    padding: 8px 25px 12px!important;
+    padding:12px 25px 9px!important; 
     line-height: 31px;
     margin-right: 15px; width:auto !important; min-width:150px;
 }
@@ -1924,12 +1924,7 @@ ul.pro-list.c-p-step-list li {
 }
 .remove_pict a{ color:#e5e5e5; }
 .remove-image-btn img{ width:14px !important; height:auto !important; }
-.f-btn {
-    font-size: 20px !important;
-    padding: 8px 25px 12px!important;
-    line-height: 31px;
-    margin-right: 15px; width:auto !important; min-width:150px;
-}
+
 .gallery div{ position:relative; }
 .header .notification-list li{ margin:0px !important; }
 .landloard-profile-head .notification-list li a:hover, .landloard-profile-head .notification-list li.active a{ background:none; }
@@ -2540,7 +2535,7 @@ select.form-control {padding:13px 15px;height:auto;}
 
 .price-select-sec input {
   border-radius: 0 !important;
-  width: 200px;
+  width: 100%;
   border: solid 1px #02a1b5 !important;
 }
 .col-sm-3.check-property-step {
@@ -2561,6 +2556,11 @@ section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
 .modal-backdrop.show{opacity:0.9 !important;}
 .modal-backdrop{background:#fff !important;}
 .modal-content{border: none !important;box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);}
+.header .brand img, .brand-logo img {max-width: 70px;}
+.border-btm-1 {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 25px;
+}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2654,13 +2654,14 @@ h5.heading-level-05.mb-3.mt-5 {
   max-width: 32%;
   padding:0 0 0 15px; margin-bottom:15px;
 }
+.ad-tp-space{padding-top:20px;}
 .next-steps-list li{padding-right:4%;}
 .next-steps-list li a .step-text{font-size:14px;}
 .step-btn-pagination a {margin:0 0 15px;width:100%;}
 .next-steps-list li{background-size:42px;background-position: right 20px;}
 	}
 @media(max-width:991px){
-body{ padding-top:51px; }
+body{ padding-top:45px; }
 .home-sec-3, .home-sec-5{ text-align:center; }
 .home-sec-4{ text-align:center; padding:40px 0 30px; }
 footer .footer-top, footer .copyright-footer, footer .term-menu, footer .social-media{ text-align:center; }
@@ -2669,8 +2670,9 @@ footer ul.f-menu li:last-child{ margin-bottom:0px; }
 footer .social-media{ margin-top:15px; }
 a.arrow-scroll-btn{ bottom:5px; }
 a.arrow-scroll-btn img{ width:30px; }
-.home-w-sec-3{ padding:30px; background:rgba(255, 255, 255, 0.5); }
+.home-w-sec-3{ padding:40px 30px; background:rgba(255, 255, 255, 0.95); border-radius:0px; }
 footer .social-media li{margin-left:0px; }
+.home-inr-sec-3{padding: 0px;}
 .home-sec-3 .col-md-8 {flex:0 0 100%;max-width:100%;padding:0;}
 .home-sec-5 .interested-gallery-sec{ margin-bottom:30px; }
 .banner-wrapper .hero-select-bx{ padding-top:10px; }
@@ -2722,8 +2724,8 @@ footer .social-media li{margin-left:0px; }
 }
 .step-rt-img-sec:before{right:0px;}
 .heading-level-01 {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 30px;
+  line-height:40px;
   margin-bottom: 20px;
 }
 
@@ -2768,7 +2770,7 @@ footer .footer-top {padding:40px 0 20px;}
 .next-steps-list li a .step-text{font-size: 13px;}
 .landloar-cong-sec .step-btn-pagination{margin-bottom: 30px;}
 .landloard-step-sec {padding:40px 0;}
-.landloard-rt-sec{ margin-top:30px; }
+.landloard-rt-sec{ margin-top:0px; }
 .landloard-rt-sec .owl-nav .owl-prev, .landloard-rt-sec .owl-nav .owl-next{width:40px;height:40px;}
 .landloard-rt-sec .owl-nav .owl-prev span, .landloard-rt-sec .owl-nav .owl-next span{background-size:20px !important; height:40px;}
 .landloard-rt-sec .col-md-4.text-right {text-align:left !important;}
@@ -2812,22 +2814,33 @@ ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
 .landloard-step-sec .step-rt-img-sec{display:none; }
 .landloard-step-sec .col-md-1 {flex:0 0 100%;max-width:100%;}
 .l-left-step-sec-01 .user-icon img {width:30px;}
-.remember-sec .checkmark:after {left:6px;top:0px;}
 .landloar-cong-sec .col-md-8 {flex:0 0 100%;max-width:100%;}
 .user-label .checkmark{right:6px !important;}
 .landloard-step-sec .l-left-step-sec-01 {padding:0 15px 0 50px;flex:0 0 100%;max-width:100%;}
 .step-btn-pagination .blue-outline-btn{margin-right:0;}
-section#pstep6 .step-btn-pagination .blue-outline-btn, #step6 .step-btn-pagination .blue-outline-btn {float:none;width:auto;margin-right:5px;}
+section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;width:auto;margin-right:5px;}
+#step6 .step-btn-pagination .blue-outline-btn{margin-right:0}
+#step6 .step-btn-pagination #stepfinishsign{width:100%;margin:10px 0;}
 #exampleModalCenter h2 {line-height:30px;}
 #exampleModalCenter .signin-form{padding:10px;}
 div#exampleModalCenter {padding:0px !important;}
 div#exampleModalCenter2 {padding:0 !important; }
 div#exampleModalCenter2 .signup-form{padding:0 10px !important;}
 .landloard-profile-head .navbar li:nth-child(4):before{display:none; }
+footer .social-media{display:none;}
+.select-step-label{line-height:24px;}
+.range-in-bx-l{padding-right:8px !important;}
+.range-in-bx-r{padding-left:8px !important;}
+.landloard-profile-btn-sec input#landlord_avatar {
+  max-width: 100%;
+  width: 100%;
+}
+.landloard-rt-sec{padding:20px 20px 0;}
+.edit-landloard-profile input[type=submit]{width: 100%;}
 }
 @media(max-width:767px){
   .l-sidebar.aside-1{display: none;}
-
+  section#step6 .col-sm-6.mt-3 {max-width:50%;}
 }
 @media(max-width:575px){
 .price-select-sec input{width:100%;}

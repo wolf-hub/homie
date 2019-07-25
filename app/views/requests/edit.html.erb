@@ -8,10 +8,10 @@
         <%= form_for @request do |f| %>
         <div class="landloard-rt-sec tenant-edit-request">
           <div class="row">
-            <div class="col-md-8">
-              <div class="back-to-req-sec"> <a href="#" class="back-to-request"> <span class="back-arrow"></span> <span>Back to requests</span> </a> </div>
+            <div class="col-md-12">
+              <div class="back-to-req-sec border-btm-1"> <a href="#" class="back-to-request"> <span class="back-arrow"></span> <span>Back to requests</span> </a> </div>
             </div>
-            <div class="col-md-4 text-right mb-0"> <%= f.submit "Save", class: "primary-btn" %> </div>
+            <!--<div class="col-md-4 text-right mb-0"> <%= f.submit "Save", class: "primary-btn" %> </div>-->
           </div>
           <div class="row">
             <div class="col-md-12">
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
               <h5 class="heading-level-05">Where Are You Looking to Move?</h5>
               <div class="hero-select-bx">
                 <%= f.select :city, ['Los Angeles'], {}, {class: "form-control"} %>               
@@ -30,11 +30,11 @@
               </div>
               
             </div>
-            <div class="col-md-5 text-right">
+            <!--<div class="col-md-5 text-right">
                <label class="remember-sec">
                    <%= f.check_box :active %>
                    <span class="checkmark"></span>  Active
-                 </label></div>
+                 </label></div>-->
           </div>
           <div class="row">
             <div class="col-md-12">
@@ -197,7 +197,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h5 class="heading-level-05 mb-3">Additional Features</h5>
+              <h5 class="heading-level-05 ad-tp-space mb-3">Additional Features</h5>
               <ul class="pro-list">
               	<li class="check-property-step">
                   <label class="remember-sec user-label landlord">
@@ -285,23 +285,30 @@
             </div>
           </div>
           <div class="row">
+          <div class="col-sm-8">
+          <div class="range-slider">
+          <input type="text" class="js-range-slider" value="" />
+      </div>
+          </div>
+          </div>
+          <div class="row">
                 <div class="col-sm-4 mt-3">
                   <label>What is your monthly budget?</label>
                   <div class="price-select-sec price-symbol">
-                    <%= f.number_field :min_budget, class: "form-control" %>
+                    <%= f.number_field :min_budget, class: "js-input-from form-control" %>
                   </div>
                 </div>
                 <div class="col-sm-4 mt-3">
                   <label>What is your monthly budget?</label>
                   <div class="price-select-sec price-symbol">
-                    <%= f.number_field :max_budget, class: "form-control" %>
+                    <%= f.number_field :max_budget, class: "js-input-to form-control" %>
                   </div>
                 </div>
           </div>
                     
           <div class="row">
             <div class="col-md-12">
-              <div class="chat-footer l-open-pro-footer">
+              <div class="chat-footer l-open-pro-footer mt-2 mb-3 pl-0">
                 <div class="row">
                   <div class="col-md-12"> <%= f.submit "Save", class: "primary-btn f-btn" %>
                   <a href="#" class="light-blue-btn f-btn">Cancel</a> </div>
