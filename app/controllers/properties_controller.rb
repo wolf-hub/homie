@@ -78,6 +78,10 @@ class PropertiesController < ApplicationController
 
   def destroy
     authorize! :destroy, @property
+      @property = Property.find(params[:id])
+      @property.destroy
+
+      redirect_to properties_path
   end
 
   def delete_image_attachment

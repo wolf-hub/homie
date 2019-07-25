@@ -61,6 +61,10 @@ class RequestsController < ApplicationController
 
   def destroy
     authorize! :destroy, @request
+    @request = Request.find(params[:id])
+      @request.destroy
+
+      redirect_to requests_path
   end
 
   def edit
