@@ -2393,7 +2393,7 @@ $range.ionRangeSlider({
     onChange: updateInputs,
     step: 100,
     prettify_enabled: true,
-   prettify_separator: ".",
+   prettify_separator: ",",
   values_separator: " - ",
   force_edges: true
   

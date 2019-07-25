@@ -2561,6 +2561,20 @@ section#pstep6 .step-btn-pagination .blue-outline-btn{float:none;}
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 25px;
 }
+.phonne-tenant .form-control.p-number {
+  padding: 15px !important;
+}
+.form-control.tenant-address{padding:15px !important;}
+.row.v-center {
+  align-items: center;
+}
+.row.v-center .remember-sec{margin:0px;}
+.divider-line {
+  background: #e5e5e5;
+  height: 1px;
+  margin-top: 20px;
+}
+.l-price-sec .price-select-sec select{width:100%;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
@@ -2654,6 +2668,7 @@ h5.heading-level-05.mb-3.mt-5 {
   max-width: 32%;
   padding:0 0 0 15px; margin-bottom:15px;
 }
+.mbb-0{margin-bottom:0px !important}
 .ad-tp-space{padding-top:20px;}
 .next-steps-list li{padding-right:4%;}
 .next-steps-list li a .step-text{font-size:14px;}
@@ -2837,6 +2852,29 @@ footer .social-media{display:none;}
 }
 .landloard-rt-sec{padding:20px 20px 0;}
 .edit-landloard-profile input[type=submit]{width: 100%;}
+.landloard-profile-btn-sec input#tenant_avatar {
+  width: 100%;
+}
+.main-landloard-profile-sec .l-sidebar{display:none;}
+.tenant-row .col-md-4 + .col-md-4{margin:15px 0 0 0;}
+.st-input {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+.st-input .form-control {
+  margin-top: 15px;
+}
+.phonne-tenant {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.row.v-center .col-md-5 {
+  max-width: 34%;
+}
+.row.v-center .col-md-7 {
+  flex: 0 0 66%;
+  max-width: 66%;
+}
 }
 @media(max-width:767px){
   .l-sidebar.aside-1{display: none;}
@@ -2845,6 +2883,20 @@ footer .social-media{display:none;}
 @media(max-width:575px){
 .price-select-sec input{width:100%;}
 }
+
+@media(max-width:340px){
+  .row.v-center .col-md-5 {
+    max-width: 100%;
+    text-align: left !important;
+    margin-top: 15px;
+}
+  .row.v-center .col-md-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+}
 input[type=text]{
   height: 52px;
 }
+
