@@ -30,12 +30,7 @@
 	    <div class="pro-btn-sec">
 	       	<% @requests = getenquires(property) %>
 	        <a href="<%= all_requests_property_url(property) %>" class="light-blue-btn">Enquiries <span>(<%=@requests.length %>)</span></a>
-	        
-	        <% if property.active? %>
-			    <%= link_to 'Deactivate', activate_property_path(property),       method: :put, data: { confirm: 'This property would be deactivated' }, class: "light-red-btn" %>
-			<% else %>
-			    <%= link_to 'Activate', activate_property_path(property), method: :put, data: { confirm: 'This property would be activated' }, class: "light-red-btn" %>
-			<% end %>
+	        <a href="<%= edit_property_path(property) %>" class="light-red-btn" >Edit</a> 	        
 	    </div>
 	</div>
 </div>
