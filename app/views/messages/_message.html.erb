@@ -9,7 +9,7 @@
             </div>
             <div class="incoming-chat-bx">
                 <%= message.context %>
-                <span class="chat-time-01"><%= timeago(message.created_at) %></span>
+                <span class="chat-time-01"><%= time_ago_in_words(message.created_at) +" ago"%></span>
             </div>
         </div>
     </div>
@@ -23,9 +23,9 @@
                 <%= message.context %>  
             </div>
             <div class="rt-chat-profile">
-                <%= image_tag showavatarurl(@other), size: "40x40", class: "rounded-circle" %>
+                <%# <%= image_tag showavatarurl(@other), size: "40x40", class: "rounded-circle" %>
             </div>
-            <span class="chat-time-01 chat-time-02"><%= timeago(message.created_at) %></span>
+            <span class="chat-time-01 chat-time-02"><%= time_ago_in_words(message.created_at) +" ago"%></span>
         </div>
     </div>
 <% end %>
