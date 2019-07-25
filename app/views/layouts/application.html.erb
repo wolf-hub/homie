@@ -31,9 +31,14 @@
         <input type="hidden" id="user_id" value="<%= current_user.id %>">
       <% end %>
       <%= yield %>
-        <% if (!request.fullpath.include?('requests/new') && !request.fullpath.include?('properties/new')) %>
+        <% if user_signed_in? %>
           <%= render 'shared/footer' %>
+        <% else %>
+          <% if (!request.fullpath.include?('requests/new') && !request.fullpath.include?('properties/new')) %>
+            <%= render 'shared/footer' %>
+          <% end %>
         <% end %>
+        
       
       <!-- footer end here -->    
     </div>
