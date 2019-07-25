@@ -13,13 +13,15 @@
 
   <body>
       <div class="canvas">
-        <% if (!request.fullpath.include?('requests/new') && !request.fullpath.include?('properties/new')) %>
+        
             <% if user_signed_in? %>
               <%= render 'shared/header' %>
             <% else %>
-              <%= render 'shared/notlogedheader' %>
+              <% if (!request.fullpath.include?('requests/new') && !request.fullpath.include?('properties/new')) %>
+                <%= render 'shared/notlogedheader' %>
+               <% end %>  
             <% end %>
-        <% end %>    
+           
        
         
         
