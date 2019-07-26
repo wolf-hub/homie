@@ -2,15 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="l-sidebar">
-            <ul class="l-menu">
-              <li class="active"> <a href="edit-profile-landlord.html"><span class="l-p-icon"><%= image_tag 'edit.png' %></span>Edit Profile</a></li>
-              <li><a href="edit-profile-landlord-credit-card.html"><span class="l-p-icon"><%= image_tag 'gallery.png' %></span>Photo</a></li>
-              <li><a href="#"><span class="l-p-icon"><%= image_tag 'padlock-grey.png' %></span>Security</a></li>
-              <li class="logout-link"><a href="#"><span class="l-p-icon"><%= image_tag 'logout.png' %></span>Log out</a></li>
-            </ul>
-            <div class="l-side-btn-sec"> <a href="#" class="light-blue-btn">+ New Property</a> </div>
-          </div>
+          <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
           <%= form_for @tenant do |f| %>
