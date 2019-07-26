@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="chat-body custom-scrollbar" id="custom-scrollbar">
-              <div id="chat">
+              <div id="chat" class="userid<%= current_user.id %>">
                 <% if @messages %>
                   <%= render @messages %>                
                 <% end %>                

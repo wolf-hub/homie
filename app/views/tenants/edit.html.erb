@@ -76,25 +76,7 @@
                         <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
                       </div>
                     </div>
-                  </div>
-                  
-                  
-
-                  <div class="form-group">
-                    <label>Add your address</label>
-                    <%= f.text_field :address, class: "form-control tenant-address" %> 
-                  </div>
-                  
-                  <div class="form-group">
-                    <label>Add a phone number <span>Only tenants can see it to contact you.</span></label>
-                    <div class="row">
-                      
-                      <div class="col-md-5 phonne-tenant">
-                        <%= f.telephone_field :phone_number, class: "form-control p-number" %>
-                        
-                      </div>
-                    </div>
-                  </div>
+                  </div>                  
                   
                   <div class="form-group">
                     <%= f.submit "Save", class: "primary-btn" %>
