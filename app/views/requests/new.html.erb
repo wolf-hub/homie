@@ -538,12 +538,13 @@
                                     <li><%= image_tag 'up-broken-line-arrow3.png' %></li>
                                 </ul>
                             </div>
-                            <% if user_signed_in? %>
-                            <%= f.submit "Finish", id: "stepfinishsign", class: "primary-btn checked-btn" %>
-                          <% else %>
-                            <%= f.submit "Finish", id: "stepfinish", class: "primary-btn checked-btn" %>
-                          <% end %>
                             <a href="javascript: void" class="blue-outline-btn" id="step6-prev">Previous Step</a>
+                            <% if user_signed_in? %>
+                            <%= f.submit "Finish", :type => :image, :src => image_path("checked-btn.png"), id: "stepfinishsign", class: "primary-btn checked-btn" %>
+                          <% else %>
+                            <%= f.submit "Finish", :type => :image, :src => image_path("checked-btn.png"), id: "stepfinish", class: "primary-btn checked-btn" %>
+                          <% end %>
+                           
                            
                                                         
                         </div>

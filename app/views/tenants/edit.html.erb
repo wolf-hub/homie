@@ -50,12 +50,17 @@
                       <div class="col-md-4">
                         <%= f.select :employment_status, [["Student","Student"], ["Work","Work"]],{:prompt => 'Select...'}, {:class => "form-control arrow-select"}  %>
                       </div>
-                      <div class="col-md-8 st-input">
-                        <%= f.text_field :working_place, class: "form-control em-status-input", placeholder: 'Where are You Working/Studying in?' %>
-                      </div>
+                      
                     </div>
                   </div>
-                  
+                  <div class="form-group ">
+                  	<div class="row v-center tenant-row">
+                  <div class="col-md-12">
+                  <%= f.text_area :working_place, class: "form-control em-status-input", placeholder: 'Where are You Working/Studying in?' %>
+                </div>
+                </div>
+                </div>
+
                   <div class="form-group ">
                   	<div class="row v-center tenant-row">
                   	
@@ -71,12 +76,22 @@
                         <label>To</label>
                         	<%= f.select :to_year, [[2019,2019], [2018,2018], [2017,2017], [2016,2016], [2015,2015],[2014,2014]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>      
                         </div>
-                        <div class="col-md-4">
-                        <label>Add Your Credit Score</label>
-                        <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
-                      </div>
+                       
                     </div>
-                  </div>                  
+
+                  </div>
+                  <div class="form-group ">
+                    <div class="row v-center tenant-row">
+                    <div class="col-md-4">
+                    <label>Add Your Credit Score</label>
+                    <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
+                  </div>
+                  </div>
+                  </div>
+                  
+
+                  
+
                   
                   <div class="form-group">
                     <%= f.submit "Save", class: "primary-btn" %>
