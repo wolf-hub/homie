@@ -1,0 +1,34 @@
+<div id="livemesswrap uerid<%= message.user_id%>">
+    <% if message.user_id == current_user.id %>
+    
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="lt-chat-profile">
+                
+                <%= image_tag showavatarurl(current_user), size: "40x40", class: "rounded-circle" %>                
+                
+            </div>
+            <div class="incoming-chat-bx">
+                <%= message.context %>
+                <span class="chat-time-01"><%= time_ago_in_words(message.created_at) +" ago"%></span>
+            </div>
+        </div>
+    </div>
+<% else %>
+    
+    <div class="row mb-3">
+        <div class="col-md-5"></div>
+        <div class="col-md-7 text-right">
+                      
+            <div class="rt-chat-tool-tip-01"> 
+                <%= message.context %>  
+            </div>
+            <div class="rt-chat-profile">
+                <%# <%= image_tag showavatarurl(@other), size: "40x40", class: "rounded-circle" %>
+            </div>
+            <span class="chat-time-01 chat-time-02"><%= time_ago_in_words(message.created_at) +" ago"%></span>
+        </div>
+    </div>
+<% end %>
+
+</div>

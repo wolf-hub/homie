@@ -25,8 +25,7 @@
                 <ul class="profile-list">
                 	<li>Joined in <%= @tenant.created_at.strftime("%Y") %></li>
                     <li><span><%= @requests.count %></span> active <%= 'request'.pluralize(@requests.count) %> <a href="<%= requests_path %>">View all</a></li>
-                </ul>
-                <p class="lives-in-paris-france">Lives in <%= @tenant.address %></p>
+                </ul>                
                 </div>
                 <div class="col-md-4 text-right">
                 	<a class="light-blue-btn" href="<%= edit_tenant_path %>"><i class="fa fa-pencil"></i> Edit Profile</a>

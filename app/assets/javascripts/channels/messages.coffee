@@ -3,5 +3,6 @@ jQuery(() ->
     received: (data) ->
       jQuery('#new_message')[0].reset()
       jQuery('#chat').append data.message
+      jQuery("#chat").load(" #chat > *");
       updateScroll() 
 )
