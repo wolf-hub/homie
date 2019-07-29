@@ -72,21 +72,23 @@ window.onload = function(){
 // }
 jQuery(document).ready(function() {
 
- 
+    $('.l-profile-img').on('click', function() {
+        $('.chat-menu1').toggleClass('show-menu');
+        });
 
- $menu = $('.chat-menu1');
+ //$menu = $('.chat-menu1');
 
-$(document).mouseup(function (e) {
-  if (!$menu.is(e.target)
-  && $menu.has(e.target).length === 0)
-  {
-    $menu.removeClass('show-menu');
- }
-});
+//$(document).mouseup(function (e) {
+  //if (!$menu.is(e.target)
+ // && $menu.has(e.target).length === 0)
+ // {
+   // $menu.removeClass('show-menu');
+ //}
+//});
 
-$('.l-profile-img').on('click', () => {
- $menu.toggleClass('show-menu');
-});
+//$('.l-profile-img').on('click', () => {
+ //$menu.toggleClass('show-menu');
+//});
 function step1validcity(cityfield) {
     if (cityfield != '') {
         return true;
@@ -689,6 +691,24 @@ $(function(){
 });
 
 });
+
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+           
+             if($(this).attr("value")=="House"){
+              $("#bed-bath-list").show();
+          } else if ($(this).attr("value")=="Townhouse") {
+$("#bed-bath-list").show();
+}else if ($(this).attr("value")=="Apartment/Condo/Loft") {
+$("#bed-bath-list").show();
+}
+          else{
+              $("#bed-bath-list").hide();
+          }
+
+           
+        });
+    });
 
 // $('.toggleTypeIcon1').click(function(){
 //     debugger;

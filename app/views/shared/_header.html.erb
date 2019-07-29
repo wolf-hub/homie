@@ -15,6 +15,14 @@
             </div>
             <div id="bs-navbar">
               <ul class="nav navbar-nav">
+                <li class="home-menu-m"><a href="
+                <% if current_user.role == 'landlord' %>
+                  <%= properties_path %>
+                <% else %>
+                  <%= requests_path %>
+                <% end %>
+                ">Home</a> 
+                </li>
                 <% if current_user.role == 'landlord' %>
                   <li class="active"><a href="<%= properties_new_path %>">+ New Property</a></li>
                 <% else %>
@@ -37,7 +45,7 @@
                 <% end %>
                 
                  </li>
-                <li style="vertical-align: middle;" class="">
+                <li style="vertical-align: middle;" class="" id="m-menu">
                   <div class="l-profile-img " >
                     <%= showavatarsmall(current_user) %>
                     <ul class=" chat-menu1">

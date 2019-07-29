@@ -2696,9 +2696,12 @@ a.light-blue-btn.btn-space-20 {
   font-size: 26px;
   margin-bottom: 20px; margin-top:0px !important;
 }
+.landloard-profile-head ul .home-menu-m{display:none;}
+#bed-bath-list{display:none;}
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
+
 @media(max-width:1199px){
   .landloard-profile-head .navbar li a{ padding:10px; }
   .landloard-profile-head .navbar{ right:0px; }
@@ -2783,6 +2786,8 @@ h5.heading-level-05.mb-3.mt-5 {
     width: 115px;
     height: 115px;
 }
+.l-profile-img:hover .chat-menu1{display:none;}
+.l-profile-img .chat-menu1.show-menu{display:block;}
 .edit-pw-footer h3{margin-top:0 !important}
 .up-broken-line-arrow{width:38%;}
 .upload-sec-gallery .upload-step-pic{height:180px; width: 100%;}
@@ -2800,6 +2805,7 @@ h5.heading-level-05.mb-3.mt-5 {
 .next-steps-list li a .step-text{font-size:14px;}
 .step-btn-pagination a {margin:0 0 15px;width:100%;}
 .next-steps-list li{background-size:42px;background-position: right 20px;}
+.landloard-profile-head ul .home-menu-m{display:block;}
 	}
 @media(max-width:991px){
 body{ padding-top:45px; }
@@ -2949,7 +2955,19 @@ ul.pro-dtl-list li {font-size:15px;margin:7px 0;}
 .primary-btn:hover{box-shadow: none !important;}
 .property-slide-bx h5{font-size: 16px;}
 .property-slide-bx .city-name{font-size: 13px;}
-.l-profile-img .chat-menu1{position: relative; float: left; width:100%;}
+.l-profile-img .chat-menu1 {
+  position: relative;
+  float: left;
+  width: 97%;
+  margin-left: 0;
+  right: 0;
+  top: 20px;
+}
+.l-profile-img:hover .chat-menu1{top:20px;}
+.chat-menu1:before{
+  left:50%; right:auto; margin-left:-3px;
+}
+.landloard-profile-head .navbar li ul.chat-menu1 li a{text-align: center;}
 .l-profile-img .chat-menu1 li{margin: 0px;}
 .l-profile-img .chat-menu1 li a{ color:#333333; }
 .landloard-step-sec .step-rt-img-sec{display:none; }
