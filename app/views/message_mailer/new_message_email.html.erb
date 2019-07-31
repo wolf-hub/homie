@@ -1,6 +1,7 @@
 <h1>You have recieved new message from <%= @message.user.email %></h1>
 <div>
-  Message conent is next:
+  Message content is next:
   <%= @message.context %>
 </div>
-<p>Go to your conversation with user <%= conversation_messages_url(@conversation) %></p>
+<p>Go to your conversation with user <a href="<%= conversation_messages_url(@conversation) %>"><%= conversation_messages_url(@conversation) %></a> </p>
+<p>Thanks for using our service and have a great day!</p>

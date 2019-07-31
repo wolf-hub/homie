@@ -1,4 +1,4 @@
 <h1>User <%= @request.user.email %> has created new request!</h1>
 <p>
-  You can view it by next link <%= request_url(@request) %><br>
+  You can view it by next link <a href="<%= request_url(@request) %>"><%= request_url(@request) %></a> <br>
 </p>
