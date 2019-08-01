@@ -33,7 +33,10 @@
                                 	<h5><%= requesto.home_type %></h5>
                                     <div class="row">
                                     	<div class="col-sm-6">
-                                        	<span class="location-name"><%= requesto.city %></span>
+                                        	<span class="location-name">
+                                                <%= @requesto.city %> 
+                                                <% @districts = @requesto.address.gsub(/(\[\"|\"\])/, '').split('", "') %>                      
+                                                (<%= @districts.map{|district| district}.join(", ") %>)</span>
                                         </div>
                                         <div class="col-md-6 text-right">
                                         	<span class="property-price">
