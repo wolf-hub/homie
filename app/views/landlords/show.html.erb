@@ -4,20 +4,10 @@
         <div class="col-md-3">
           <%= render 'sidebar' %>
         </div>
-        <div class="col-md-9">
-        	<div class="card card-default">
-            <div class="card-header">Notifications</div>
-            <div class="card-body">
-                <%= link_to notifications_path do %>
-                    You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
-                <% end %>
-            </div>
-          </div>
-
-          <div class="landloard-rt-sec">
-          		
-            <div class="row">
-            
+        <div class="col-md-9">        	
+          
+          <div class="landloard-rt-sec">          		
+            <div class="row">            
             <div class="col-md-12">
             	<div class="l-a-landloard-header">
                 <div class="row">
@@ -36,7 +26,7 @@
                 <div class="col-md-4 text-right">
                 	<% if @landlord.user_id == current_user.id %>
                        <a class="light-blue-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i> Edit Profile</a> 
-                    <% end %>
+                  <% end %>
                     
                 </div>
                 </div>
