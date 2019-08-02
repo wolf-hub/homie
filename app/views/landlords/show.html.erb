@@ -4,10 +4,23 @@
         <div class="col-md-3">
           <%= render 'sidebar' %>
         </div>
+<<<<<<< HEAD
         <div class="col-md-9">        	
           
           <div class="landloard-rt-sec l-pro-head-bg">          		
             <div class="row">            
+=======
+
+        <div class="col-md-9">
+        	
+          <div class="landloard-rt-sec l-pro-head-bg">
+          		
+            <div class="row">
+            
+
+                   
+
+>>>>>>> 0c83c115c70302b907088c10012f1f77344cb729
             <div class="col-md-12">
             	<div class="l-a-landloard-header">
                 <div class="row">
@@ -25,7 +38,7 @@
               
                 </div>
                 <div class="col-md-4 text-right">
-                <a href="#" class="light-blue-btn req-btn">Properties <span class="count">(4)</span></a>
+                <a href="<%= properties_path %>" class="light-blue-btn req-btn">Properties <span class="count">(<%= @properties.count %>)</span></a>
                 	<% if @landlord.user_id == current_user.id %>
 
                        <a class="light-red-btn req-red-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i></a> 
@@ -40,9 +53,7 @@
                     <p><%= @landlord.information %></p>
                 </div>                
                </div>
-            </div>
-          </div>
-        </div>
+            
       </div>
     </div>
   </section>

@@ -5,14 +5,7 @@
           <%= render 'sidebar' %>
         </div>
         <div class="col-md-9">
-        	<div class="card card-default">
-            <div class="card-header">Notifications</div>
-            <div class="card-body">
-                <%= link_to notifications_path do %>
-                    You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
-                <% end %>
-            </div>
-          </div>
+        	
           <div class="landloard-rt-sec l-pro-head-bg">
           		
             <div class="row">
@@ -24,11 +17,11 @@
             	<h2 class="heading-level-02">Hi, I’m <%= @tenant.first_name%> <%= @tenant.last_name %></h2>
                 <ul class="profile-list">
                 	<li>Joined in <%= @tenant.created_at.strftime("%Y") %></li>
-                    <li><span><%= @requests.count %></span> active <%= 'request'.pluralize(@requests.count) %> <a href="<%= requests_path %>">View all</a></li>
+                    <!-- <li><span><%= @requests.count %></span> active <%= 'request'.pluralize(@requests.count) %> <a href="<%= requests_path %>">View all</a></li> -->
                 </ul>                
                 </div>
                 <div class="col-md-4 text-right">
-                <a href="#" class="light-blue-btn req-btn">Request <span class="count">(4)</span></a>
+                <a href="<%= requests_path %>" class="light-blue-btn req-btn">Requests <span class="count">(<%= @requests.count %>)</span></a>
                 	<a class="light-red-btn req-red-btn" href="<%= edit_tenant_path %>"><i class="fa fa-pencil"></i></a>
                 </div>
                 </div>
