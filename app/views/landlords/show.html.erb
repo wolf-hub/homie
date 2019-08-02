@@ -14,7 +14,7 @@
             </div>
           </div>
 
-          <div class="landloard-rt-sec">
+          <div class="landloard-rt-sec l-pro-head-bg">
           		
             <div class="row">
             
@@ -24,14 +24,15 @@
                 <div class="col-md-8">
             	<h2 class="heading-level-02">Hi, I’m <%= @landlord.first_name %> <%= @landlord.last_name %></h2>
                 <ul class="profile-list">
+                <li>  <p class="lives-in-paris-france">Lives in 
+                <% if @landlord.address %>
+                  <%= @landlord.address %>
+                <% end %>
+                        </p></li>
                 	<li>Joined in <%= @landlord.created_at.strftime("%Y") %></li>
                     <li><span><%= @properties.count %></span> available <%= pluralize_without_count(@properties.count, 'property') %> <a href="<%= properties_path %>">View all</a></li>
                 </ul>
-                <p class="lives-in-paris-france">Lives in 
-					<% if @landlord.address %>
-						<%= @landlord.address %>
-					<% end %>
-                	</p>
+              
                 </div>
                 <div class="col-md-4 text-right">
                 <a href="#" class="light-blue-btn req-btn">Properties <span class="count">(4)</span></a>
