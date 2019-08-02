@@ -4,6 +4,7 @@
         <div class="col-md-3">
           <%= render 'sidebar' %>
         </div>
+<<<<<<< HEAD
         <div class="col-md-9">
         	<div class="card card-default">
             <div class="card-header">Notifications</div>
@@ -18,6 +19,12 @@
           		
             <div class="row">
             
+=======
+        <div class="col-md-9">        	
+          
+          <div class="landloard-rt-sec">          		
+            <div class="row">            
+>>>>>>> 860fb3057a8b735b4d685a92b95e21473a739f47
             <div class="col-md-12">
             	<div class="l-a-landloard-header">
                 <div class="row">
@@ -37,8 +44,10 @@
                 <div class="col-md-4 text-right">
                 <a href="#" class="light-blue-btn req-btn">Properties <span class="count">(4)</span></a>
                 	<% if @landlord.user_id == current_user.id %>
+
                        <a class="light-red-btn req-red-btn" href="<%= edit_landlord_path %>"><i class="fa fa-pencil"></i></a> 
                     <% end %>
+
                     
                 </div>
                 </div>
