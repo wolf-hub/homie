@@ -4,27 +4,10 @@
         <div class="col-md-3">
           <%= render 'sidebar' %>
         </div>
-<<<<<<< HEAD
-        <div class="col-md-9">
-        	<div class="card card-default">
-            <div class="card-header">Notifications</div>
-            <div class="card-body">
-                <%= link_to notifications_path do %>
-                    You have <span id="num_of_unread"><%= current_user.unread %></span> notification(s).
-                <% end %>
-            </div>
-          </div>
-
-          <div class="landloard-rt-sec l-pro-head-bg">
-          		
-            <div class="row">
-            
-=======
         <div class="col-md-9">        	
           
-          <div class="landloard-rt-sec">          		
+          <div class="landloard-rt-sec l-pro-head-bg">          		
             <div class="row">            
->>>>>>> 860fb3057a8b735b4d685a92b95e21473a739f47
             <div class="col-md-12">
             	<div class="l-a-landloard-header">
                 <div class="row">
@@ -37,7 +20,7 @@
                 <% end %>
                         </p></li>
                 	<li>Joined in <%= @landlord.created_at.strftime("%Y") %></li>
-                    <li><span><%= @properties.count %></span> available <%= pluralize_without_count(@properties.count, 'property') %> <a href="<%= properties_path %>">View all</a></li>
+                    <!--<li><span><%= @properties.count %></span> available <%= pluralize_without_count(@properties.count, 'property') %> <a href="<%= properties_path %>">View all</a></li>-->
                 </ul>
               
                 </div>
