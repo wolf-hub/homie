@@ -2717,6 +2717,38 @@ a.light-blue-btn.req-btn, a.light-red-btn.req-red-btn{
 .l-pro-head-bg .l-a-landloard-header{border-bottom:none}
 .l-pro-head-bg > .row{min-height:180px;}
 
+.page-not-found-wrap h1{
+  font-family: 'Sofia Pro';
+  font-size: 24px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-align:center;
+  margin:30px 0;
+}
+.page-not-found-wrap p{
+  font-family: 'Sofia Pro';
+  font-size: 20px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-align:center;
+  margin:30px 0;
+}
+.page-not-found-wrap .back-to-home-btn-sec {
+    text-align: center;
+}
+.page-not-found-wrap .arrow-rt:after{
+transform: rotate(180deg); 
+right:auto; 
+left:25px;
+}
+.page-not-found-wrap .arrow-rt {
+    padding: 15px 40px 15px 70px !important;
+}
+
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }
