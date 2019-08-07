@@ -46,7 +46,7 @@ Rails.application.configure do
   config.action_cable.mount_path = '/websocket'
   config.action_cable.url = '/cable'
   # config.action_cable.allowed_request_origins = ['http://142.93.86.230','142.93.86.230']
-  config.action_cable.allowed_request_origins = ['http://homie.seedx.us']
+  config.action_cable.allowed_request_origins = ['https://movehomie.com/']
   config.action_cable.disable_request_forgery_protection = true
 
   # Mount Action Cable outside main process or domain
@@ -74,7 +74,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   #config.action_mailer.default_url_options = { :host => 'homie.seedx.us' }
-  config.action_mailer.default_url_options = { host: 'homie.seedx.us'}
+  config.action_mailer.default_url_options = { host: 'movehomie.com'}
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
