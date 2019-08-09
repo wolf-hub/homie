@@ -48,7 +48,7 @@
                   <div class="form-group ">
                   <div class="row v-center  tenant-row">
                   <div class="col-md-12">
-                  <%= f.text_area :working_place, class: "form-control em-status-input", placeholder: 'Where are You Working/Studying in?' %>
+                  <%= f.text_area :working_place, class: "form-control em-status-input", placeholder: 'Tell us a little about your work or what you are studying....' %>
                 </div>
                 </div>
                 </div>
@@ -74,7 +74,7 @@
                   <div class="row v-center tenant-row">
                   <div class="col-md-4">
                       <label>Add Your Credit Score</label>
-                        <%= f.select :credit_score, [[100,100], [300,300], [500,500], [700,700], [900,900],[1100,1100]], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
+                        <%= f.select :credit_score, [['300-579','300-579'], ['580-669','580-669'], ['670-739','670-739'], ['740-799','740-799'], ['800-850','800-850']], {:prompt => 'Select...'}, {:class => "form-control arrow-select"} %>
                       </div>
 
                     </div>
