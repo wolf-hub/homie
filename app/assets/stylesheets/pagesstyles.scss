@@ -194,7 +194,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a0b5', end
 .home-sec-5{padding-top: 110px; margin-bottom:-25px; position:relative;}
 .home-sec-5:before{ content:""; position:absolute; background:image-url("dotted-bg.jpg") right top repeat-x; width:25%; height:95px; right:0; top:3px; }
 .home-sec-5 .row { align-items: center; }
-.home-sec-6 { padding: 70px 0;  text-align: center; }
+.home-sec-6 { padding: 155px 0;  text-align: center; }
 .home-sec-7{ padding:85px 0 100px 0; display:none; }
 .home-sec-7 .latest-header{ float:left; width:100%; margin-bottom:15px; }
 .home-sec-7 .latest-header .latest-cstegory{ font-size:14px;font-weight:normal;color:#c4c4c4;float:left;font-family: 'Sofia Pro';}
@@ -2747,6 +2747,11 @@ left:25px;
 }
 .page-not-found-wrap .arrow-rt {
     padding: 15px 40px 15px 70px !important;
+}
+.newpicbutton {
+  background: linear-gradient(to right, #02a0b5 0%, #02a0b5 41%, #40d1e4 90%, #40d1e4 100%);
+    box-shadow: -2px 10px 15px 0 rgba(64, 209, 228, 0.5);
+    color: #ffffff;
 }
 
 @media(max-width:1330px){
