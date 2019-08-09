@@ -78,6 +78,9 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  require 'sidekiq/web'
+mount Sidekiq::Web => '/sidekiq'
+
   mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   

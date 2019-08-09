@@ -64,6 +64,8 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 gem 'rails_admin', '~> 2.0.0.beta'
 
+gem 'sidekiq'
+
 group :production do 
   gem 'pg'
   gem 'rails_12factor'

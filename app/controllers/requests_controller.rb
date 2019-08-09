@@ -81,6 +81,7 @@ class RequestsController < ApplicationController
       if @request.save
         RequestMailer.new_request_email(@request).deliver_later
         RequestMailer.new_request_admin_email(@request).deliver_later
+        MatchingJob.perform_later @requests
         render :congratulations, notice: "Saved..."
       else
         flash[:alert] = "Something went wrong..."

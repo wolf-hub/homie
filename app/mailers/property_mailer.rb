@@ -20,5 +20,10 @@ class PropertyMailer < ApplicationMailer
 	    @property = property
 	    mail(to: 'volodymyr@seedx.us', subject: 'Property was Updated')
 	end
+
+	def matching_property_email(property)
+		@property = property
+	    mail(to: @property.user.email, subject: 'Your property has new request matching')
+	end
 	
 end
