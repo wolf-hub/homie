@@ -3,9 +3,11 @@ class MatchingJob < ApplicationJob
 
   def perform(requesto)
     # Do something later
-    @properties = Property.where(home_type: requesto.home_type, minimum_lease: requesto.duration, city: requesto.city)
+    @districts = requesto.address.gsub(/(\[\"|\"\])/, '').split('", "')
+    
+    @properties = Property.where("home_type = ? and minimum_lease = ? and city = ? and address = ? and price <= ? and price >= ? ",requesto.home_type,requesto.duration,requesto.city,@districts,requesto.max_budget,requesto.min_budget)
     @properties.each do |property|
-    	PropertyMailer.matching_property_admin_email(property).deliver_later
+    	PropertyMailer.matching_property_email(property).deliver_later
     end
   end
 end
