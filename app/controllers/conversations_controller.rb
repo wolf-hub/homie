@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.create(sender_id: params[:sender_id], recepient_id: params[:recepient_id])
       
     end
-
+    
     redirect_to conversation_messages_path(@conversation)
   end
 

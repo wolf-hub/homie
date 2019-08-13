@@ -11,4 +11,5 @@ class Request < ApplicationRecord
 
 	belongs_to :user
 	has_many :purchases
+	has_many :points
 end

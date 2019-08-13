@@ -10,6 +10,7 @@ class Property < ApplicationRecord
 
   belongs_to :user
   has_many :purchases
+  has_many :points
   has_many_attached :images
 
   geocoded_by :address

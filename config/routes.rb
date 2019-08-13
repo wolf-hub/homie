@@ -1,6 +1,6 @@
-Rails.application.routes.draw do
-  
+Rails.application.routes.draw do  
  
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'requests/index'
   get 'requests/show'
@@ -56,10 +56,17 @@ Rails.application.routes.draw do
   end
 
   resources :purchases
+  resources :points
 
   resources :properties do
     resources :requests do        
-      resources :purchases         
+      resources :purchases        
+    end  
+  end
+
+  resources :properties do
+    resources :requests do 
+      resources :points         
     end  
   end
 

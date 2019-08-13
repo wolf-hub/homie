@@ -169,42 +169,63 @@
                     <div class="chat-footer l-open-pro-footer">
             	<div class="row">
                 <% @purchases = Purchase.where(request_id: @request.id, user_id: current_user.id) %>
-  				<% if @purchases.count==0 %>
-	                <div class="col-md-4">
-	                	<%= form_for @purchase do |f| %>
-						<%= f.hidden_field :request_id, :value => @request.id %>
-						<%= f.hidden_field :property_id, :value => @property.id  %>
-						<%= f.submit "Accept ($5)", id: "btn_purcahse", class: "primary-btn"%>
-						<% end %>     	           	
-	                </div>
-	                <div class="col-md-5">
-	                	<a href="#" class="primary-btn disabled-btn">Message 
+                <% @points = Point.where(request_id: @request.id, user_id: current_user.id) %>
+  				      <% if @purchases.count>0 || @points.count>0 %>
+                  <div class="col-md-5">
+                   <p class="primary-btn disabled-btn">Request Accepted</p>
+                  </div>
+                  <div class="col-md-5">
+                    
+                    <%= link_to "Message ", conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
+                    
+                  </div>
+                <% elsif current_user.freepoints>0 %>  
+                  <div class="col-md-4">
+                  <%= form_for @point do |f| %>
+                    <%= f.hidden_field :request_id, :value => @request.id %>
+                    <%= f.hidden_field :property_id, :value => @property.id  %>
+                    <%= f.submit "Accept for Free*", id: "btn_purcahse", class: "primary-btn"%>
+                  <% end %>                   
+                  </div>
+                  <div class="col-md-5">
+                    <a href="#" class="primary-btn disabled-btn">Message 
                       <% if profile(@request.user) %>
                         <%= profile(@request.user).first_name %>
                       <% end %>                        
                       </a>
-	                </div>
-				<% else %>
-					<div class="col-md-5">
-	            		<p class="primary-btn disabled-btn">Request Accepted</p>
-	                </div>
-	                <div class="col-md-5">
-                    
-                    <%= link_to "Message ", conversations_path(sender_id: current_user.id, recepient_id: @request.user_id), method: :post, class: "primary-btn" %>
-                    
-	                </div>
-                <% end %> 
+                  </div>
+                  <div class="col-12">
+                    <p class="">Special offer! You can accept <%= current_user.freepoints%> requests for FREE. You have <%= current_user.freepoints%> attempts now.</p>
+                  </div>
+                <% else %>
+                  <div class="col-md-4">
+                  <%= form_for @purchase do |f| %>
+                    <%= f.hidden_field :request_id, :value => @request.id %>
+                    <%= f.hidden_field :property_id, :value => @property.id  %>
+                    <%= f.submit "Accept ($5)", id: "btn_purcahse", class: "primary-btn"%>
+                  <% end %>                   
+                  </div>
+                  <div class="col-md-5">
+                    <a href="#" class="primary-btn disabled-btn">Message 
+                      <% if profile(@request.user) %>
+                        <%= profile(@request.user).first_name %>
+                      <% end %>                        
+                      </a>
+                  </div>
+                <% end %>
+
                 
-                </div>
-            </div>
+                
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
-           </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   <!-- landloard-profile end here -->

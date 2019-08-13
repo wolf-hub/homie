@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    
+
     var select = $('select[multiple]');
     var options = select.find('option');
 
