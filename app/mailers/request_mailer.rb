@@ -1,9 +1,9 @@
 class RequestMailer < ApplicationMailer
-	default from: 'no-reply@homie.com'
+	default from: 'no-reply@movehomie.com'
 
 	def new_request_email(request)
 	    @request = request
-	    mail(to: @request.user.email, subject: 'Your request was created')
+	    mail(to: @request.user.email, subject: 'Thank You For Your Request')
 	end
 
 	def new_request_admin_email(request)

@@ -7,7 +7,7 @@ class MatchingJob < ApplicationJob
     
     @properties = Property.where("home_type = ? and minimum_lease = ? and city = ? and address IN (?) and price <= ? and price >= ? ",requesto.home_type,requesto.duration,requesto.city,@districts,requesto.max_budget,requesto.min_budget)
     @properties.each do |property|
-    	PropertyMailer.matching_property_email(property).deliver_later
+    	PropertyMailer.matching_property_email(property, requesto).deliver_later
     end
   end
 end

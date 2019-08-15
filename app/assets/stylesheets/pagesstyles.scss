@@ -2754,6 +2754,28 @@ left:25px;
     color: #ffffff;
 }
 
+.wolf-special-offer {
+  font-family: 'Sofia Pro';
+  font-size: 18px;
+  color: #000000;
+  padding-left: 32px;
+  position: relative;
+  font-weight: normal;
+}
+.wolf-special-offer span {
+  color: #02a1b5;
+}
+
+.wolf-special-offer::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: image-url('gift.png');
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
 @media(max-width:1330px){
   .landloard-step-sec ul.step-list li.active:after{ left:45%; }
   }

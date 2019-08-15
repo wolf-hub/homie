@@ -1,5 +1,6 @@
-<h1>Your property has new request matching!</h1>
-<p>
-  You can view it by next link <a href="<%= property_url(@property) %>"><%= property_url(@property) %></a> <br>
-</p>
-<p>Thanks for using our service and have a great day!</p>
+<p>Hi,</p>
+<p>A new request matched a home that you have listed.</p>
+<p>You can see the request by clicking here:
+<a href="<%= show_request_property_path(@property, @request) %>"><%= show_request_property_path(@property, @request) %></a></p>
+<p>Please email us at <a href="mailto:info@movehomie.com">info@movehomie.com</a> with any questions or concerns.</p>
+<p>Team Homie</p>

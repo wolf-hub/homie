@@ -40,7 +40,7 @@ $(document).ready(function() {
                 setTimeout(function() {
                     a.addClass('shown');
                     select.children('div').children('span').addClass('hide');
-                    select.find('option:contains(' + li.text() + ')').prop('selected', true);
+                    select.find('option').filter(function(i, e) { return $(e).text() == li.text()}).prop('selected', true);
                 }, 500);
             });
             setTimeout(function() {
