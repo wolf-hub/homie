@@ -1,5 +1,12 @@
 RailsAdmin.config do |config|
 
+  config.model 'User' do
+    list do
+      field :email
+      field :created_at
+      field :role
+    end
+  end
   ### Popular gems integration
   config.authorize_with do
     redirect_to main_app.root_path unless current_user && current_user.admin == true
