@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.sidescroll = true
+  
   config.model 'User' do
     list do
       field :email
