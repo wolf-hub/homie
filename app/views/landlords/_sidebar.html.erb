@@ -1,6 +1,12 @@
 <div class="l-sidebar aside-1">
   <div class="landloard-profile-inbox">
-    <%= showavatar(@landlord.user) %>
+    <% if @landlord %>
+      <%= showavatar(@landlord.user) %>
+    <% else %>
+      <%= showavatar(current_user) %>
+    <% end %>
+
+    
   </div>
   <ul class="l-menu">
               
