@@ -19,6 +19,16 @@ Rails.application.routes.draw do
   get 'properties/show'
   get 'properties/edit'
   get 'properties/destroy'
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :properties
+      devise_for :users, 
+                  :controllers => {registrations: "api/v1/registrations", sessions: "api/v1/sessions"},
+                  path_names: { sign_in: :login }
+    end
+  end
+
   devise_for :users,
              :controllers => {registrations: 'registrations'},
              path: '',
