@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_12_143123) do
+ActiveRecord::Schema.define(version: 2019_09_30_112411) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -185,6 +185,8 @@ ActiveRecord::Schema.define(version: 2019_08_12_143123) do
     t.integer "unread", default: 0
     t.boolean "admin", default: false
     t.integer "freepoints", default: 5
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

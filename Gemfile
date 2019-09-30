@@ -41,6 +41,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'simple_token_authentication', '~> 1.0'
 
 gem 'geocoder'
 
