@@ -178,11 +178,15 @@ jQuery('#step4-btn').click(function(e){
 jQuery('#step5-btn').click(function(e){
     e.preventDefault();
     var duration = jQuery('input[name="request[duration]"]');
-    if (step2valid(duration)) {
+    var arrive = jQuery('#request_arrival_date').val();
+    
+    if (!step2valid(duration)) {
+        alert('Please select how much you want to stay!');
+    } else if (!step1valid(arrive)) {
+        alert('Please choose your arrival date');
+    } else {
         jQuery('#step5').hide();
         jQuery('#step6').show();
-    } else {
-        alert('Please select how much you want to stay!');
     }
 }); 
 
