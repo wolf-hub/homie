@@ -11,7 +11,7 @@ module Homie
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.active_job.queue_adapter = Rails.env.production? ? :sidekiq : :async
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
     config.assets.paths << Rails.root.join("app", "assets")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     # Settings in config/environments/* take precedence over those specified here.
