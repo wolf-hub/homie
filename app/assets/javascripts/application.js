@@ -17,10 +17,9 @@
 //= require cable
 
 //= require card
-
+//= require_tree .
 //= require popper
 //= require bootstrap-sprockets
 
 //= require activestorage
 
-//= require_tree .
