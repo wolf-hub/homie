@@ -9,7 +9,7 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require_tree .
 //= require jquery
 //= require rails-ujs
 //= require activestorage
@@ -17,7 +17,7 @@
 //= require cable
 
 //= require card
-//= require_tree .
+
 //= require popper
 //= require bootstrap-sprockets
 
