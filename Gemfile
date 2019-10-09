@@ -63,7 +63,7 @@ gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rvm', github: "capistrano/rvm"
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
-gem 'rails_admin', '~> 2.0.0.beta'
+# gem 'rails_admin', '~> 2.0.0.beta'
 
 gem 'listen', '>= 3.0.5', '< 3.2'
 
