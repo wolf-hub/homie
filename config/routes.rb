@@ -1,6 +1,9 @@
 Rails.application.routes.draw do  
  
   
+  
+  
+  ActiveAdmin.routes(self)
   get 'requests/index'
   get 'requests/show'
   get 'requests/update'
