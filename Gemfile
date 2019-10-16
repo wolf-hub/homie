@@ -65,7 +65,7 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 # gem 'rails_admin', '~> 2.0.0.beta'
 
-gem 'listen', '>= 3.0.5', '< 3.2'
+
 
 gem 'sidekiq'
 gem 'activeadmin'
@@ -73,7 +73,7 @@ gem 'activeadmin'
 
 group :production do 
   gem 'pg'
-  gem 'rails_12factor'
+  #gem 'rails_12factor'
   gem 'redis', '~> 4.0'
   gem 'mini_racer'
 end  
@@ -90,6 +90,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
 group :test do
