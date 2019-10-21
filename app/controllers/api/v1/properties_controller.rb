@@ -5,7 +5,7 @@ class Api::V1::PropertiesController < ApplicationController
 	respond_to :json
 
 	def index
-		@properties = current_user.properties
+		@properties = properties
 		respond_with @properties
 	end
 end	
