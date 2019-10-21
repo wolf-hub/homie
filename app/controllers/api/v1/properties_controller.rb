@@ -2,7 +2,7 @@ class Api::V1::PropertiesController < ApplicationController
 	acts_as_token_authentication_handler_for User, fallback: :exception
 	before_action :authenticate_user!
 	protect_from_forgery with: :null_session
-	skip_before_action :verify_authenticity_token, if: :json_request
+	before_action :verify_authenticity_token
 	
 	respond_to :json
 
