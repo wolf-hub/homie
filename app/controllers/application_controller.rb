@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base	
-	acts_as_token_authentication_handler_for User
+	acts_as_token_authentication_handler_for User, fallback: :devise
 
 	rescue_from CanCan::AccessDenied do |exception|
 	    redirect_to root_url, :alert => exception.message	    
