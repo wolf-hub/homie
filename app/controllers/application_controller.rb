@@ -1,5 +1,4 @@
-class ApplicationController < ActionController::Base
-	acts_as_token_authentication_handler_for User
+class ApplicationController < ActionController::Base	
 	rescue_from CanCan::AccessDenied do |exception|
 	    redirect_to root_url, :alert => exception.message	    
 	end
