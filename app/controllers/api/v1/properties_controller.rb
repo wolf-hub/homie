@@ -6,6 +6,6 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		respond_with current_user.properties
+		respond_with current_user.requests
 	end
 end	
