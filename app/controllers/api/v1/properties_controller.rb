@@ -1,6 +1,6 @@
 class Api::V1::PropertiesController < ApplicationController
 	
-	acts_as_token_authentication_handler_for User, fallback: :devise
+	acts_as_token_authentication_handler_for User, fallback: :none
 	
 	respond_to :json
 
