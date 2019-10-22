@@ -15,7 +15,7 @@ def create
     user = user_email.present? && User.find_by(email: user_email)
 
     if user and user.valid_password? user_password
-      sign_in user, store: false
+      # sign_in user, store: false
       current_user.update authentication_token: nil
       user.save
       
