@@ -6,7 +6,7 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@improp = @properties.map { |property| property.attributes.merge(image: property.images[0]) },
+		@improp = @properties.map { |property| property.merge(image: property.images[0]) }
 		respond_with @improp
 	end
 end	
