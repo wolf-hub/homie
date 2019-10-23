@@ -6,8 +6,8 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@properties.map { |property| property_json(property) }
-		respond_with @properties
+		@newproperties = @properties.map { |property| property_json(property) }
+		respond_with @newproperties
 	end
 
 	private
