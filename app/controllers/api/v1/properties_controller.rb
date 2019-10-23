@@ -6,7 +6,7 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@improp = @properties[0].images[0]
+		@improp = @properties[0].images[0].service_url
 		respond_with @improp
 	end
 end	
