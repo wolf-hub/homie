@@ -6,9 +6,15 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@improp = url_for(@properties[0].images[0])	
-		respond_with @improp
+		@properties.map { |peoperty| property_json(property) }
+		respond_with @property
 	end
+
+	private
+
+	def property_json(property)
+    	property.as_json.merge(images: property.images.map { |image| url_for(image) })
+  	end
 end
 
 
