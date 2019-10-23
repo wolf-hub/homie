@@ -6,7 +6,7 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@improp = @properties.map { |property| property[:images] = property.images) }
+		@improp = @properties.map { |property| property.merge(image: property.images[0].url) }
 		respond_with @improp
 	end
 end	
