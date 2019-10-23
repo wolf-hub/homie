@@ -6,7 +6,7 @@ class Api::V1::PropertiesController < ApplicationController
 
 	def index
 		@properties = Property.all
-		@improp = rails_blob_path(@properties[0].images[0], disposition: "attachment", only_path: true)	
+		@improp = url_for(@properties[0].images[0])	
 		respond_with @improp
 	end
 end
