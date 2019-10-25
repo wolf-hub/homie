@@ -10,6 +10,12 @@ class Api::V1::PropertiesController < ApplicationController
 		respond_with @newproperties
 	end
 
+	def show
+		@property = Property.find(params[:id])
+		@newproperty = property_json(@property)
+		respond_with @newproperty
+	end
+
 	private
 
 	def property_json(property)
