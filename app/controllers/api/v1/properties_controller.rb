@@ -14,7 +14,7 @@ class Api::V1::PropertiesController < ApplicationController
 		@property = Property.find(params[:id])
 		@newproperty = property_json(@property)
 		@requests = helpers.getenquires(@property)
-		respond_with @newproperty, @requests
+		respond_with(@newproperty, @requests)
 	end
 
 	private
