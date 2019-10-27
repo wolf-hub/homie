@@ -13,7 +13,8 @@ class Api::V1::PropertiesController < ApplicationController
 	def show
 		@property = Property.find(params[:id])
 		@newproperty = property_json(@property)
-		respond_with @newproperty
+		@requests = helpers.getenquires(@property)
+		respond_with @newproperty, @requests
 	end
 
 	private
