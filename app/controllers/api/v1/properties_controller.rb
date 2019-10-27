@@ -13,14 +13,14 @@ class Api::V1::PropertiesController < ApplicationController
 	def show
 		@property = Property.find(params[:id])
 		@newproperty = property_json(@property)
-		@requests = helpers.getenquires(@property)
-		respond_with(@newproperty, @requests)
+		respond_with @newproperty
 	end
 
 	private
 
 	def property_json(property)
-    	property.as_json.merge(images: property.images.map { |image| url_for(image) })
+    	@requests = helpers.getenquires(property)
+    	property.as_json.merge(images: property.images.map { |image| url_for(image) }, requests: @requests)
   	end
 end
 
