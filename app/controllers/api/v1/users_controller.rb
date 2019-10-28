@@ -9,16 +9,11 @@ class Api::V1::UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@profile = helpers.profile(@user)
-		@newuser = @user.as_json.only: [:email, :role]).merge( profile: @profile)
+		@newuser = @user.as_json(only: [:email, :role]).merge( profile: @profile)
 		respond_with @newuser
 	end
 
-	private
-
-	def property_json(property)
-    	@requests = helpers.getenquires(property)
-    	property.as_json.merge(images: property.images.map { |image| url_for(image) }, requests: @requests)
-  	end
+	
 end
 
 
