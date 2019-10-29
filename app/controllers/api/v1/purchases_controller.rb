@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
 	
 
 	def index
-		@purchases = Purchase.where(request_id: params[:request_id], user_id: params[:user.id])
+		@purchases = Purchase.where(request_id: params[:request_id], user_id: params[:user_id])
 		respond_with @purchases
 	end
 
