@@ -28,7 +28,9 @@ Rails.application.routes.draw do
       devise_for :users, 
                   :controllers => {registrations: "api/v1/registrations", sessions: "api/v1/sessions"},
                   path_names: { sign_in: :login }
-      resources :users, only: [:show]            
+      resources :users, only: [:show]  
+      resources :purchases, only: [:index]
+      resources :points, only: [:index]          
     end
   end
 
