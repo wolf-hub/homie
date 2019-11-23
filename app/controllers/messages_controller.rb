@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
 
     if @message.save      
       ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
-      MessageMailer.new_message_email(@message, @conversation).deliver_now
+      MessageMailer.new_message_email(@message, @conversation).deliver_later
       #redirect_to conversation_messages_path(@conversation)
     end
   end
