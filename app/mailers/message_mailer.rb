@@ -1,9 +1,9 @@
 class MessageMailer < ApplicationMailer
 	default from: 'no-reply@homie.com'
 
-	def new_message_email(message_id, conversation_id)
-	    @message = Message.find(message_id);
-	    @conversation = Conversation.find(conversation_id)
+	def new_message_email(message, conversation)
+	    @message = message;
+	    @conversation = conversation;
 	    if @message.user == @conversation.sender
 	    	@reciever = @conversation.recepient
 	    else
