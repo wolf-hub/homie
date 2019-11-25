@@ -51,7 +51,7 @@ class RequestsController < ApplicationController
     authorize! :update, @request
     if @request.update(request_params)
       RequestMailer.update_request_email(@request).deliver_later
-        RequestMailer.update_request_admin_email(@request).deliver_later
+      RequestMailer.update_request_admin_email(@request).deliver_later
       
       
       MatchingJob.perform_later @request
